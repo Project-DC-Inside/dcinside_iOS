@@ -31,7 +31,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.emailCert.isEnabled = false
+        self.emailCert.isEnabled = false
         // Do any additional setup after loading the view.
     }
 }
@@ -45,11 +45,19 @@ extension SignUpViewController: UITextFieldDelegate {
     }
     
     func isValidEmail(email: String) -> Bool {
-            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-            let emailValid = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailValid = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
             
-            return emailValid.evaluate(with: email)
-        }
+        return emailValid.evaluate(with: email)
+    }
+    
+    func isValidPassword(mypassword : String) -> Bool {
+        let passwordreg = ("(?=.*[A-Za-z])(?=.*[0-9]).{8,20}")
+        let passwordtesting = NSPredicate(format: "SELF MATCHES %@", passwordreg)
+        return passwordtesting.evaluate(with: mypassword)
+    }
+
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == self.idField {
             self.nicknameField.becomeFirstResponder()
@@ -80,8 +88,30 @@ extension SignUpViewController: UITextFieldDelegate {
         }
         
         if textField == self.passwordField {
-            
+            if textField.text != nil {
+                if !isValidPassword(mypassword: textField.text!) {
+                    self.passwordChecker.text = "조건에 부합하지 않습니다."
+                    self.passwordChecker.textColor = .red
+                }else {
+                    self.passwordChecker.text = "조건에 맞네요!"
+                    self.passwordChecker.textColor = .gray
+                }
+            }
         }
+        
+        if textField == self.passwordCheckField {
+            if self.passwordField.text == nil { return true}
+            if textField.text != nil {
+                if self.passwordField.text == textField.text {
+                    self.passwordChecker.text = "비밀번호 완료"
+                    self.passwordChecker.textColor = .blue
+                }else {
+                    self.passwordChecker.text = "비밀번호가 같지 않네요"
+                    self.passwordChecker.textColor = .red
+                }
+            }
+        }
+        
         if textField == self.emailField {
             if textField.text != nil {
                 if isValidEmail(email: textField.text!) {

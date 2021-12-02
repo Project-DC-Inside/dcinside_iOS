@@ -156,7 +156,6 @@
 				6B0E9DD427524CD000B0E946 /* LaunchScreen.storyboard */,
 				6B0E9DD727524CD000B0E946 /* Info.plist */,
 				6B0E9DCF27524CCF00B0E946 /* dcinside_iOS.xcdatamodeld */,
-				723830B42758BB0D006B0F49 /* SignUpViewController.swift */,
 			);
 			path = dcinside_iOS;
 			sourceTree = "<group>";
@@ -183,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				6B0E9DCA27524CCF00B0E946 /* ViewController.swift */,
+				723830B42758BB0D006B0F49 /* SignUpViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

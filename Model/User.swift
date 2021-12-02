@@ -11,7 +11,6 @@ struct User: Codable {
     var ID: String?
     var nickName: String?
     var password: String?
-    var name: String?
     var email: String?
     var role: Role
 }
