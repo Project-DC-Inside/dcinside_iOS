@@ -18,6 +18,8 @@
 		6B0E9DE127524CD000B0E946 /* dcinside_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E9DE027524CD000B0E946 /* dcinside_iOSTests.swift */; };
 		6B0E9DEC27524CD000B0E946 /* dcinside_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E9DEB27524CD000B0E946 /* dcinside_iOSUITests.swift */; };
 		723830B52758BB0D006B0F49 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723830B42758BB0D006B0F49 /* SignUpViewController.swift */; };
+		723830BA2758DB90006B0F49 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723830B92758DB90006B0F49 /* Role.swift */; };
+		723830BC2758DBB1006B0F49 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723830BB2758DBB1006B0F49 /* User.swift */; };
 		FCB0A5A54025DB78944510EC /* Pods_dcinside_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1158103951A4FB7AA43372 /* Pods_dcinside_iOS.framework */; };
 		FCFF292416A684B208A02B01 /* Pods_dcinside_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D7B19436E0E14A4F524FA8 /* Pods_dcinside_iOSTests.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +63,8 @@
 		6B0E9DEB27524CD000B0E946 /* dcinside_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dcinside_iOSUITests.swift; sourceTree = "<group>"; };
 		6B0E9DED27524CD000B0E946 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		723830B42758BB0D006B0F49 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		723830B92758DB90006B0F49 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
+		723830BB2758DBB1006B0F49 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8B3789E2BBFE5F2D389D38DF /* Pods_dcinside_iOS_dcinside_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dcinside_iOS_dcinside_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1158103951A4FB7AA43372 /* Pods_dcinside_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dcinside_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D7B19436E0E14A4F524FA8 /* Pods_dcinside_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dcinside_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +125,9 @@
 		6B0E9DBA27524CCF00B0E946 = {
 			isa = PBXGroup;
 			children = (
+				723830B82758DB72006B0F49 /* Model */,
+				723830B72758DB6E006B0F49 /* View */,
+				723830B62758DB67006B0F49 /* Controller */,
 				6B0E9DC527524CCF00B0E946 /* dcinside_iOS */,
 				6B0E9DDF27524CD000B0E946 /* dcinside_iOSTests */,
 				6B0E9DEA27524CD000B0E946 /* dcinside_iOSUITests */,
@@ -145,8 +152,6 @@
 			children = (
 				6B0E9DC627524CCF00B0E946 /* AppDelegate.swift */,
 				6B0E9DC827524CCF00B0E946 /* SceneDelegate.swift */,
-				6B0E9DCA27524CCF00B0E946 /* ViewController.swift */,
-				6B0E9DCC27524CCF00B0E946 /* Main.storyboard */,
 				6B0E9DD227524CD000B0E946 /* Assets.xcassets */,
 				6B0E9DD427524CD000B0E946 /* LaunchScreen.storyboard */,
 				6B0E9DD727524CD000B0E946 /* Info.plist */,
@@ -172,6 +177,31 @@
 				6B0E9DED27524CD000B0E946 /* Info.plist */,
 			);
 			path = dcinside_iOSUITests;
+			sourceTree = "<group>";
+		};
+		723830B62758DB67006B0F49 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B0E9DCA27524CCF00B0E946 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		723830B72758DB6E006B0F49 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B0E9DCC27524CCF00B0E946 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		723830B82758DB72006B0F49 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				723830B92758DB90006B0F49 /* Role.swift */,
+				723830BB2758DBB1006B0F49 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,6 +447,8 @@
 				6B0E9DD127524CCF00B0E946 /* dcinside_iOS.xcdatamodeld in Sources */,
 				6B0E9DC927524CCF00B0E946 /* SceneDelegate.swift in Sources */,
 				723830B52758BB0D006B0F49 /* SignUpViewController.swift in Sources */,
+				723830BA2758DB90006B0F49 /* Role.swift in Sources */,
+				723830BC2758DBB1006B0F49 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
