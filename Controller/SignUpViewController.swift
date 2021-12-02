@@ -31,8 +31,16 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.emailCert.addTarget(self, action: #selector(onClickCertButton(_:)), for: .touchUpInside)
         self.emailCert.isEnabled = false
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func onClickCertButton(_ sender: Any?) {
+        // API 들어갈 부분
+        
+        // 로직 이후
+        self.certiField.isHidden = false
     }
 }
 
