@@ -21,6 +21,7 @@
 		723830BA2758DB90006B0F49 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723830B92758DB90006B0F49 /* Role.swift */; };
 		723830BC2758DBB1006B0F49 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723830BB2758DBB1006B0F49 /* User.swift */; };
 		723830BF275A2B97006B0F49 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723830BE275A2B97006B0F49 /* APIService.swift */; };
+		726EA7AD275A534500EB2D83 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA7AC275A534500EB2D83 /* KeyChain.swift */; };
 		FCB0A5A54025DB78944510EC /* Pods_dcinside_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1158103951A4FB7AA43372 /* Pods_dcinside_iOS.framework */; };
 		FCFF292416A684B208A02B01 /* Pods_dcinside_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D7B19436E0E14A4F524FA8 /* Pods_dcinside_iOSTests.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		723830B92758DB90006B0F49 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		723830BB2758DBB1006B0F49 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		723830BE275A2B97006B0F49 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		726EA7AC275A534500EB2D83 /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		8B3789E2BBFE5F2D389D38DF /* Pods_dcinside_iOS_dcinside_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dcinside_iOS_dcinside_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1158103951A4FB7AA43372 /* Pods_dcinside_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dcinside_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D7B19436E0E14A4F524FA8 /* Pods_dcinside_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dcinside_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				723830BE275A2B97006B0F49 /* APIService.swift */,
+				726EA7AC275A534500EB2D83 /* KeyChain.swift */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				723830B52758BB0D006B0F49 /* SignUpViewController.swift in Sources */,
 				723830BA2758DB90006B0F49 /* Role.swift in Sources */,
 				723830BF275A2B97006B0F49 /* APIService.swift in Sources */,
+				726EA7AD275A534500EB2D83 /* KeyChain.swift in Sources */,
 				723830BC2758DBB1006B0F49 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

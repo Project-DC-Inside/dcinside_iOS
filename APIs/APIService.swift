@@ -8,11 +8,16 @@
 import Foundation
 import Alamofire
 
-struct APIService {
-    static let shared = APIService()
+class APIService {
+    //최초 생성시, 전역으로 사용가능하게한다.
     
+    static let shared = APIService()
+    private let baseURL = "https://api.itbook.store/1.0/"
     func loginAPI() {
-        
+        AF.request(baseURL + "/search/mongodb").responseJSON { response in
+            print(response.response?.statusCode)
+            print(response.debugDescription)
+        }
     }
     
     func singUpAPI() {

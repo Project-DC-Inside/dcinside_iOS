@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: Any) {
         print("LOG IN!")
+        APIService.shared.loginAPI()
         
     }
     @IBAction func signUpButton(_ sender: Any) {
