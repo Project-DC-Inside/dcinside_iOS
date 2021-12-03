@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
     @IBOutlet weak var idField: UITextField!
@@ -15,6 +16,7 @@ class ViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: Any) {
         print("LOG IN!")
+        
     }
     @IBAction func signUpButton(_ sender: Any) {
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") else {return}
