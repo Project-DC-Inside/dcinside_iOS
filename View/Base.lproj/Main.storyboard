@@ -356,22 +356,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZu-fN-ufk">
-                                <rect key="frame" x="0.0" y="44" width="414" height="118.5"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="53"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deep Forest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="947-81-61Q">
-                                        <rect key="frame" x="0.0" y="15" width="414" height="27.5"/>
+                                        <rect key="frame" x="0.0" y="15" width="414" height="28"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="V7f-bD-V9P">
-                                        <rect key="frame" x="0.0" y="67.5" width="414" height="51"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </searchBar>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLe-GT-rNx">
-                                        <rect key="frame" x="10" y="13" width="45" height="31.5"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="list.bullet" catalog="system"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLe-GT-rNx">
+                                        <rect key="frame" x="10" y="13" width="45" height="32"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="line.3.horizontal" catalog="system"/>
                                         <connections>
                                             <segue destination="Kfd-qL-SQ8" kind="show" id="GiM-4B-ONn"/>
                                         </connections>
@@ -379,24 +374,26 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="V7f-bD-V9P" firstAttribute="top" secondItem="947-81-61Q" secondAttribute="bottom" constant="25" id="AJs-np-Xbf"/>
                                     <constraint firstItem="aLe-GT-rNx" firstAttribute="leading" secondItem="JZu-fN-ufk" secondAttribute="leading" constant="10" id="GZp-jt-KNn"/>
                                     <constraint firstItem="947-81-61Q" firstAttribute="leading" secondItem="JZu-fN-ufk" secondAttribute="leading" id="GZr-aZ-8DE"/>
                                     <constraint firstItem="947-81-61Q" firstAttribute="top" secondItem="JZu-fN-ufk" secondAttribute="top" constant="15" id="H9d-dW-DdK"/>
                                     <constraint firstItem="aLe-GT-rNx" firstAttribute="centerY" secondItem="947-81-61Q" secondAttribute="centerY" id="KQu-gs-pdv"/>
-                                    <constraint firstAttribute="trailing" secondItem="V7f-bD-V9P" secondAttribute="trailing" id="THf-Me-h8E"/>
                                     <constraint firstAttribute="trailing" secondItem="947-81-61Q" secondAttribute="trailing" id="ZU1-QQ-hKM"/>
                                     <constraint firstItem="aLe-GT-rNx" firstAttribute="top" secondItem="JZu-fN-ufk" secondAttribute="top" constant="13" id="bnW-ce-EdE"/>
-                                    <constraint firstItem="V7f-bD-V9P" firstAttribute="leading" secondItem="JZu-fN-ufk" secondAttribute="leading" id="eod-f6-Qel"/>
-                                    <constraint firstAttribute="bottom" secondItem="V7f-bD-V9P" secondAttribute="bottom" id="gZY-fJ-VHC"/>
+                                    <constraint firstAttribute="bottom" secondItem="947-81-61Q" secondAttribute="bottom" constant="10" id="jvC-a9-C8n"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sLC-24-kCZ">
-                                <rect key="frame" x="0.0" y="162.5" width="414" height="1116.5"/>
+                                <rect key="frame" x="0.0" y="97" width="414" height="1182"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cDf-Jv-nwR">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1116.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1182"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <searchBar key="tableFooterView" contentMode="redraw" id="OgO-iU-BWj">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </searchBar>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -428,7 +425,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
