@@ -35,7 +35,7 @@ class APIService {
         }
     }
     
-    func loginAPI(compleition: (NetworkResult<Any>)->Void) {
+    func loginAPI(compleition: @escaping (NetworkResult<Any>) -> Void) {
         AF.request(baseURL + "/search/mongodb").responseJSON { response in
             switch response.result {
             case .success:
@@ -44,7 +44,7 @@ class APIService {
                 guard let value = response.value else { return }
                 
                 let decoder = JSONDecoder()
-                guard let decodeData = try? decoder.decode(Login.self, from: value as! Data) else { compleition(.pathErr)}
+                guard let decodeData = try? decoder.decode(Login.self, from: value as! Data) else { return }
                 
                 compleition(self.completionConvertor(by: statusCode, decodeData))
             case .failure:

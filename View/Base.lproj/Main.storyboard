@@ -101,6 +101,50 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="50.892857142857139"/>
         </scene>
+        <!--Custom Side Menu Navigation-->
+        <scene sceneID="7O4-1v-PwI">
+            <objects>
+                <navigationController id="Kfd-qL-SQ8" customClass="CustomSideMenuNavigation" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2L9-kV-A1Q"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J0j-qR-gN1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gmf-Zl-Ka4" kind="relationship" relationship="rootViewController" id="UAg-ZQ-pSX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3d2-4R-THW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113" y="772"/>
+        </scene>
+        <!--Side Menu Controller View Controller-->
+        <scene sceneID="ef1-da-7Nh">
+            <objects>
+                <viewController storyboardIdentifier="SideMenuControllerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gmf-Zl-Ka4" customClass="SideMenuControllerViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q4g-2x-Wuv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSt-wR-5qR" customClass="Login">
+                                <rect key="frame" x="174" y="195" width="67" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fOU-Ai-bGQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jSt-wR-5qR" firstAttribute="centerX" secondItem="fOU-Ai-bGQ" secondAttribute="centerX" id="RJh-YU-93w"/>
+                            <constraint firstItem="jSt-wR-5qR" firstAttribute="centerY" secondItem="fOU-Ai-bGQ" secondAttribute="centerY" id="oR2-QI-Rqb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qcX-uJ-E9s"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ajl-wo-0VK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1189" y="782"/>
+        </scene>
         <!--회원가입-->
         <scene sceneID="G7P-YH-va4">
             <objects>
@@ -339,6 +383,9 @@
                                         <rect key="frame" x="10" y="13" width="45" height="31.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="list.bullet" catalog="system"/>
+                                        <connections>
+                                            <segue destination="Kfd-qL-SQ8" kind="show" id="GiM-4B-ONn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
