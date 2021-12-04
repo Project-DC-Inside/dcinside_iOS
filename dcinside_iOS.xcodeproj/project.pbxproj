@@ -21,6 +21,7 @@
 		723830BA2758DB90006B0F49 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723830B92758DB90006B0F49 /* Role.swift */; };
 		723830BC2758DBB1006B0F49 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723830BB2758DBB1006B0F49 /* User.swift */; };
 		723830BF275A2B97006B0F49 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723830BE275A2B97006B0F49 /* APIService.swift */; };
+		725FCD3F275B66850077C59D /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725FCD3E275B66850077C59D /* Login.swift */; };
 		726EA7AD275A534500EB2D83 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA7AC275A534500EB2D83 /* KeyChain.swift */; };
 		726EA7AF275A7C7800EB2D83 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA7AE275A7C7800EB2D83 /* MainViewController.swift */; };
 		726EA7B1275A7C9500EB2D83 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA7B0275A7C9500EB2D83 /* PostViewController.swift */; };
@@ -71,6 +72,7 @@
 		723830B92758DB90006B0F49 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		723830BB2758DBB1006B0F49 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		723830BE275A2B97006B0F49 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		725FCD3E275B66850077C59D /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		726EA7AC275A534500EB2D83 /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		726EA7AE275A7C7800EB2D83 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		726EA7B0275A7C9500EB2D83 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			children = (
 				723830B92758DB90006B0F49 /* Role.swift */,
 				723830BB2758DBB1006B0F49 /* User.swift */,
+				725FCD3E275B66850077C59D /* Login.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 			files = (
 				6B0E9DCB27524CCF00B0E946 /* ViewController.swift in Sources */,
 				6B0E9DC727524CCF00B0E946 /* AppDelegate.swift in Sources */,
+				725FCD3F275B66850077C59D /* Login.swift in Sources */,
 				726EA7B3275A7C9D00EB2D83 /* MakePostViewController.swift in Sources */,
 				6B0E9DD127524CCF00B0E946 /* dcinside_iOS.xcdatamodeld in Sources */,
 				6B0E9DC927524CCF00B0E946 /* SceneDelegate.swift in Sources */,

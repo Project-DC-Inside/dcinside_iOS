@@ -16,7 +16,12 @@ class ViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: Any) {
         print("LOG IN!")
-        APIService.shared.loginAPI()
+        APIService.shared.loginAPI { (response, error) in
+        case .error:
+        case .response
+            print(error)
+            
+        }
         
     }
     @IBAction func signUpButton(_ sender: Any) {
