@@ -11,5 +11,6 @@ import SideMenu
 class CustomSideMenuNavigation: SideMenuNavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.leftSide = true
     }
 }

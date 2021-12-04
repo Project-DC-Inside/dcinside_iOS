@@ -125,19 +125,8 @@
                     <view key="view" contentMode="scaleToFill" id="Q4g-2x-Wuv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSt-wR-5qR" customClass="Login">
-                                <rect key="frame" x="174" y="195" width="67" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="fOU-Ai-bGQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="jSt-wR-5qR" firstAttribute="centerX" secondItem="fOU-Ai-bGQ" secondAttribute="centerX" id="RJh-YU-93w"/>
-                            <constraint firstItem="jSt-wR-5qR" firstAttribute="centerY" secondItem="fOU-Ai-bGQ" secondAttribute="centerY" id="oR2-QI-Rqb"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qcX-uJ-E9s"/>
                 </viewController>
@@ -367,7 +356,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZu-fN-ufk">
-                                <rect key="frame" x="0.0" y="44" width="414" height="143.5"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="118.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deep Forest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="947-81-61Q">
                                         <rect key="frame" x="0.0" y="15" width="414" height="27.5"/>
@@ -376,7 +365,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="V7f-bD-V9P">
-                                        <rect key="frame" x="0.0" y="92.5" width="414" height="51"/>
+                                        <rect key="frame" x="0.0" y="67.5" width="414" height="51"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLe-GT-rNx">
@@ -390,7 +379,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="V7f-bD-V9P" firstAttribute="top" secondItem="947-81-61Q" secondAttribute="bottom" constant="50" id="AJs-np-Xbf"/>
+                                    <constraint firstItem="V7f-bD-V9P" firstAttribute="top" secondItem="947-81-61Q" secondAttribute="bottom" constant="25" id="AJs-np-Xbf"/>
                                     <constraint firstItem="aLe-GT-rNx" firstAttribute="leading" secondItem="JZu-fN-ufk" secondAttribute="leading" constant="10" id="GZp-jt-KNn"/>
                                     <constraint firstItem="947-81-61Q" firstAttribute="leading" secondItem="JZu-fN-ufk" secondAttribute="leading" id="GZr-aZ-8DE"/>
                                     <constraint firstItem="947-81-61Q" firstAttribute="top" secondItem="JZu-fN-ufk" secondAttribute="top" constant="15" id="H9d-dW-DdK"/>
@@ -403,10 +392,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sLC-24-kCZ">
-                                <rect key="frame" x="0.0" y="187.5" width="414" height="1091.5"/>
+                                <rect key="frame" x="0.0" y="162.5" width="414" height="1116.5"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cDf-Jv-nwR">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1091.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1116.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
