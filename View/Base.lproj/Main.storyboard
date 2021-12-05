@@ -418,6 +418,10 @@
                         </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="1279"/>
+                    <connections>
+                        <outlet property="searchBar" destination="OgO-iU-BWj" id="FPy-by-qVB"/>
+                        <outlet property="tableView" destination="cDf-Jv-nwR" id="u4e-4M-kWQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i9a-iI-Tn9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
