@@ -15,9 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     
     @IBAction func loginButton(_ sender: Any) {
-        //print("LOG IN!")
-        
-        APIService.shared.loginAPI(compleition: { response in
+        print("LOG IN!")
+        /*
+         APIService.shared.loginAPI(compleition: { response in
             switch(response) {
             case .success(let data):
                 print(data)
@@ -31,12 +31,13 @@ class ViewController: UIViewController {
                 print("DEF")
             }
         })
-            
+         */
         
         
     }
     @IBAction func signUpButton(_ sender: Any) {
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") else {return}
+        print(nextVC)
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     

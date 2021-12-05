@@ -27,17 +27,8 @@ class MainViewController: UIViewController {
     }
     
     func fetch() {// 게시글 패칭용
-        
+        // How To Make ?
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -50,9 +41,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as! MainTableViewCell
         
-        cell.title.text = "HELLO"
+        cell.title.text = "반갑다!"
         cell.imageView?.image = UIImage(systemName: "pencil.slash")
-        cell.info.text = "INFO"
+        cell.info.text = "조회수 + Date 정보"
         cell.sizeToFit()
         
         return cell

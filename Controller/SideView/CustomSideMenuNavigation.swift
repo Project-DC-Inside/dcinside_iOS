@@ -14,3 +14,4 @@ class CustomSideMenuNavigation: SideMenuNavigationController {
         self.leftSide = true
     }
 }
+
