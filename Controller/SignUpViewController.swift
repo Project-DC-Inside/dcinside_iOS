@@ -42,6 +42,11 @@ class SignUpViewController: UIViewController {
         // 로직 이후
         self.certiField.isHidden = false
     }
+    @IBAction func BackButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
 
 extension SignUpViewController: UITextFieldDelegate {

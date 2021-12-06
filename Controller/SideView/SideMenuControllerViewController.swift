@@ -106,8 +106,10 @@ extension SideMenuControllerViewController : UITableViewDataSource {
         
         // section 부분 선택하면 열리게 설정
         if indexPath.row == 0, indexPath.section == 0 {
-            guard let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") else { return }
-            self.navigationController?.pushViewController(pushVC, animated: true)
+            guard let newVC = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") else { return }
+            newVC.modalTransitionStyle = .crossDissolve
+            newVC.modalPresentationStyle = .fullScreen
+            self.present(newVC, animated: true, completion: nil)
         }
         if indexPath.row == 0 {
             // section이 열려있다면 다시 닫힐 수 있게 해주는 코드
