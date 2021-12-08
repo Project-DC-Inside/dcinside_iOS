@@ -87,8 +87,6 @@ extension SideMenuControllerViewController : UITableViewDataSource {
             cell.configureUI()
             cell.tableLabel.text = tableViewData[indexPath.section].title
             return cell
-            
-            // sectionData 부분 코드
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath)
                     as? TableViewCell else { return UITableViewCell() }
@@ -96,7 +94,6 @@ extension SideMenuControllerViewController : UITableViewDataSource {
             cell.tableLabel.text = tableViewData[indexPath.section].sectionData[indexPath.row - 1]
             return cell
         }
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -105,12 +102,15 @@ extension SideMenuControllerViewController : UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         
         // section 부분 선택하면 열리게 설정
+        
+        // Select -> Delegate -> View Transition
         if indexPath.row == 0, indexPath.section == 0 {
             guard let newVC = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") else { return }
             newVC.modalTransitionStyle = .crossDissolve
             newVC.modalPresentationStyle = .fullScreen
             self.present(newVC, animated: true, completion: nil)
         }
+        
         if indexPath.row == 0 {
             // section이 열려있다면 다시 닫힐 수 있게 해주는 코드
             tableViewData[indexPath.section].opened = !tableViewData[indexPath.section].opened
