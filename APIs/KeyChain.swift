@@ -7,6 +7,8 @@
 
 
 //source reference https://dvlpr-chan.tistory.com/27
+// UserDefaults vs KeyChain -> 이부분에 대해서 고민이 필요할듯. 오늘 해보니 UserDefaults 가 쓰기 편했다..
+
 import Foundation
 
 class KeyChain {
