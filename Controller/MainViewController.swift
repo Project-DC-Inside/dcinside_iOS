@@ -15,14 +15,15 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         tableView.tableHeaderView = searchBar
         //tableView.addSubview(searchBar)
-        let nibName = UINib(nibName: "MainTableViewCell", bundle: nil)
+        
+        //let nibName = UINib(nibName: "MainTableViewCell", bundle: nil)
         
         tableView.delegate = self
         tableView.dataSource = self
         
         
         super.viewDidLoad()
-        tableView.register(nibName, forCellReuseIdentifier: "MainCell")
+        // tableView.register(nibName, forCellReuseIdentifier: "MainCell")
         // Do any additional setup after loading the view.
     }
     
@@ -39,11 +40,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as! MainTableViewCell
-        
-        cell.title.text = "반갑다!"
-        cell.imageView?.image = UIImage(systemName: "pencil.slash")
-        cell.info.text = "조회수 + Date 정보"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MainViewTableViewCell", for: indexPath) as! MainViewTableViewCell
+        cell.mainTableTitleLabel.text = "반갑다"
+        cell.mainTableDescriptLabel.text = "조회수 + Date Info"
+        cell.mianTableThumbnail.image = UIImage(systemName: "star.fill")
         cell.sizeToFit()
         
         return cell

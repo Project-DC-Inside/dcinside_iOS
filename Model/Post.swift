@@ -9,9 +9,9 @@ import Foundation
 
 struct Post:Codable {
     var title: String
-    var nickname: User
+    var writer: User
     var postHits: Int
     var recommandHits: Int
-    var date: String //임시..
+    var date: Date //임시..
     //var content:
 }
