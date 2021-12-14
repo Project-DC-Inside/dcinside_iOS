@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vh0-YT-2CB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vh0-YT-2CB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -94,6 +94,22 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="50.892857142857139"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="XUT-r1-VBM">
+            <objects>
+                <viewController id="vVu-Gd-sLy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zlg-gZ-a3w">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="zgr-BG-vFC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="house" catalog="system" selectedImage="house.fill" id="Dck-l3-xgQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uPW-JA-eKt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2378.2608695652175" y="1060.7142857142858"/>
+        </scene>
         <!--Custom Side Menu Navigation-->
         <scene sceneID="7O4-1v-PwI">
             <objects>
@@ -109,7 +125,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3d2-4R-THW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113" y="772"/>
+            <point key="canvasLocation" x="3642.0289855072465" y="1036.6071428571429"/>
         </scene>
         <!--Side Menu Controller View Controller-->
         <scene sceneID="ef1-da-7Nh">
@@ -125,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajl-wo-0VK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1189" y="782"/>
+            <point key="canvasLocation" x="4718.840579710145" y="1046.6517857142858"/>
         </scene>
         <!--회원가입-->
         <scene sceneID="G7P-YH-va4">
@@ -487,9 +503,28 @@
             </objects>
             <point key="canvasLocation" x="2730.434782608696" y="177.79017857142856"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="n5U-WY-X9d">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="vYw-Fj-spy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EHP-EN-qef">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="vVu-Gd-sLy" kind="relationship" relationship="viewControllers" id="8gD-vc-de6"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZaW-dM-asG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1468.1159420289857" y="1060.7142857142858"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

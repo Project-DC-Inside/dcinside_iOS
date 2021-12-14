@@ -13,10 +13,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
-
-    @IBAction func backButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
     
     @IBAction func loginButton(_ sender: Any) {
         print("LOG IN!")
@@ -41,6 +37,7 @@ class ViewController: UIViewController {
         
     }
     @IBAction func signUpButton(_ sender: Any) {
+        
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") else {return}
         nextVC.modalTransitionStyle = .coverVertical
         nextVC.modalPresentationStyle = .fullScreen
@@ -49,6 +46,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("HELLO")
         // Do any additional setup after loading the view.
     }
 
