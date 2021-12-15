@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vh0-YT-2CB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PyL-aW-gWV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -116,7 +116,7 @@
                 <navigationController id="Kfd-qL-SQ8" customClass="CustomSideMenuNavigation" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="2L9-kV-A1Q"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="J0j-qR-gN1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -132,7 +132,7 @@
             <objects>
                 <viewController storyboardIdentifier="SideMenuControllerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gmf-Zl-Ka4" customClass="SideMenuControllerViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q4g-2x-Wuv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="fOU-Ai-bGQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -369,7 +369,23 @@
             </objects>
             <point key="canvasLocation" x="1878" y="85"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="kcE-nN-Mee">
+            <objects>
+                <navigationController id="PyL-aW-gWV" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="00q-Hz-oh6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vh0-YT-2CB" kind="relationship" relationship="rootViewController" id="3lA-HC-TU4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ohi-hu-Cue" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2688" y="51"/>
+        </scene>
+        <!--Deep Forest-->
         <scene sceneID="4EL-bB-KNg">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="vh0-YT-2CB" customClass="MainViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -377,39 +393,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1279"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZu-fN-ufk">
-                                <rect key="frame" x="0.0" y="44" width="414" height="52.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deep Forest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="947-81-61Q">
-                                        <rect key="frame" x="0.0" y="15" width="414" height="27.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLe-GT-rNx">
-                                        <rect key="frame" x="10" y="13" width="45" height="31.5"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="line.3.horizontal" catalog="system"/>
-                                        <connections>
-                                            <segue destination="Kfd-qL-SQ8" kind="show" id="GiM-4B-ONn"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="aLe-GT-rNx" firstAttribute="leading" secondItem="JZu-fN-ufk" secondAttribute="leading" constant="10" id="GZp-jt-KNn"/>
-                                    <constraint firstItem="947-81-61Q" firstAttribute="leading" secondItem="JZu-fN-ufk" secondAttribute="leading" id="GZr-aZ-8DE"/>
-                                    <constraint firstItem="947-81-61Q" firstAttribute="top" secondItem="JZu-fN-ufk" secondAttribute="top" constant="15" id="H9d-dW-DdK"/>
-                                    <constraint firstItem="aLe-GT-rNx" firstAttribute="centerY" secondItem="947-81-61Q" secondAttribute="centerY" id="KQu-gs-pdv"/>
-                                    <constraint firstAttribute="trailing" secondItem="947-81-61Q" secondAttribute="trailing" id="ZU1-QQ-hKM"/>
-                                    <constraint firstItem="aLe-GT-rNx" firstAttribute="top" secondItem="JZu-fN-ufk" secondAttribute="top" constant="13" id="bnW-ce-EdE"/>
-                                    <constraint firstAttribute="bottom" secondItem="947-81-61Q" secondAttribute="bottom" constant="10" id="jvC-a9-C8n"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sLC-24-kCZ">
-                                <rect key="frame" x="0.0" y="96.5" width="414" height="1182.5"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="1191"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cDf-Jv-nwR">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1182.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1191"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <searchBar key="tableHeaderView" contentMode="redraw" id="OgO-iU-BWj">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -485,14 +473,23 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ieQ-la-JPa" firstAttribute="trailing" secondItem="sLC-24-kCZ" secondAttribute="trailing" id="9Xi-TG-4bu"/>
-                            <constraint firstItem="ieQ-la-JPa" firstAttribute="trailing" secondItem="JZu-fN-ufk" secondAttribute="trailing" id="E6B-KG-g51"/>
+                            <constraint firstItem="sLC-24-kCZ" firstAttribute="top" secondItem="ieQ-la-JPa" secondAttribute="top" id="SaT-YP-HqG"/>
                             <constraint firstAttribute="bottom" secondItem="sLC-24-kCZ" secondAttribute="bottom" id="Swv-nz-nxl"/>
-                            <constraint firstItem="ieQ-la-JPa" firstAttribute="top" secondItem="JZu-fN-ufk" secondAttribute="top" id="UHA-ua-DTB"/>
-                            <constraint firstItem="JZu-fN-ufk" firstAttribute="leading" secondItem="ieQ-la-JPa" secondAttribute="leading" id="bxO-pa-eYa"/>
                             <constraint firstItem="sLC-24-kCZ" firstAttribute="leading" secondItem="ieQ-la-JPa" secondAttribute="leading" id="ctP-8n-If3"/>
-                            <constraint firstItem="sLC-24-kCZ" firstAttribute="top" secondItem="JZu-fN-ufk" secondAttribute="bottom" id="pQO-C3-GxI"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Deep Forest" id="Xmm-XF-9uQ">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="ziV-XW-neQ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aLe-GT-rNx">
+                                <rect key="frame" x="20" y="5" width="50" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <buttonConfiguration key="configuration" style="plain" image="line.3.horizontal" catalog="system"/>
+                                <connections>
+                                    <segue destination="Kfd-qL-SQ8" kind="show" id="GiM-4B-ONn"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="414" height="1279"/>
                     <connections>
                         <outlet property="searchBar" destination="OgO-iU-BWj" id="FPy-by-qVB"/>
@@ -501,7 +498,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i9a-iI-Tn9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2730.434782608696" y="177.79017857142856"/>
+            <point key="canvasLocation" x="3436" y="178"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="n5U-WY-X9d">
@@ -509,6 +506,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="vYw-Fj-spy" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EHP-EN-qef">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

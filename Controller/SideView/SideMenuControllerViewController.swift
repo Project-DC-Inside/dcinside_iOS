@@ -110,7 +110,6 @@ extension SideMenuControllerViewController : UITableViewDataSource {
             newVC.modalPresentationStyle = .fullScreen
             self.present(newVC, animated: true, completion: nil)
         }
-        
         if indexPath.row == 0 {
             // section이 열려있다면 다시 닫힐 수 있게 해주는 코드
             tableViewData[indexPath.section].opened = !tableViewData[indexPath.section].opened
