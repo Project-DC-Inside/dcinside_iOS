@@ -22,8 +22,6 @@
 		723830BA2758DB90006B0F49 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723830B92758DB90006B0F49 /* Role.swift */; };
 		723830BC2758DBB1006B0F49 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723830BB2758DBB1006B0F49 /* User.swift */; };
 		723830BF275A2B97006B0F49 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723830BE275A2B97006B0F49 /* APIService.swift */; };
-		723FAE5D275C54E4002F2470 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723FAE5B275C54E4002F2470 /* MainTableViewCell.swift */; };
-		723FAE5E275C54E4002F2470 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723FAE5C275C54E4002F2470 /* MainTableViewCell.xib */; };
 		725FCD3F275B66850077C59D /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725FCD3E275B66850077C59D /* Login.swift */; };
 		725FCD42275B767D0077C59D /* CustomSideMenuNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725FCD41275B767D0077C59D /* CustomSideMenuNavigation.swift */; };
 		725FCD44275B76B60077C59D /* SideMenuControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725FCD43275B76B60077C59D /* SideMenuControllerViewController.swift */; };
@@ -81,8 +79,6 @@
 		723830B92758DB90006B0F49 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		723830BB2758DBB1006B0F49 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		723830BE275A2B97006B0F49 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		723FAE5B275C54E4002F2470 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
-		723FAE5C275C54E4002F2470 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		725FCD3E275B66850077C59D /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		725FCD41275B767D0077C59D /* CustomSideMenuNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSideMenuNavigation.swift; sourceTree = "<group>"; };
 		725FCD43275B76B60077C59D /* SideMenuControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuControllerViewController.swift; sourceTree = "<group>"; };
@@ -217,8 +213,6 @@
 				726EA7AE275A7C7800EB2D83 /* MainViewController.swift */,
 				726EA7B0275A7C9500EB2D83 /* PostViewController.swift */,
 				726EA7B2275A7C9D00EB2D83 /* MakePostViewController.swift */,
-				723FAE5B275C54E4002F2470 /* MainTableViewCell.swift */,
-				723FAE5C275C54E4002F2470 /* MainTableViewCell.xib */,
 				7216E8AB27658A9B00A2A976 /* MainViewTableViewCell.swift */,
 			);
 			path = Controller;
@@ -380,7 +374,6 @@
 			files = (
 				6B0E9DD627524CD000B0E946 /* LaunchScreen.storyboard in Resources */,
 				6B0E9DD327524CD000B0E946 /* Assets.xcassets in Resources */,
-				723FAE5E275C54E4002F2470 /* MainTableViewCell.xib in Resources */,
 				6B0E9DCE27524CCF00B0E946 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,7 +512,6 @@
 				6B0E9DD127524CCF00B0E946 /* dcinside_iOS.xcdatamodeld in Sources */,
 				6B0E9DC927524CCF00B0E946 /* SceneDelegate.swift in Sources */,
 				723830B52758BB0D006B0F49 /* SignUpViewController.swift in Sources */,
-				723FAE5D275C54E4002F2470 /* MainTableViewCell.swift in Sources */,
 				723830BA2758DB90006B0F49 /* Role.swift in Sources */,
 				725FCD42275B767D0077C59D /* CustomSideMenuNavigation.swift in Sources */,
 				7216E8AC27658A9B00A2A976 /* MainViewTableViewCell.swift in Sources */,
