@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: Any) {
         print("LOG IN!")
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
         /*
          APIService.shared.loginAPI(compleition: { response in
             switch(response) {

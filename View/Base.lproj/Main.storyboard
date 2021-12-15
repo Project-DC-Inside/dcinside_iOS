@@ -11,6 +11,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="ERR-OD-pnY">
+            <objects>
+                <navigationController id="tun-7N-CqS" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MuE-za-q3U">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="QJ2-bF-zPh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="emj-4b-YIP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-20" y="50"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -20,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U24-UR-3z5">
-                                <rect key="frame" x="30" y="106" width="354" height="34"/>
+                                <rect key="frame" x="30" y="150" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -28,7 +44,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Ru-yL-6lV">
-                                <rect key="frame" x="30" y="150" width="354" height="34"/>
+                                <rect key="frame" x="30" y="194" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
@@ -36,7 +52,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXA-9I-saE">
-                                <rect key="frame" x="30" y="204" width="354" height="31"/>
+                                <rect key="frame" x="30" y="248" width="354" height="31"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -46,7 +62,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6e-YW-sRW">
-                                <rect key="frame" x="30" y="240" width="354" height="31"/>
+                                <rect key="frame" x="30" y="284" width="354" height="31"/>
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="회원가입"/>
@@ -54,32 +70,22 @@
                                     <action selector="signUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YFc-D2-ajI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iD4-a9-1sq">
-                                <rect key="frame" x="20" y="59" width="19.5" height="22"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="arrow.backward" catalog="system"/>
-                                <connections>
-                                    <action selector="backButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gpm-F8-vkq"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8Ru-yL-6lV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="9je-E1-gz3"/>
-                            <constraint firstItem="iD4-a9-1sq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="EjW-Qs-Fbw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B6e-YW-sRW" secondAttribute="trailing" constant="30" id="GtG-kY-THs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U24-UR-3z5" secondAttribute="trailing" constant="30" id="Jst-4Q-DqV"/>
+                            <constraint firstItem="U24-UR-3z5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="62" id="Mty-68-Ty1"/>
                             <constraint firstItem="VXA-9I-saE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="NTJ-0E-Cbt"/>
                             <constraint firstItem="B6e-YW-sRW" firstAttribute="top" secondItem="VXA-9I-saE" secondAttribute="bottom" constant="5" id="Of8-Wn-dlZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VXA-9I-saE" secondAttribute="trailing" constant="30" id="fQS-fb-V80"/>
                             <constraint firstItem="8Ru-yL-6lV" firstAttribute="top" secondItem="U24-UR-3z5" secondAttribute="bottom" constant="10" id="gaL-9o-3aj"/>
                             <constraint firstItem="VXA-9I-saE" firstAttribute="top" secondItem="8Ru-yL-6lV" secondAttribute="bottom" constant="20" id="gsT-cv-fOU"/>
-                            <constraint firstItem="U24-UR-3z5" firstAttribute="top" secondItem="iD4-a9-1sq" secondAttribute="bottom" constant="25" id="h8T-St-cbu"/>
                             <constraint firstItem="U24-UR-3z5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="idU-w8-VoJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Ru-yL-6lV" secondAttribute="trailing" constant="30" id="jjq-0M-veN"/>
                             <constraint firstItem="B6e-YW-sRW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="o9f-Qr-g4B"/>
-                            <constraint firstItem="iD4-a9-1sq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ogr-PQ-ZKS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Px6-2q-Wj9"/>
@@ -92,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="50.892857142857139"/>
+            <point key="canvasLocation" x="780" y="50"/>
         </scene>
         <!--Item-->
         <scene sceneID="XUT-r1-VBM">
@@ -141,7 +147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajl-wo-0VK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4718.840579710145" y="1046.6517857142858"/>
+            <point key="canvasLocation" x="4733" y="1037"/>
         </scene>
         <!--회원가입-->
         <scene sceneID="G7P-YH-va4">
@@ -480,7 +486,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Deep Forest" id="Xmm-XF-9uQ">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="ziV-XW-neQ">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aLe-GT-rNx">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aLe-GT-rNx">
                                 <rect key="frame" x="20" y="5" width="50" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <buttonConfiguration key="configuration" style="plain" image="line.3.horizontal" catalog="system"/>
