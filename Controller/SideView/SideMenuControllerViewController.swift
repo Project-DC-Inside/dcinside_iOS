@@ -18,10 +18,18 @@ class SideMenuControllerViewController: UIViewController{
     
     
     // MARK: - Property
-    
     var tableView = UITableView()
-    
-    
+    var signInButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "power.circle"), for: .normal)
+        return button
+    }()
+    var nicknameInfo: UILabel = {
+        let label = UILabel()
+        label.text = "로그인 하실?"
+        label.textAlignment = .center
+        return label
+    }()
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -46,11 +54,26 @@ class SideMenuControllerViewController: UIViewController{
     
     func configureUI() {
         
+        lazy var stackView = UIStackView(arrangedSubviews: [nicknameInfo, signInButton])
+        signInButton.addTarget(self, action: #selector(SignIn), for: .touchUpInside)
+        stackView.spacing = 4.0
+        stackView.distribution = .fillEqually
+        view.addSubview(stackView)
         view.addSubview(tableView)
         
-        tableView.snp.makeConstraints { (make) in
-            make.top.leading.bottom.trailing.equalToSuperview()
+        stackView.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+            $0.top.equalTo(view.safeAreaLayoutGuide)
         }
+        tableView.snp.makeConstraints { (make) in
+            make.top.equalTo(stackView.snp.bottom).offset(5)
+            make.leading.bottom.trailing.equalToSuperview()
+        }
+    }
+    
+    @objc func SignIn() {
+        guard let newVC = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") else { return }
+        self.navigationController?.pushViewController(newVC, animated: true)
     }
 }
 
@@ -104,14 +127,6 @@ extension SideMenuControllerViewController : UITableViewDataSource {
         // section 부분 선택하면 열리게 설정
         
         // Select -> Delegate -> View Transition
-        if indexPath.row == 0, indexPath.section == 0 {
-            guard let newVC = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") else { return }
-            self.navigationController?.pushViewController(newVC, animated: true)
-//            guard let newVC = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") else { return }
-//            newVC.modalTransitionStyle = .crossDissolve
-//            newVC.modalPresentationStyle = .fullScreen
-//            self.present(newVC, animated: true, completion: nil)
-        }
         if indexPath.row == 0 {
             // section이 열려있다면 다시 닫힐 수 있게 해주는 코드
             tableViewData[indexPath.section].opened = !tableViewData[indexPath.section].opened
