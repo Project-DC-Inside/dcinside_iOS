@@ -126,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uPW-JA-eKt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="535" y="1913"/>
+            <point key="canvasLocation" x="52" y="1908"/>
         </scene>
         <!--NoticeView-->
         <scene sceneID="2le-Ql-4dC">
@@ -151,7 +151,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fvv-bg-1tu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1338" y="1913"/>
+            <point key="canvasLocation" x="855" y="1908"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="LRT-2L-dxk">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" id="UNf-vu-8N9" customClass="SearchViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g9G-Me-6rD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="lB3-Tt-HED"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass.circle.fill" id="52a-mg-P1k"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yv2-O3-qBc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1723" y="1908"/>
+        </scene>
+        <!--Make Post View Controller-->
+        <scene sceneID="wJz-dv-WEQ">
+            <objects>
+                <viewController storyboardIdentifier="MakePostViewController" id="rI2-3N-axR" customClass="MakePostViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W2D-9E-SUF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="1xN-ly-cF4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="pencil.circle" catalog="system" selectedImage="pencil.circle.fill" id="TO5-4u-Fle"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oEH-g3-VF2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2578" y="1908"/>
         </scene>
         <!--Custom Side Menu Navigation-->
         <scene sceneID="7O4-1v-PwI">
@@ -556,6 +588,8 @@
                     <connections>
                         <segue destination="vVu-Gd-sLy" kind="relationship" relationship="viewControllers" id="8gD-vc-de6"/>
                         <segue destination="jzX-15-VuR" kind="relationship" relationship="viewControllers" id="6F1-Fm-0Ac"/>
+                        <segue destination="UNf-vu-8N9" kind="relationship" relationship="viewControllers" id="9YG-aB-cdj"/>
+                        <segue destination="rI2-3N-axR" kind="relationship" relationship="viewControllers" id="P6w-Zf-Wsr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZaW-dM-asG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -570,6 +604,10 @@
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="pencil.circle" catalog="system" width="128" height="121"/>
+        <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

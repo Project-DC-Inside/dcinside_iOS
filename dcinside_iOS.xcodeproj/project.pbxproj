@@ -34,6 +34,7 @@
 		7BCE4B4A2768D904008C07A5 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE4B492768D904008C07A5 /* GalleryViewController.swift */; };
 		7BCE4B90276B5DA5008C07A5 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE4B8F276B5DA5008C07A5 /* MainTabBarViewController.swift */; };
 		7BCE4B92276B641C008C07A5 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE4B91276B641C008C07A5 /* NoticeViewController.swift */; };
+		7BCE4B94276B7F3C008C07A5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE4B93276B7F3C008C07A5 /* SearchViewController.swift */; };
 		FCB0A5A54025DB78944510EC /* Pods_dcinside_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1158103951A4FB7AA43372 /* Pods_dcinside_iOS.framework */; };
 		FCFF292416A684B208A02B01 /* Pods_dcinside_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D7B19436E0E14A4F524FA8 /* Pods_dcinside_iOSTests.framework */; };
 /* End PBXBuildFile section */
@@ -93,6 +94,7 @@
 		7BCE4B492768D904008C07A5 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		7BCE4B8F276B5DA5008C07A5 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		7BCE4B91276B641C008C07A5 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		7BCE4B93276B7F3C008C07A5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8B3789E2BBFE5F2D389D38DF /* Pods_dcinside_iOS_dcinside_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dcinside_iOS_dcinside_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1158103951A4FB7AA43372 /* Pods_dcinside_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dcinside_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D7B19436E0E14A4F524FA8 /* Pods_dcinside_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dcinside_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,6 +222,7 @@
 				7216E8AB27658A9B00A2A976 /* MainViewTableViewCell.swift */,
 				7BCE4B8F276B5DA5008C07A5 /* MainTabBarViewController.swift */,
 				7BCE4B91276B641C008C07A5 /* NoticeViewController.swift */,
+				7BCE4B93276B7F3C008C07A5 /* SearchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				6B0E9DC927524CCF00B0E946 /* SceneDelegate.swift in Sources */,
 				7BCE4B92276B641C008C07A5 /* NoticeViewController.swift in Sources */,
 				723830B52758BB0D006B0F49 /* SignUpViewController.swift in Sources */,
+				7BCE4B94276B7F3C008C07A5 /* SearchViewController.swift in Sources */,
 				723830BA2758DB90006B0F49 /* Role.swift in Sources */,
 				725FCD42275B767D0077C59D /* CustomSideMenuNavigation.swift in Sources */,
 				7216E8AC27658A9B00A2A976 /* MainViewTableViewCell.swift in Sources */,
