@@ -100,30 +100,58 @@
             </objects>
             <point key="canvasLocation" x="780" y="50"/>
         </scene>
-        <!--Item-->
+        <!--PostView-->
         <scene sceneID="XUT-r1-VBM">
             <objects>
-                <viewController storyboardIdentifier="PostViewController" id="vVu-Gd-sLy" customClass="PostViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostViewController" title="PostView" id="vVu-Gd-sLy" customClass="PostViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zlg-gZ-a3w">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGj-mM-5Yn">
-                                <rect key="frame" x="186" y="394" width="33" height="21"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="1MT-Cy-Ffy">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zgr-BG-vFC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1MT-Cy-Ffy" firstAttribute="centerX" secondItem="Zlg-gZ-a3w" secondAttribute="centerX" id="RMO-IV-CJC"/>
+                            <constraint firstItem="1MT-Cy-Ffy" firstAttribute="centerY" secondItem="Zlg-gZ-a3w" secondAttribute="centerY" id="Xrg-dJ-T54"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="house" catalog="system" selectedImage="house.fill" id="Dck-l3-xgQ"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="1MT-Cy-Ffy" id="dsT-Hy-eTx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uPW-JA-eKt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="535" y="1913"/>
+        </scene>
+        <!--NoticeView-->
+        <scene sceneID="2le-Ql-4dC">
+            <objects>
+                <viewController storyboardIdentifier="NoticeViewController" title="NoticeView" id="jzX-15-VuR" customClass="NoticeViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bC0-ZO-KBl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPl-l7-AX9">
+                                <rect key="frame" x="186" y="438" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="zgr-BG-vFC"/>
+                        <viewLayoutGuide key="safeArea" id="xze-HV-yMG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="house" catalog="system" selectedImage="house.fill" id="Dck-l3-xgQ"/>
+                    <tabBarItem key="tabBarItem" title="" image="book" catalog="system" selectedImage="book.fill" id="eBZ-Zd-Pva"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uPW-JA-eKt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fvv-bg-1tu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2378.2608695652175" y="1060.7142857142858"/>
+            <point key="canvasLocation" x="1338" y="1913"/>
         </scene>
         <!--Custom Side Menu Navigation-->
         <scene sceneID="7O4-1v-PwI">
@@ -513,7 +541,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i9a-iI-Tn9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3436" y="178"/>
+            <point key="canvasLocation" x="3877" y="51"/>
         </scene>
         <!--Main Tab Bar View Controller-->
         <scene sceneID="n5U-WY-X9d">
@@ -527,6 +555,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="vVu-Gd-sLy" kind="relationship" relationship="viewControllers" id="8gD-vc-de6"/>
+                        <segue destination="jzX-15-VuR" kind="relationship" relationship="viewControllers" id="6F1-Fm-0Ac"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZaW-dM-asG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -536,6 +565,8 @@
     </scenes>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="book" catalog="system" width="128" height="99"/>
+        <image name="book.fill" catalog="system" width="128" height="95"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="line.3.horizontal" catalog="system" width="128" height="64"/>

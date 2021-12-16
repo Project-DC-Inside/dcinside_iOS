@@ -9,21 +9,33 @@ import UIKit
 
 class PostViewController: UIViewController {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        activityIndicator.startAnimating()
+        ConfigureFetching {
+            var x = 0
+            while x < 100000 {
+                x += 1
+            }
+            self.activityIndicator.stopAnimating()
+        }
         // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension PostViewController {
+    func FetchingData() {
+        // escaping Closure 이후,
+        // activityIndicator Animating 종료
+        // activityIndicator alpha값 조정해서 지우기..
     }
-    */
-
+    
+    func ConfigureFetching(completion: @escaping () -> ()) {
+        
+        
+    }
+    
+    
 }
