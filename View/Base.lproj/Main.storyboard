@@ -103,10 +103,19 @@
         <!--Item-->
         <scene sceneID="XUT-r1-VBM">
             <objects>
-                <viewController id="vVu-Gd-sLy" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostViewController" id="vVu-Gd-sLy" customClass="PostViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zlg-gZ-a3w">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGj-mM-5Yn">
+                                <rect key="frame" x="186" y="394" width="33" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="zgr-BG-vFC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -506,10 +515,10 @@
             </objects>
             <point key="canvasLocation" x="3436" y="178"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar View Controller-->
         <scene sceneID="n5U-WY-X9d">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="vYw-Fj-spy" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarViewController" automaticallyAdjustsScrollViewInsets="NO" id="vYw-Fj-spy" customClass="MainTabBarViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EHP-EN-qef">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

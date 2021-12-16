@@ -33,7 +33,7 @@ class MainViewController: UIViewController {
 
 }
 
-extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
         
@@ -48,7 +48,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-        
-    
-    
+}
+
+extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let newVC = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBarViewController") else { return }
+        self.navigationController?.pushViewController(newVC, animated: true)
+    }
 }

@@ -32,6 +32,7 @@
 		726EA7B1275A7C9500EB2D83 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA7B0275A7C9500EB2D83 /* PostViewController.swift */; };
 		726EA7B3275A7C9D00EB2D83 /* MakePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA7B2275A7C9D00EB2D83 /* MakePostViewController.swift */; };
 		7BCE4B4A2768D904008C07A5 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE4B492768D904008C07A5 /* GalleryViewController.swift */; };
+		7BCE4B90276B5DA5008C07A5 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE4B8F276B5DA5008C07A5 /* MainTabBarViewController.swift */; };
 		FCB0A5A54025DB78944510EC /* Pods_dcinside_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1158103951A4FB7AA43372 /* Pods_dcinside_iOS.framework */; };
 		FCFF292416A684B208A02B01 /* Pods_dcinside_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D7B19436E0E14A4F524FA8 /* Pods_dcinside_iOSTests.framework */; };
 /* End PBXBuildFile section */
@@ -89,6 +90,7 @@
 		726EA7B0275A7C9500EB2D83 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		726EA7B2275A7C9D00EB2D83 /* MakePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePostViewController.swift; sourceTree = "<group>"; };
 		7BCE4B492768D904008C07A5 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		7BCE4B8F276B5DA5008C07A5 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		8B3789E2BBFE5F2D389D38DF /* Pods_dcinside_iOS_dcinside_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dcinside_iOS_dcinside_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1158103951A4FB7AA43372 /* Pods_dcinside_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dcinside_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D7B19436E0E14A4F524FA8 /* Pods_dcinside_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dcinside_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,6 +216,7 @@
 				726EA7B0275A7C9500EB2D83 /* PostViewController.swift */,
 				726EA7B2275A7C9D00EB2D83 /* MakePostViewController.swift */,
 				7216E8AB27658A9B00A2A976 /* MainViewTableViewCell.swift */,
+				7BCE4B8F276B5DA5008C07A5 /* MainTabBarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				6B0E9DC727524CCF00B0E946 /* AppDelegate.swift in Sources */,
 				725FCD3F275B66850077C59D /* Login.swift in Sources */,
 				725FCD48275BD0C40077C59D /* Post.swift in Sources */,
+				7BCE4B90276B5DA5008C07A5 /* MainTabBarViewController.swift in Sources */,
 				726EA7B3275A7C9D00EB2D83 /* MakePostViewController.swift in Sources */,
 				725FCD44275B76B60077C59D /* SideMenuControllerViewController.swift in Sources */,
 				6B0E9DD127524CCF00B0E946 /* dcinside_iOS.xcdatamodeld in Sources */,
