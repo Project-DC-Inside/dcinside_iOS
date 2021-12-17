@@ -16,25 +16,7 @@ class ViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: Any) {
         print("LOG IN!")
-        self.navigationController?.popViewController(animated: true)
-        /*
-         APIService.shared.loginAPI(compleition: { response in
-            switch(response) {
-            case .success(let data):
-                print(data)
-            case .pathErr://(let data):
-                print(response)
-            case .networkFail:
-                print("FAIL")
-            case .serverErr:
-                print("FUCK")
-            default:
-                print("DEF")
-            }
-        })
-         */
-        
-        
+        self.navigationController?.popViewController(animated: true)        
     }
     @IBAction func signUpButton(_ sender: Any) {
         

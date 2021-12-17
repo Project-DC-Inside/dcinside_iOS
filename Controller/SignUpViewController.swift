@@ -41,6 +41,7 @@ class SignUpViewController: UIViewController {
         
         // 로직 이후
         self.certiField.isHidden = false
+        // Hidden -> Alpha 조절해서 Animation 주기
     }
     @IBAction func BackButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
