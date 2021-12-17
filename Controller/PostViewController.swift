@@ -12,6 +12,7 @@ class PostViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        configNav()
         activityIndicator.startAnimating()
         ConfigureFetching {
             var x = 0
@@ -37,5 +38,13 @@ extension PostViewController {
         
     }
     
+    func configNav() {
+        navigationItem.title = "POST"
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "arrow.backward"), style: .plain, target: self, action: #selector(didTapBackButton))
+        navigationItem.leftBarButtonItem = backButton
+    }
     
+    @objc func didTapBackButton() {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
