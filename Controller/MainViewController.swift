@@ -44,7 +44,9 @@ extension MainViewController: UITableViewDataSource {
         cell.mainTableTitleLabel.text = "반갑다"
         cell.mainTableDescriptLabel.text = "조회수 + Date Info"
         cell.mianTableThumbnail.image = UIImage(systemName: "star.fill")
-        cell.sizeToFit()
+        cell.mianTableThumbnail.snp.makeConstraints {
+            $0.size.height.equalTo(90)
+        }
         
         return cell
     }
