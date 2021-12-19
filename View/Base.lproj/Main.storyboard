@@ -319,6 +319,9 @@
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="가입하기"/>
+                                                <connections>
+                                                    <action selector="signUpButton:" destination="fpg-ag-nNk" eventType="touchUpInside" id="Io8-6q-hMn"/>
+                                                </connections>
                                             </button>
                                             <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="인증번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Za0-io-WgQ">
                                                 <rect key="frame" x="30" y="527" width="354" height="34"/>

@@ -74,12 +74,16 @@ class SideMenuControllerViewController: UIViewController{
         lazy var blankLabel = UILabel()
         lazy var blankLabel2 = UILabel()
         lazy var blankLabel3 = UILabel()
+        lazy var blankLabel4 = UILabel()
         
-        lazy var stackView = UIStackView(arrangedSubviews: [nicknameInfo, signInButton])
+        lazy var logStack = UIStackView(arrangedSubviews: [blankLabel4, signInButton])
+        lazy var stackView = UIStackView(arrangedSubviews: [nicknameInfo, logStack])
         lazy var btnView = UIStackView(arrangedSubviews: [settingButton, noticeButton])
         lazy var stackTop = UIStackView(arrangedSubviews: [logo, blankLabel, btnView])
         
         lazy var HeaderStack = UIStackView(arrangedSubviews: [stackTop, stackView])
+        
+        logStack.distribution = .fillEqually
         
         signInButton.addTarget(self, action: #selector(SignIn), for: .touchUpInside)
         stackView.spacing = 4.0

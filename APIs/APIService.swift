@@ -24,9 +24,9 @@ class APIService {
     static let shared = APIService()
     
     private let HTTPHeaders = ["Content-Type": "application/json"]
-    private let baseURL = "https://api.itbook.store/1.0/"
+    private let baseURL = "https://3.36.205.23"
     
-    private func completionConvertor(by statusCode: Int, _ data: Login) -> NetworkResult<Any> {
+    private func completionConvertor(by statusCode: Int, _ data: Any) -> NetworkResult<Any> {
         switch statusCode {
         case 200: return .success(data)
         case 400: return .pathErr
@@ -53,8 +53,21 @@ class APIService {
         }
     }
     
-    func singUpAPI() {
-        
+    func singUpAPI(SingUpID: User, completion: @escaping (NetworkResult<Any>) -> Void) {
+        AF.request(baseURL + "/api/v1/auth/signup", method: .post).responseJSON(completionHandler: { response in
+            switch response.result {
+            case .success:
+                guard let statusCode = response.response?.statusCode else { return }
+                guard let value = response.value else { return }
+                
+                let decoder = JSONDecoder()
+                guard let decodeData = try? decoder.decode(String.self, from: value as! Data) else { return }
+                completion(self.completionConvertor(by: statusCode, decodeData))
+            case .failure:
+                completion(.pathErr)
+            }
+            
+        })
     }
     
     func openPage() {

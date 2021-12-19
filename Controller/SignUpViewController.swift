@@ -29,6 +29,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var certiField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     
+    let AF = APIService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.emailCert.addTarget(self, action: #selector(onClickCertButton(_:)), for: .touchUpInside)
@@ -47,6 +49,23 @@ class SignUpViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func signUpButton(_ sender: Any) {
+        guard let username = idField.text else { return }
+        guard let password = passwordField.text else { return }
+        guard let email = emailField.text else { return }
+        guard let nickname = nicknameField.text else { return }
+        let user = User(username: username, password: password, email: email, nickname: nickname)
+        APIService.shared.singUpAPI(SingUpID: user) { response in
+            switch response{
+            case .success(let name):
+                print(name)
+            case .pathErr:
+                print("FAIL")
+            default:
+                print("ERR")
+            }
+        }
+    }
     
 }
 
@@ -84,9 +103,9 @@ extension SignUpViewController: UITextFieldDelegate {
         }
         return true
     }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let count = range.location
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let count = textField.text?.count else { return }
+        print(count, textField.text)
         if textField == self.idField {
             if count < 5 || count >= 20 {
                 self.idChecker.text = "글자가 부족하거나 넘칩니다."
@@ -114,7 +133,7 @@ extension SignUpViewController: UITextFieldDelegate {
         }
         
         if textField == self.passwordCheckField {
-            if self.passwordField.text == nil { return true}
+            if self.passwordField.text == nil { return }
             if textField.text != nil {
                 if self.passwordField.text == textField.text {
                     self.passwordChecker.text = "비밀번호 완료"
@@ -137,6 +156,6 @@ extension SignUpViewController: UITextFieldDelegate {
                 }
             }
         }
-        return true
     }
+    
 }
