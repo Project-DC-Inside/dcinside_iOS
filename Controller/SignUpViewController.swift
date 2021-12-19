@@ -61,6 +61,10 @@ class SignUpViewController: UIViewController {
             switch response{
             case .success(let name):
                 print(name)
+                let alert = UIAlertController(title: "가입 성공!", message: nil, preferredStyle: .alert)
+                let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
+                alert.addAction(ok)
+                self.present(alert, animated: true)
             case .pathErr:
                 print("FAIL")
             default:

@@ -60,7 +60,7 @@ class APIService {
             switch response.result{
                 case .success:
                     guard let value = response.value else { return }
-                completion(self.completionConvertor(by: statusCode, value))
+                    completion(self.completionConvertor(by: statusCode, value))
                 case .failure:
                     completion(.pathErr)
                             
