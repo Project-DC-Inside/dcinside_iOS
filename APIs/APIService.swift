@@ -24,7 +24,7 @@ class APIService {
     static let shared = APIService()
     
     private let HTTPHeaders = ["Content-Type": "application/json"]
-    private let baseURL = "https://3.36.205.23"
+    private let baseURL = "http://3.36.205.23:8080"
     
     private func completionConvertor(by statusCode: Int, _ data: Any) -> NetworkResult<Any> {
         switch statusCode {
@@ -35,18 +35,19 @@ class APIService {
         }
     }
     
-    func loginAPI(compleition: @escaping (NetworkResult<Any>) -> Void) {
-        AF.request(baseURL + "/search/mongodb").responseJSON { response in
+    func loginAPI(SingIn: Login, compleition: @escaping (NetworkResult<Any>) -> Void) {
+        AF.request(baseURL + "/api/v1/auth/signin", method: .post, parameters: SingIn, encoder: JSONParameterEncoder.default).responseJSON { response in
+            print(response.result)
             switch response.result {
             case .success:
                 guard let statusCode = response.response?.statusCode else { return }
                 
                 guard let value = response.value else { return }
                 
-                let decoder = JSONDecoder()
-                guard let decodeData = try? decoder.decode(Login.self, from: value as! Data) else { return }
+                //let decoder = JSONDecoder()
+                //guard let decodeData = try? decoder.decode(Login.self, from: value as! Data) else { return }
                 
-                compleition(self.completionConvertor(by: statusCode, decodeData))
+                compleition(self.completionConvertor(by: statusCode, value))
             case .failure:
                 compleition(.pathErr)
             }
@@ -54,20 +55,18 @@ class APIService {
     }
     
     func singUpAPI(SingUpID: User, completion: @escaping (NetworkResult<Any>) -> Void) {
-        AF.request(baseURL + "/api/v1/auth/signup", method: .post).responseJSON(completionHandler: { response in
-            switch response.result {
-            case .success:
-                guard let statusCode = response.response?.statusCode else { return }
-                guard let value = response.value else { return }
-                
-                let decoder = JSONDecoder()
-                guard let decodeData = try? decoder.decode(String.self, from: value as! Data) else { return }
-                completion(self.completionConvertor(by: statusCode, decodeData))
-            case .failure:
-                completion(.pathErr)
+        AF.request(baseURL + "/api/v1/auth/signup", method: .post, parameters: SingUpID, encoder: JSONParameterEncoder.default).responseString { response in
+            guard let statusCode = response.response?.statusCode else { return }
+            switch response.result{
+                case .success:
+                    guard let value = response.value else { return }
+                completion(self.completionConvertor(by: statusCode, value))
+                case .failure:
+                    completion(.pathErr)
+                            
             }
             
-        })
+        }
     }
     
     func openPage() {

@@ -13,6 +13,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var idField: UITextField!
     @IBOutlet weak var idChecker: UILabel!
     
+    
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var nicknameField: UITextField!
     @IBOutlet weak var nicknameChecker: UILabel!
@@ -56,6 +57,7 @@ class SignUpViewController: UIViewController {
         guard let nickname = nicknameField.text else { return }
         let user = User(username: username, password: password, email: email, nickname: nickname)
         APIService.shared.singUpAPI(SingUpID: user) { response in
+            print("RR ", response)
             switch response{
             case .success(let name):
                 print(name)

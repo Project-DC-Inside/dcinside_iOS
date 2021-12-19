@@ -8,7 +8,6 @@
 import Foundation
 
 struct Login: Codable {
-    var token:String
-    var expire: String
-    var refresh: String
+    var username: String
+    var password: String
 }

@@ -16,7 +16,20 @@ class ViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: Any) {
         print("LOG IN!")
-        self.navigationController?.popViewController(animated: true)        
+        //self.navigationController?.popViewController(animated: true)
+        guard let username = idField.text else { return }
+        guard let password = passwordField.text else { return }
+        let log = Login(username: username, password: password)
+        APIService.shared.loginAPI(SingIn: log) { response in
+            print(response)
+            switch response {
+            case .success(let message):
+                print(message)
+            default:
+                print("FAIL")
+            }
+            
+        }
     }
     @IBAction func signUpButton(_ sender: Any) {
         
