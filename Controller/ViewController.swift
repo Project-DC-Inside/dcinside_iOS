@@ -21,10 +21,25 @@ class ViewController: UIViewController {
         guard let password = passwordField.text else { return }
         let log = Login(username: username, password: password)
         APIService.shared.loginAPI(SingIn: log) { response in
-            print(response)
+            print("RPONS ", response)
             switch response {
             case .success(let message):
                 print(message)
+                var ParsedData : tokenInfo? = nil
+                do{
+                    let jsonData = try JSONSerialization.data(withJSONObject: message, options: .prettyPrinted)
+                    let json = try JSONDecoder().decode(tokenInfo.self, from: jsonData)
+                    ParsedData = json
+                }catch (let err) {
+                    print("FUCK ", err.localizedDescription)
+                }
+                guard let data = ParsedData else { return }
+                print(type(of: data))
+                UserDefaults.standard.set(message, forKey: "token")
+
+                NotificationCenter.default.post(name: Notification.Name("token"), object: data, userInfo: nil)
+                
+                self.navigationController?.popViewController(animated: true)
             default:
                 print("FAIL")
             }

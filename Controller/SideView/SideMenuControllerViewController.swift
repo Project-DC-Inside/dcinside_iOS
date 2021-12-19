@@ -50,6 +50,9 @@ class SideMenuControllerViewController: UIViewController{
         logo.textAlignment = .center
         return logo
     }()
+    
+    var LogON = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,9 +65,19 @@ class SideMenuControllerViewController: UIViewController{
         
         tableView.delegate = self
         tableView.dataSource = self
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(changableToken(_:)), name: Notification.Name("token"), object: nil)
         configureUI()
         
+    }
+    @objc func changableToken(_ notification: Notification) {
+        print("CHANGE!!")
+        guard let tokenInfo = notification.object as? tokenInfo else {
+            print("MOTHER FUCKER")
+            return }
+        self.signInButton.setImage(UIImage(systemName: "power.circle.fill"), for: .normal)
+        self.signInButton.addTarget(self, action: #selector(LogOff), for: .touchUpInside)
+        self.LogON = true
+        print(tokenInfo)
     }
     
     
@@ -85,7 +98,14 @@ class SideMenuControllerViewController: UIViewController{
         
         logStack.distribution = .fillEqually
         
-        signInButton.addTarget(self, action: #selector(SignIn), for: .touchUpInside)
+        print("LOG ", LogON)
+        if !LogON {
+            signInButton.addTarget(self, action: #selector(SignIn), for: .touchUpInside)
+            signInButton.setImage(UIImage(systemName: "power.circle"), for: .normal)
+        }else {
+            signInButton.setImage(UIImage(systemName: "power.circle.fill"), for: .normal)
+            signInButton.addTarget(self, action: #selector(LogOff), for: .touchUpInside)
+        }
         stackView.spacing = 4.0
         stackView.distribution = .fillEqually
         
@@ -116,6 +136,12 @@ class SideMenuControllerViewController: UIViewController{
     @objc func SignIn() {
         guard let newVC = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") else { return }
         self.navigationController?.pushViewController(newVC, animated: true)
+    }
+    
+    @objc func LogOff() {
+        UserDefaults.standard.removeObject(forKey: "token")
+        self.signInButton.addTarget(self, action: #selector(SignIn), for: .touchUpInside)
+        self.signInButton.setImage(UIImage(systemName: "power.circle"), for: .normal)
     }
 }
 

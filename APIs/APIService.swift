@@ -39,15 +39,13 @@ class APIService {
         AF.request(baseURL + "/api/v1/auth/signin", method: .post, parameters: SingIn, encoder: JSONParameterEncoder.default).responseJSON { response in
             print(response.result)
             switch response.result {
-            case .success:
-                guard let statusCode = response.response?.statusCode else { return }
-                
-                guard let value = response.value else { return }
-                
+            case .success(let data):
+                guard let statusCode = response.response?.statusCode else { return }                
+                //print(jsonData)
                 //let decoder = JSONDecoder()
                 //guard let decodeData = try? decoder.decode(Login.self, from: value as! Data) else { return }
                 
-                compleition(self.completionConvertor(by: statusCode, value))
+                compleition(self.completionConvertor(by: statusCode, data))
             case .failure:
                 compleition(.pathErr)
             }
@@ -55,18 +53,18 @@ class APIService {
     }
     
     func singUpAPI(SingUpID: User, completion: @escaping (NetworkResult<Any>) -> Void) {
-        AF.request(baseURL + "/api/v1/auth/signup", method: .post, parameters: SingUpID, encoder: JSONParameterEncoder.default).responseString { response in
+        AF.request(baseURL + "/api/v1/auth/signup", method: .post, parameters: SingUpID, encoder: JSONParameterEncoder.default).responseString(completionHandler: { response in
             guard let statusCode = response.response?.statusCode else { return }
             switch response.result{
-                case .success:
-                    guard let value = response.value else { return }
-                    completion(self.completionConvertor(by: statusCode, value))
-                case .failure:
-                    completion(.pathErr)
-                            
+            case .success:
+                guard let value = response.value else { return }
+                completion(self.completionConvertor(by: statusCode, value))
+            case .failure:
+                completion(.pathErr)
+                
             }
             
-        }
+        })
     }
     
     func openPage() {

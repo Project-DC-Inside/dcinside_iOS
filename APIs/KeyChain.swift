@@ -14,11 +14,11 @@ import Foundation
 class KeyChain {
         static let shared = KeyChain()
         
-        func addItem(key: Any, value: Any) -> Bool {
+        func addItem(key: String, value: Any) -> Bool {
             let addQuery: [CFString: Any] = [kSecClass: kSecClassGenericPassword,
                                              kSecAttrAccount: key,// Key 지정
                                              kSecValueData: (value as AnyObject).data(using: String.Encoding.utf8.rawValue) as Any]//Value지정
-            
+            print("QUERY ",addQuery)
             let result: Bool = {
                 let status = SecItemAdd(addQuery as CFDictionary, nil)
                 if status == errSecSuccess {
@@ -26,7 +26,6 @@ class KeyChain {
                 } else if status == errSecDuplicateItem {
                     return updateItem(value: value, key: key)
                 }
-                
                 print("addItem Error : \(status.description))")
                 return false
             }()
