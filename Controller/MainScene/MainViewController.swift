@@ -54,8 +54,9 @@ extension MainViewController: UITableViewDataSource {
 
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let newVC = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBarViewController") else { return }
+        guard let newVC = self.storyboard?.instantiateViewController(withIdentifier: "SubTabBarController") else { return }
         //
+        
         newVC.modalPresentationStyle = .fullScreen
         self.present(newVC, animated: true)
     }

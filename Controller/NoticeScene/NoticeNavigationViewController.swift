@@ -1,16 +1,18 @@
 //
-//  MainTabBarViewController.swift
+//  NoticeNavigationViewController.swift
 //  dcinside_iOS
 //
-//  Created by 황지웅 on 2021/12/16.
+//  Created by 황지웅 on 2021/12/19.
 //
 
 import UIKit
 
-class MainTabBarViewController: UITabBarController {
+class NoticeNavigationViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
     
 
