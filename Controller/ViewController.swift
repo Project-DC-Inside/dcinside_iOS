@@ -36,9 +36,9 @@ class ViewController: UIViewController {
                 guard let data = ParsedData else { return }
                 print(type(of: data))
                 UserDefaults.standard.set(message, forKey: "token")
+                UserDefaults.standard.set(log.username, forKey: "userInfo")
 
                 NotificationCenter.default.post(name: Notification.Name("token"), object: data, userInfo: nil)
-                
                 self.navigationController?.popViewController(animated: true)
             default:
                 print("FAIL")

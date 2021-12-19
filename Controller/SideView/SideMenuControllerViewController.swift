@@ -52,7 +52,7 @@ class SideMenuControllerViewController: UIViewController{
     }()
     
     var LogON = false
-    
+    var username: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,9 +66,24 @@ class SideMenuControllerViewController: UIViewController{
         tableView.delegate = self
         tableView.dataSource = self
         NotificationCenter.default.addObserver(self, selector: #selector(changableToken(_:)), name: Notification.Name("token"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(logout(_ :)), name: NSNotification.Name("LogOut"), object: nil)
+        tokenCheck()
         configureUI()
-        
     }
+    @objc func logout(_ notification: Notification) {
+        self.LogON = false
+        UserDefaults.standard.removeObject(forKey: "token")
+        signInButton.addTarget(self, action: #selector(SignIn), for: .touchUpInside)
+        signInButton.setImage(UIImage(systemName: "power.circle"), for: .normal)
+        nicknameInfo.text = "로그인 하실?"
+    }
+    func tokenCheck() {
+        guard let token = UserDefaults.standard.object(forKey: "token") else { return }
+        guard let log = UserDefaults.standard.object(forKey: "userInfo") as? String else { return }
+        self.LogON = true
+        self.username = log
+    }
+    
     @objc func changableToken(_ notification: Notification) {
         print("CHANGE!!")
         guard let tokenInfo = notification.object as? tokenInfo else {
@@ -76,7 +91,6 @@ class SideMenuControllerViewController: UIViewController{
             return }
         self.signInButton.setImage(UIImage(systemName: "power.circle.fill"), for: .normal)
         self.signInButton.addTarget(self, action: #selector(LogOff), for: .touchUpInside)
-        self.LogON = true
         print(tokenInfo)
     }
     
@@ -102,7 +116,9 @@ class SideMenuControllerViewController: UIViewController{
         if !LogON {
             signInButton.addTarget(self, action: #selector(SignIn), for: .touchUpInside)
             signInButton.setImage(UIImage(systemName: "power.circle"), for: .normal)
+            nicknameInfo.text = "로그인 하실?"
         }else {
+            nicknameInfo.text = "\(username)"
             signInButton.setImage(UIImage(systemName: "power.circle.fill"), for: .normal)
             signInButton.addTarget(self, action: #selector(LogOff), for: .touchUpInside)
         }
@@ -139,9 +155,17 @@ class SideMenuControllerViewController: UIViewController{
     }
     
     @objc func LogOff() {
-        UserDefaults.standard.removeObject(forKey: "token")
-        self.signInButton.addTarget(self, action: #selector(SignIn), for: .touchUpInside)
-        self.signInButton.setImage(UIImage(systemName: "power.circle"), for: .normal)
+        var goOn = false
+        let alert = UIAlertController(title: "가입 성공!", message: nil, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        let ok = UIAlertAction(title: "확인", style: .default) { action in
+            NotificationCenter.default.post(name: NSNotification.Name("LogOut"), object: true, userInfo: nil)
+        }
+        alert.addAction(cancel)
+        alert.addAction(ok)
+        
+        self.present(alert, animated: true)
+        
     }
 }
 
