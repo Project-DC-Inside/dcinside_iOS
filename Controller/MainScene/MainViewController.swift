@@ -54,10 +54,12 @@ extension MainViewController: UITableViewDataSource {
 
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let newVC = self.storyboard?.instantiateViewController(withIdentifier: "SubTabBarController") else { return }
-        //
+//        guard let postVC = self.storyboard?.instantiateViewController(withIdentifier: "PostViewController") else { return }
+//        self.navigationController?.pushViewController(postVC, animated: true)
         
-        newVC.modalPresentationStyle = .fullScreen
-        self.present(newVC, animated: true)
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "PostNaviViewController") else {return}
+        nextVC.modalTransitionStyle = .coverVertical
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true, completion: nil)
     }
 }

@@ -56,10 +56,10 @@ class SideMenuControllerViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableViewData = [cellData(opened: false, title: "방문한 갤러리", sectionData: ["Cell1", "Cell2", "Cell3"]),
-                         cellData(opened: false, title: "Section2", sectionData: ["Cell1", "Cell2", "Cell3"]),
-                         cellData(opened: false, title: "Section3", sectionData: ["Cell1", "Cell2", "Cell3"]),
-                         cellData(opened: false, title: "Section4", sectionData: ["Cell1", "Cell2", "Cell3"])]
+        tableViewData = [cellData(opened: false, title: "방문한 갤러리", sectionData: ["Cell1", "Cell2", "Cell3", "Cell3", "Cell4", "Cell5"]),
+                         cellData(opened: false, title: "갤러리 리스트", sectionData: []),
+                         cellData(opened: false, title: "운영 갤러리", sectionData: []),
+                         cellData(opened: false, title: "최근 본 글", sectionData: [])]
         
         tableView.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
         
@@ -133,7 +133,7 @@ class SideMenuControllerViewController: UIViewController{
         
         HeaderStack.axis = .vertical
         
-        HeaderStack.spacing = 10.0
+        HeaderStack.spacing = 15.0
         HeaderStack.distribution = .fillEqually
         
         view.addSubview(HeaderStack)
@@ -156,7 +156,7 @@ class SideMenuControllerViewController: UIViewController{
     
     @objc func LogOff() {
         var goOn = false
-        let alert = UIAlertController(title: "가입 성공!", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "로그아웃 하시겠어요?", message: nil, preferredStyle: .alert)
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         let ok = UIAlertAction(title: "확인", style: .default) { action in
             NotificationCenter.default.post(name: NSNotification.Name("LogOut"), object: true, userInfo: nil)
@@ -225,6 +225,22 @@ extension SideMenuControllerViewController : UITableViewDataSource {
             // sectionData 부분을 선택하면 아무 작동하지 않게 설정
         } else {
             print("이건 sectionData 선택한 거야")
+        }
+        
+        switch indexPath.section {
+        case 0:
+            break
+        case 1:
+            guard let newVC = self.storyboard?.instantiateViewController(withIdentifier: "SubTabBarController") else { return }
+            newVC.modalPresentationStyle = .fullScreen
+            self.present(newVC, animated: true)
+            break
+        case 2:
+            break
+        case 3:
+            break
+        default:
+            break
         }
         
         print([indexPath.section], [indexPath.row])

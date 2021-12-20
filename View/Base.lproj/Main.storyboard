@@ -103,7 +103,7 @@
         <!--PostView-->
         <scene sceneID="XUT-r1-VBM">
             <objects>
-                <viewController storyboardIdentifier="PostViewController" title="PostView" id="vVu-Gd-sLy" customClass="PostViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GalleryListViewController" title="PostView" id="vVu-Gd-sLy" customClass="GalleryListViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zlg-gZ-a3w">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,6 +127,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uPW-JA-eKt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="960.86956521739137" y="1907.8125"/>
+        </scene>
+        <!--Post Navi View Controller-->
+        <scene sceneID="enB-pg-rPe">
+            <objects>
+                <navigationController storyboardIdentifier="PostNaviViewController" id="dBT-bL-vS6" customClass="PostNaviViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zMD-mK-IsW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="l2R-zV-sAX" kind="relationship" relationship="rootViewController" id="IlH-Fb-OY0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mHD-K2-fDt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="51" y="2597"/>
+        </scene>
+        <!--Post View Controller-->
+        <scene sceneID="Ng3-W0-C4k">
+            <objects>
+                <viewController storyboardIdentifier="PostViewController" id="l2R-zV-sAX" customClass="PostViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xa8-Ca-L9F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="zFJ-LL-TWe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1iT-lq-EIM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JwA-ih-Vrf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="961" y="2597"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g8T-7l-ycM">
