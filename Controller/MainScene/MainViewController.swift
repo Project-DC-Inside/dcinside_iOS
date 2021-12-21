@@ -54,9 +54,6 @@ extension MainViewController: UITableViewDataSource {
 
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard let postVC = self.storyboard?.instantiateViewController(withIdentifier: "PostViewController") else { return }
-//        self.navigationController?.pushViewController(postVC, animated: true)
-        
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "PostNaviViewController") else {return}
         nextVC.modalTransitionStyle = .coverVertical
         nextVC.modalPresentationStyle = .fullScreen

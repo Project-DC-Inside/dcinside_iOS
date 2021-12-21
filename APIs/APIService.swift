@@ -67,6 +67,23 @@ class APIService {
         })
     }
     
+    func refreshAPI(token: tokenInfo,completion: @escaping (NetworkResult<Any>)-> Void) {
+        let token = refreshToken(accessToken: token.accessToken, refreshToken: token.refreshToken)
+        AF.request(baseURL + "/api/v1/auth/reissue", method: .post, parameters: token, encoder: JSONParameterEncoder.default).responseJSON { response in
+            guard let statusCode = response.response?.statusCode else { return }
+            switch response.result {
+            case .success(let data):
+                guard let data = response.value else { return }
+                completion(self.completionConvertor(by: statusCode, data))
+                        
+                break
+            case .failure:
+                completion(.pathErr)
+                break
+            }
+        }
+        
+    }
     func openPage() {
         
     }
@@ -74,8 +91,11 @@ class APIService {
     func openCategory() {
         
     }
-    
-    
+}
+
+struct refreshToken : Codable {
+    var accessToken: String
+    var refreshToken: String
 }
 
 

@@ -65,7 +65,7 @@ class SideMenuControllerViewController: UIViewController{
         
         tableView.delegate = self
         tableView.dataSource = self
-        NotificationCenter.default.addObserver(self, selector: #selector(changableToken(_:)), name: Notification.Name("token"), object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(changableToken(_:)), name: Notification.Name("token"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(logout(_ :)), name: NSNotification.Name("LogOut"), object: nil)
         tokenCheck()
         configureUI()
