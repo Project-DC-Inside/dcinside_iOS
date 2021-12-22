@@ -20,31 +20,37 @@ class ViewController: UIViewController {
         guard let username = idField.text else { return }
         guard let password = passwordField.text else { return }
         let log = Login(username: username, password: password)
-        APIService.shared.loginAPI(SingIn: log) { response in
-            print("RPONS ", response)
+        APIService.shared.SingInAPI(singin: log) { response in
             switch response {
             case .success(let message):
-                print(message)
-                var ParsedData : tokenInfo? = nil
-                do{
-                    let jsonData = try JSONSerialization.data(withJSONObject: message, options: .prettyPrinted)
-                    let json = try JSONDecoder().decode(tokenInfo.self, from: jsonData)
-                    ParsedData = json
-                }catch (let err) {
-                    print("FUCK ", err.localizedDescription)
+                guard let token = message as? tokenInfo else {
+                    return
                 }
-                guard let data = ParsedData else { return }
-                print(type(of: data))
-                UserDefaults.standard.set(message, forKey: "token")
+                do {
+                    let useToken = try? PropertyListEncoder().encode(token)
+                    UserDefaults.standard.set(useToken, forKey: "token")
+                    NotificationCenter.default.post(name: Notification.Name("token"), object: useToken, userInfo: nil)
+                }catch{
+                    return
+                }
                 UserDefaults.standard.set(log.username, forKey: "userInfo")
-
-                NotificationCenter.default.post(name: Notification.Name("token"), object: data, userInfo: nil)
                 self.navigationController?.popViewController(animated: true)
+            case .failure(let err):
+                print(err)
+                guard let e = err as? ErrInfo else { return }
+                self.ErrMessage(error: e)
             default:
                 print("FAIL")
             }
             
         }
+    }
+    
+    private func ErrMessage(error: ErrInfo) {
+        let alert = UIAlertController(title: "로그인 실패!", message: error.message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
+        alert.addAction(ok)
+        self.present(alert, animated: true)
     }
     @IBAction func signUpButton(_ sender: Any) {
         

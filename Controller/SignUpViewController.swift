@@ -56,17 +56,21 @@ class SignUpViewController: UIViewController {
         guard let email = emailField.text else { return }
         guard let nickname = nicknameField.text else { return }
         let user = User(username: username, password: password, email: email, nickname: nickname)
-        APIService.shared.singUpAPI(SingUpID: user) { response in
+        APIService.shared.SignUpAPI(signUp: user) { response in
             print("RR ", response)
             switch response{
             case .success(let name):
-                print(name)
                 let alert = UIAlertController(title: "가입 성공!", message: nil, preferredStyle: .alert)
                 let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
                 alert.addAction(ok)
                 self.present(alert, animated: true)
-            case .pathErr:
-                print("FAIL")
+                self.dismiss(animated: true, completion: nil)
+            case .failure(let err):
+                guard let e = err as? ErrInfo else { return }
+                let alert = UIAlertController(title: "가입 실패", message: e.message, preferredStyle: .alert)
+                let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
+                alert.addAction(ok)
+                self.present(alert, animated: true)
             default:
                 print("ERR")
             }
