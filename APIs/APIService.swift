@@ -11,10 +11,8 @@ import Alamofire
 enum NetworkResult<T> {
     // status Code에 따라서..
     case success(T) // 200 성공!
-    case requestErr(T) // 300 request Error
-    case pathErr // 400 요청오류
-    case serverErr // 500 서버문제
-    case networkFail // 네트워크 문제.. 600번대는 없어!
+    case failure(T)
+    case networkErr
 }
 
 
@@ -26,59 +24,75 @@ class APIService {
     private let HTTPHeaders = ["Content-Type": "application/json"]
     private let baseURL = "http://3.36.205.23:8080"
     
-    private func completionConvertor(by statusCode: Int, _ data: Any) -> NetworkResult<Any> {
-        switch statusCode {
-        case 200: return .success(data)
-        case 400: return .pathErr
-        case 500: return .serverErr
-        default: return .networkFail
-        }
-    }
-    
-    func loginAPI(SingIn: Login, compleition: @escaping (NetworkResult<Any>) -> Void) {
-        AF.request(baseURL + "/api/v1/auth/signin", method: .post, parameters: SingIn, encoder: JSONParameterEncoder.default).responseJSON { response in
-            print(response.result)
+    func SingInAPI(singin: Login, compleition: @escaping (NetworkResult<Any>) -> Void) {
+        AF.request(baseURL + "/api/v1/auth/signin", method: .post, parameters: singin, encoder: JSONParameterEncoder.default).responseJSON { response in
             switch response.result {
-            case .success(let data):
-                guard let statusCode = response.response?.statusCode else { return }                
-                //print(jsonData)
-                //let decoder = JSONDecoder()
-                //guard let decodeData = try? decoder.decode(Login.self, from: value as! Data) else { return }
-                
-                compleition(self.completionConvertor(by: statusCode, data))
+            case .success:
+                guard let data = response.data else { return }
+                do {
+                    let decoder = JSONDecoder()
+                    let json = try decoder.decode(LoginResponse.self, from: data)
+                    guard let isSuccess = json.success else { return }
+                    if isSuccess {
+                        compleition(.success(json.result))
+                    }else {
+                        compleition(.failure(json.error))
+                    }
+                }catch{
+                    print("Decode Error Occured")
+                }
             case .failure:
-                compleition(.pathErr)
+                compleition(.networkErr)
             }
         }
     }
-    
-    func singUpAPI(SingUpID: User, completion: @escaping (NetworkResult<Any>) -> Void) {
-        AF.request(baseURL + "/api/v1/auth/signup", method: .post, parameters: SingUpID, encoder: JSONParameterEncoder.default).responseString(completionHandler: { response in
-            guard let statusCode = response.response?.statusCode else { return }
-            switch response.result{
+
+    func SignUpAPI(signUp: User, completion: @escaping (NetworkResult<Any>)-> Void) {
+        AF.request(baseURL + "/api/v1/auth/signup", method: .post, parameters: signUp, encoder: JSONParameterEncoder.default).responseJSON { response in
+            switch response.result {
             case .success:
-                guard let value = response.value else { return }
-                completion(self.completionConvertor(by: statusCode, value))
+                guard let data = response.data else { return }
+                do {
+                    let decoder = JSONDecoder()
+                    let json = try decoder.decode(SignUpResponse.self, from: data)
+                    guard let isSuccess = json.success else { return }
+                    if isSuccess {
+                        completion(.success(true))
+                    }else {
+                        guard let error = json.error else { return }
+                        completion(.success(error))
+                    }
+                }catch {
+                    print("Decode Error Occured")
+                }
             case .failure:
-                completion(.pathErr)
-                
+                completion(.networkErr)
             }
-            
-        })
+        }
     }
     
     func refreshAPI(token: tokenInfo,completion: @escaping (NetworkResult<Any>)-> Void) {
-        let token = refreshToken(accessToken: token.accessToken, refreshToken: token.refreshToken)
-        AF.request(baseURL + "/api/v1/auth/reissue", method: .post, parameters: token, encoder: JSONParameterEncoder.default).responseJSON { response in
-            guard let statusCode = response.response?.statusCode else { return }
+        let reissueToken = refreshToken(accessToken: token.accessToken, refreshToken: token.refreshToken)
+        AF.request(baseURL + "/api/v1/auth/reissue", method: .post, parameters: reissueToken, encoder: JSONParameterEncoder.default).responseJSON { response in
             switch response.result {
-            case .success(let data):
-                guard let data = response.value else { return }
-                completion(self.completionConvertor(by: statusCode, data))
-                        
-                break
+            case .success:
+                guard let data = response.data else { return }
+                do {
+                    let decoder = JSONDecoder()
+                    let json = try decoder.decode(LoginResponse.self, from: data)
+                    guard let isSuccess = json.success else { return }
+                    if isSuccess {
+                        guard let result = json.result else { return }
+                        completion(.success(result))
+                    }else {
+                        guard let error = json.error else { return }
+                        completion(.failure(error))
+                    }
+                }catch{
+                    print("Decode Error Occured")
+                }
             case .failure:
-                completion(.pathErr)
+                completion(.networkErr)
                 break
             }
         }

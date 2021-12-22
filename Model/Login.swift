@@ -11,3 +11,9 @@ struct Login: Codable {
     var username: String
     var password: String
 }
+
+struct LoginResponse: Codable {
+    var success: Bool?
+    var result: tokenInfo?
+    var error: ErrInfo?
+}

@@ -14,3 +14,9 @@ struct User: Codable {
     var nickname: String
     var nicknameType: String = "COMMON"
 }
+
+struct SignUpResponse: Codable {
+    var success: Bool?
+    var result: String?
+    var error: ErrInfo?
+}
