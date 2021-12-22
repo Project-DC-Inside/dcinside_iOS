@@ -86,7 +86,7 @@ class SideMenuControllerViewController: UIViewController{
     
     @objc func changableToken(_ notification: Notification) {
         print("CHANGE!!")
-        guard let tokenInfo = notification.object as? tokenInfo else {
+        guard let tokenInfo = notification.object as? TokenInfo else {
             print("MOTHER FUCKER")
             return }
         self.signInButton.setImage(UIImage(systemName: "power.circle.fill"), for: .normal)

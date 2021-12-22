@@ -18,7 +18,6 @@ enum NetworkResult<T> {
 
 class APIService {
     //최초 생성시, 전역으로 사용가능하게한다.
-    
     static let shared = APIService()
     
     private let HTTPHeaders = ["Content-Type": "application/json"]
@@ -71,7 +70,7 @@ class APIService {
         }
     }
     
-    func refreshAPI(token: tokenInfo,completion: @escaping (NetworkResult<Any>)-> Void) {
+    func refreshAPI(token: TokenInfo,completion: @escaping (NetworkResult<Any>)-> Void) {
         let reissueToken = refreshToken(accessToken: token.accessToken, refreshToken: token.refreshToken)
         AF.request(baseURL + "/api/v1/auth/reissue", method: .post, parameters: reissueToken, encoder: JSONParameterEncoder.default).responseJSON { response in
             switch response.result {

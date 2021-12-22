@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         APIService.shared.SingInAPI(singin: log) { response in
             switch response {
             case .success(let message):
-                guard let token = message as? tokenInfo else {
+                guard let token = message as? TokenInfo else {
                     return
                 }
                 do {

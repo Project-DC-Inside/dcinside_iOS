@@ -33,7 +33,7 @@
 		726EA7B3275A7C9D00EB2D83 /* MakePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA7B2275A7C9D00EB2D83 /* MakePostViewController.swift */; };
 		7B64A88F276F38C40038305A /* NoticeNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64A88E276F38C40038305A /* NoticeNavigationViewController.swift */; };
 		7B64A893276F395A0038305A /* SubTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64A892276F395A0038305A /* SubTabBarViewController.swift */; };
-		7B64A895276F77010038305A /* tokenInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64A894276F77010038305A /* tokenInfo.swift */; };
+		7B64A895276F77010038305A /* TokenInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64A894276F77010038305A /* TokenInfo.swift */; };
 		7B64A8972770C7270038305A /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64A8962770C7270038305A /* PostViewController.swift */; };
 		7B64A8992770C7840038305A /* PostNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64A8982770C7840038305A /* PostNaviViewController.swift */; };
 		7B64A89F277345810038305A /* ErrInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64A89E277345810038305A /* ErrInfo.swift */; };
@@ -99,7 +99,7 @@
 		726EA7B2275A7C9D00EB2D83 /* MakePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePostViewController.swift; sourceTree = "<group>"; };
 		7B64A88E276F38C40038305A /* NoticeNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeNavigationViewController.swift; sourceTree = "<group>"; };
 		7B64A892276F395A0038305A /* SubTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTabBarViewController.swift; sourceTree = "<group>"; };
-		7B64A894276F77010038305A /* tokenInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tokenInfo.swift; sourceTree = "<group>"; };
+		7B64A894276F77010038305A /* TokenInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenInfo.swift; sourceTree = "<group>"; };
 		7B64A8962770C7270038305A /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		7B64A8982770C7840038305A /* PostNaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostNaviViewController.swift; sourceTree = "<group>"; };
 		7B64A89E277345810038305A /* ErrInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrInfo.swift; sourceTree = "<group>"; };
@@ -255,7 +255,7 @@
 				723830BB2758DBB1006B0F49 /* User.swift */,
 				725FCD3E275B66850077C59D /* Login.swift */,
 				725FCD47275BD0C40077C59D /* Post.swift */,
-				7B64A894276F77010038305A /* tokenInfo.swift */,
+				7B64A894276F77010038305A /* TokenInfo.swift */,
 				7B64A89E277345810038305A /* ErrInfo.swift */,
 			);
 			path = Model;
@@ -563,7 +563,7 @@
 				7B64A8992770C7840038305A /* PostNaviViewController.swift in Sources */,
 				723830BA2758DB90006B0F49 /* Role.swift in Sources */,
 				7B64A8972770C7270038305A /* PostViewController.swift in Sources */,
-				7B64A895276F77010038305A /* tokenInfo.swift in Sources */,
+				7B64A895276F77010038305A /* TokenInfo.swift in Sources */,
 				725FCD42275B767D0077C59D /* CustomSideMenuNavigation.swift in Sources */,
 				7216E8AC27658A9B00A2A976 /* MainViewTableViewCell.swift in Sources */,
 				723830BF275A2B97006B0F49 /* APIService.swift in Sources */,

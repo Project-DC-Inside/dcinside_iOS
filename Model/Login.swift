@@ -14,6 +14,6 @@ struct Login: Codable {
 
 struct LoginResponse: Codable {
     var success: Bool?
-    var result: tokenInfo?
+    var result: TokenInfo?
     var error: ErrInfo?
 }
