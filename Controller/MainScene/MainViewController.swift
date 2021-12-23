@@ -54,9 +54,12 @@ extension MainViewController: UITableViewDataSource {
 
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "PostNaviViewController") else {return}
-        nextVC.modalTransitionStyle = .coverVertical
-        nextVC.modalPresentationStyle = .fullScreen
-        self.present(nextVC, animated: true, completion: nil)
+        //let postVC = PostViewController()
+        guard let postVC = storyboard?.instantiateViewController(withIdentifier: "PostViewController") as? PostViewController else { return }
+        postVC.ChangePostInfos(info: TitleInfo(title: "POST@@@", url: "Not Yet"))
+        let postNVC = UINavigationController(rootViewController: postVC)
+        postNVC.modalTransitionStyle = .coverVertical
+        postNVC.modalPresentationStyle = .fullScreen
+        self.present(postNVC, animated: true, completion: nil)
     }
 }
