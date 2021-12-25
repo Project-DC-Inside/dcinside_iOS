@@ -14,17 +14,9 @@ class MainViewController: UIViewController {
         
     override func viewDidLoad() {
         tableView.tableHeaderView = searchBar
-        //tableView.addSubview(searchBar)
-        
-        //let nibName = UINib(nibName: "MainTableViewCell", bundle: nil)
-        
         tableView.delegate = self
         tableView.dataSource = self
-        
-        
         super.viewDidLoad()
-        // tableView.register(nibName, forCellReuseIdentifier: "MainCell")
-        // Do any additional setup after loading the view.
     }
     
     func fetch() {// 게시글 패칭용
