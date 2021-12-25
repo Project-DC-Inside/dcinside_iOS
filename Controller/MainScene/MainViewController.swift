@@ -13,10 +13,10 @@ class MainViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
         
     override func viewDidLoad() {
+        super.viewDidLoad()
         tableView.tableHeaderView = searchBar
         tableView.delegate = self
         tableView.dataSource = self
-        super.viewDidLoad()
     }
     
     func fetch() {// 게시글 패칭용
