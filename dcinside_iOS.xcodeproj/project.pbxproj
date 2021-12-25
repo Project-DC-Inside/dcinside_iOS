@@ -40,6 +40,7 @@
 		7B6903A52774B065000F615A /* PostTitleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6903A42774B065000F615A /* PostTitleInfo.swift */; };
 		7B89D973277765E300E7A334 /* GalleryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89D972277765E300E7A334 /* GalleryCategory.swift */; };
 		7B89D97627776C0400E7A334 /* CategoryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89D97527776C0400E7A334 /* CategoryListTableViewCell.swift */; };
+		7B8F215E2777730100F58F47 /* GalleryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8F215D2777730100F58F47 /* GalleryListViewController.swift */; };
 		7BCE4B4A2768D904008C07A5 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE4B492768D904008C07A5 /* GalleryViewController.swift */; };
 		7BCE4B90276B5DA5008C07A5 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE4B8F276B5DA5008C07A5 /* MainTabBarViewController.swift */; };
 		7BCE4B92276B641C008C07A5 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE4B91276B641C008C07A5 /* NoticeViewController.swift */; };
@@ -109,6 +110,7 @@
 		7B6903A42774B065000F615A /* PostTitleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTitleInfo.swift; sourceTree = "<group>"; };
 		7B89D972277765E300E7A334 /* GalleryCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCategory.swift; sourceTree = "<group>"; };
 		7B89D97527776C0400E7A334 /* CategoryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListTableViewCell.swift; sourceTree = "<group>"; };
+		7B8F215D2777730100F58F47 /* GalleryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryListViewController.swift; sourceTree = "<group>"; };
 		7BCE4B492768D904008C07A5 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		7BCE4B8F276B5DA5008C07A5 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		7BCE4B91276B641C008C07A5 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
@@ -230,7 +232,7 @@
 		723830B62758DB67006B0F49 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7B89D977277771FB00E7A334 /* New Group */,
+				7B89D977277771FB00E7A334 /* GalleryView */,
 				7B89D97427776BED00E7A334 /* CategoryView */,
 				7B6903A327736121000F615A /* Auth */,
 				7B64A891276F38E40038305A /* MainScene */,
@@ -325,11 +327,12 @@
 			path = CategoryView;
 			sourceTree = "<group>";
 		};
-		7B89D977277771FB00E7A334 /* New Group */ = {
+		7B89D977277771FB00E7A334 /* GalleryView */ = {
 			isa = PBXGroup;
 			children = (
+				7B8F215D2777730100F58F47 /* GalleryListViewController.swift */,
 			);
-			path = "New Group";
+			path = GalleryView;
 			sourceTree = "<group>";
 		};
 		7BCE4B482768D8DD008C07A5 /* MainTabView */ = {
@@ -583,6 +586,7 @@
 				725FCD46275BA5CE0077C59D /* TableViewCell.swift in Sources */,
 				7B6903A52774B065000F615A /* PostTitleInfo.swift in Sources */,
 				6B0E9DC727524CCF00B0E946 /* AppDelegate.swift in Sources */,
+				7B8F215E2777730100F58F47 /* GalleryListViewController.swift in Sources */,
 				725FCD3F275B66850077C59D /* Login.swift in Sources */,
 				725FCD48275BD0C40077C59D /* Post.swift in Sources */,
 				7BCE4B90276B5DA5008C07A5 /* MainTabBarViewController.swift in Sources */,
