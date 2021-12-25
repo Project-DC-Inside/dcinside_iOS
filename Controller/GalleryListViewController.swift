@@ -16,7 +16,7 @@ class GalleryListViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        configNav()
+        ConfigNav()
         activityIndicator.startAnimating()
         ConfigureFetching {
             var x = 0
@@ -42,13 +42,13 @@ extension GalleryListViewController {
         
     }
     
-    func configNav() {
+    func ConfigNav() {
         navigationItem.title = "GalleryList"
-        let backButton = UIBarButtonItem(image: UIImage(systemName: "arrow.backward"), style: .plain, target: self, action: #selector(didTapBackButton))
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "arrow.backward"), style: .plain, target: self, action: #selector(DidTapButton))
         navigationItem.leftBarButtonItem = backButton
     }
     
-    @objc func didTapBackButton() {
+    @objc func DidTapButton() {
         self.dismiss(animated: true, completion: nil)
     }
 }
@@ -63,10 +63,9 @@ extension GalleryListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         return TableViewCell()
     }
-    
-    
 }
 
 extension GalleryListViewController : UITableViewDelegate {
