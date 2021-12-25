@@ -17,12 +17,38 @@ class MainViewController: UIViewController {
         tableView.tableHeaderView = searchBar
         tableView.delegate = self
         tableView.dataSource = self
+        
+        APIService.shared.RefreshAPI { response in
+            switch response {
+            case .success(let tokenInfo) :
+                guard let token = tokenInfo as? TokenInfo else { return }
+                let useToken = try? PropertyListEncoder().encode(token)
+                UserDefaults.standard.set(useToken, forKey: "token")
+            case .failure(let err):
+                UserDefaults.standard.removeObject(forKey: "token")
+                self.ErrMessage(error: err as! ErrInfo)
+            case .networkErr:
+                self.NetworkFailure()
+            }
+            
+        }
     }
     
     func fetch() {// 게시글 패칭용
         // How To Make ?
     }
-
+    private func NetworkFailure() {
+        let alert = UIAlertController(title: "Network 실패!", message: "네트워크를 확인하세요", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
+        alert.addAction(ok)
+        self.present(alert, animated: true)
+    }
+    private func ErrMessage(error: ErrInfo) {
+        let alert = UIAlertController(title: "세션 만료!", message: error.message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
+        alert.addAction(ok)
+        self.present(alert, animated: true)
+    }
 }
 
 extension MainViewController: UITableViewDataSource {
