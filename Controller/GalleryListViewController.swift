@@ -9,9 +9,13 @@ import UIKit
 
 class GalleryListViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    var galleryCategory: [GalleryCategory]
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
         configNav()
         activityIndicator.startAnimating()
         ConfigureFetching {
@@ -47,4 +51,24 @@ extension GalleryListViewController {
     @objc func didTapBackButton() {
         self.dismiss(animated: true, completion: nil)
     }
+}
+
+extension GalleryViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return tableViewData.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return TableViewCell()
+    }
+    
+    
+}
+
+extension GalleryViewController : UITableViewDelegate {
+    
 }
