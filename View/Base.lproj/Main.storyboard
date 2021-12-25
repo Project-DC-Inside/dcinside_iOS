@@ -103,7 +103,7 @@
         <!--GalleryListViewController-->
         <scene sceneID="XUT-r1-VBM">
             <objects>
-                <viewController storyboardIdentifier="GalleryListViewController" title="GalleryListViewController" id="vVu-Gd-sLy" customClass="GalleryListViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tegoryListViewController" title="GalleryListViewController" id="vVu-Gd-sLy" customClass="CategoryListViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zlg-gZ-a3w">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -137,6 +137,53 @@
             </objects>
             <point key="canvasLocation" x="960.86956521739137" y="1907.8125"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oAN-i3-0kr">
+            <objects>
+                <navigationController id="1KV-qT-TXo" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MqI-zn-edp">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hkP-Eg-KOs" kind="relationship" relationship="rootViewController" id="FmL-1f-QL8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DT9-hI-26T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="51" y="2646"/>
+        </scene>
+        <!--Gallery List View Controller-->
+        <scene sceneID="Izf-fe-KOn">
+            <objects>
+                <viewController storyboardIdentifier="GalleryListViewController" id="hkP-Eg-KOs" customClass="GalleryListViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x6g-Cs-2Mn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lZo-28-Wnh">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9Jz-JQ-SfC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9Jz-JQ-SfC" firstAttribute="trailing" secondItem="lZo-28-Wnh" secondAttribute="trailing" id="4Eh-gi-ui2"/>
+                            <constraint firstItem="lZo-28-Wnh" firstAttribute="top" secondItem="9Jz-JQ-SfC" secondAttribute="top" id="F7W-OU-O1Q"/>
+                            <constraint firstItem="lZo-28-Wnh" firstAttribute="leading" secondItem="9Jz-JQ-SfC" secondAttribute="leading" id="aSL-hS-vDX"/>
+                            <constraint firstItem="9Jz-JQ-SfC" firstAttribute="bottom" secondItem="lZo-28-Wnh" secondAttribute="bottom" id="u6O-XF-jTv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="H1V-4S-Exh"/>
+                    <connections>
+                        <outlet property="tableView" destination="lZo-28-Wnh" id="5cz-3c-16B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fGn-vh-Z5M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="961" y="2646"/>
+        </scene>
         <!--Post Navi View Controller-->
         <scene sceneID="enB-pg-rPe">
             <objects>
@@ -151,7 +198,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mHD-K2-fDt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="51" y="2597"/>
+            <point key="canvasLocation" x="51" y="3400"/>
         </scene>
         <!--POST-->
         <scene sceneID="Ng3-W0-C4k">
@@ -178,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JwA-ih-Vrf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="961" y="2597"/>
+            <point key="canvasLocation" x="961" y="3400"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g8T-7l-ycM">
@@ -711,7 +758,7 @@
         <!--Main Tab Bar View Controller-->
         <scene sceneID="gnc-4w-GED">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Xe9-yL-BEZ" customClass="MainTabBarViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarViewController" automaticallyAdjustsScrollViewInsets="NO" id="Xe9-yL-BEZ" customClass="MainTabBarViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bhQ-0P-tQ9">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

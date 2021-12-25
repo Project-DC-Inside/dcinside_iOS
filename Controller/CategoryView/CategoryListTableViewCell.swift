@@ -7,9 +7,9 @@
 
 import UIKit
 
-class GalleryListTableViewCell: UITableViewCell {
+class CategoryListTableViewCell: UITableViewCell {
 
-    static let identifier = "GalleryListTableViewCell"
+    static let identifier = "CategoryListTableViewCell"
     
     // MARK: - Property
     

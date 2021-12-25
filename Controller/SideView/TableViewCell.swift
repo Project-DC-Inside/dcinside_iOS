@@ -30,8 +30,7 @@ class TableViewCell: UITableViewCell {
         tableLabel.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
             make.leading.equalTo(20)
-        }
-        
+        }        
     }
     
     override func awakeFromNib() {

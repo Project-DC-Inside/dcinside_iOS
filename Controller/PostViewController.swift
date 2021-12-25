@@ -17,7 +17,6 @@ class PostViewController: UIViewController {
         super.viewDidLoad()
         ChangePostInfo()
         self.navigationItem.titleView = label
-        //label.target(forAction: <#T##Selector#>, withSender: <#T##Any?#>)
     }
     
     @IBAction func DissmissPost(_ sender: UIButton) {

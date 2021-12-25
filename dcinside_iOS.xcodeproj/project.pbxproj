@@ -29,7 +29,7 @@
 		725FCD48275BD0C40077C59D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725FCD47275BD0C40077C59D /* Post.swift */; };
 		726EA7AD275A534500EB2D83 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA7AC275A534500EB2D83 /* KeyChain.swift */; };
 		726EA7AF275A7C7800EB2D83 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA7AE275A7C7800EB2D83 /* MainViewController.swift */; };
-		726EA7B1275A7C9500EB2D83 /* GalleryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA7B0275A7C9500EB2D83 /* GalleryListViewController.swift */; };
+		726EA7B1275A7C9500EB2D83 /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA7B0275A7C9500EB2D83 /* CategoryListViewController.swift */; };
 		726EA7B3275A7C9D00EB2D83 /* MakePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA7B2275A7C9D00EB2D83 /* MakePostViewController.swift */; };
 		7B64A88F276F38C40038305A /* NoticeNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64A88E276F38C40038305A /* NoticeNavigationViewController.swift */; };
 		7B64A893276F395A0038305A /* SubTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64A892276F395A0038305A /* SubTabBarViewController.swift */; };
@@ -39,7 +39,8 @@
 		7B64A89F277345810038305A /* ErrInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64A89E277345810038305A /* ErrInfo.swift */; };
 		7B6903A52774B065000F615A /* PostTitleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6903A42774B065000F615A /* PostTitleInfo.swift */; };
 		7B89D973277765E300E7A334 /* GalleryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89D972277765E300E7A334 /* GalleryCategory.swift */; };
-		7B89D97627776C0400E7A334 /* GalleryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89D97527776C0400E7A334 /* GalleryListTableViewCell.swift */; };
+		7B89D97627776C0400E7A334 /* CategoryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89D97527776C0400E7A334 /* CategoryListTableViewCell.swift */; };
+		7B8F215E2777730100F58F47 /* GalleryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8F215D2777730100F58F47 /* GalleryListViewController.swift */; };
 		7BCE4B4A2768D904008C07A5 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE4B492768D904008C07A5 /* GalleryViewController.swift */; };
 		7BCE4B90276B5DA5008C07A5 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE4B8F276B5DA5008C07A5 /* MainTabBarViewController.swift */; };
 		7BCE4B92276B641C008C07A5 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE4B91276B641C008C07A5 /* NoticeViewController.swift */; };
@@ -98,7 +99,7 @@
 		725FCD47275BD0C40077C59D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		726EA7AC275A534500EB2D83 /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		726EA7AE275A7C7800EB2D83 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		726EA7B0275A7C9500EB2D83 /* GalleryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryListViewController.swift; sourceTree = "<group>"; };
+		726EA7B0275A7C9500EB2D83 /* CategoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
 		726EA7B2275A7C9D00EB2D83 /* MakePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePostViewController.swift; sourceTree = "<group>"; };
 		7B64A88E276F38C40038305A /* NoticeNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeNavigationViewController.swift; sourceTree = "<group>"; };
 		7B64A892276F395A0038305A /* SubTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTabBarViewController.swift; sourceTree = "<group>"; };
@@ -108,7 +109,8 @@
 		7B64A89E277345810038305A /* ErrInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrInfo.swift; sourceTree = "<group>"; };
 		7B6903A42774B065000F615A /* PostTitleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTitleInfo.swift; sourceTree = "<group>"; };
 		7B89D972277765E300E7A334 /* GalleryCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCategory.swift; sourceTree = "<group>"; };
-		7B89D97527776C0400E7A334 /* GalleryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryListTableViewCell.swift; sourceTree = "<group>"; };
+		7B89D97527776C0400E7A334 /* CategoryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListTableViewCell.swift; sourceTree = "<group>"; };
+		7B8F215D2777730100F58F47 /* GalleryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryListViewController.swift; sourceTree = "<group>"; };
 		7BCE4B492768D904008C07A5 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		7BCE4B8F276B5DA5008C07A5 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		7BCE4B91276B641C008C07A5 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
@@ -230,7 +232,8 @@
 		723830B62758DB67006B0F49 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7B89D97427776BED00E7A334 /* GalleryView */,
+				7B89D977277771FB00E7A334 /* GalleryView */,
+				7B89D97427776BED00E7A334 /* CategoryView */,
 				7B6903A327736121000F615A /* Auth */,
 				7B64A891276F38E40038305A /* MainScene */,
 				7B64A890276F38D00038305A /* NoticeScene */,
@@ -315,11 +318,19 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
-		7B89D97427776BED00E7A334 /* GalleryView */ = {
+		7B89D97427776BED00E7A334 /* CategoryView */ = {
 			isa = PBXGroup;
 			children = (
-				726EA7B0275A7C9500EB2D83 /* GalleryListViewController.swift */,
-				7B89D97527776C0400E7A334 /* GalleryListTableViewCell.swift */,
+				726EA7B0275A7C9500EB2D83 /* CategoryListViewController.swift */,
+				7B89D97527776C0400E7A334 /* CategoryListTableViewCell.swift */,
+			);
+			path = CategoryView;
+			sourceTree = "<group>";
+		};
+		7B89D977277771FB00E7A334 /* GalleryView */ = {
+			isa = PBXGroup;
+			children = (
+				7B8F215D2777730100F58F47 /* GalleryListViewController.swift */,
 			);
 			path = GalleryView;
 			sourceTree = "<group>";
@@ -575,6 +586,7 @@
 				725FCD46275BA5CE0077C59D /* TableViewCell.swift in Sources */,
 				7B6903A52774B065000F615A /* PostTitleInfo.swift in Sources */,
 				6B0E9DC727524CCF00B0E946 /* AppDelegate.swift in Sources */,
+				7B8F215E2777730100F58F47 /* GalleryListViewController.swift in Sources */,
 				725FCD3F275B66850077C59D /* Login.swift in Sources */,
 				725FCD48275BD0C40077C59D /* Post.swift in Sources */,
 				7BCE4B90276B5DA5008C07A5 /* MainTabBarViewController.swift in Sources */,
@@ -593,14 +605,14 @@
 				7B64A895276F77010038305A /* TokenInfo.swift in Sources */,
 				725FCD42275B767D0077C59D /* CustomSideMenuNavigation.swift in Sources */,
 				7216E8AC27658A9B00A2A976 /* MainViewTableViewCell.swift in Sources */,
-				7B89D97627776C0400E7A334 /* GalleryListTableViewCell.swift in Sources */,
+				7B89D97627776C0400E7A334 /* CategoryListTableViewCell.swift in Sources */,
 				723830BF275A2B97006B0F49 /* APIService.swift in Sources */,
 				726EA7AD275A534500EB2D83 /* KeyChain.swift in Sources */,
 				723830BC2758DBB1006B0F49 /* User.swift in Sources */,
 				7BCE4B4A2768D904008C07A5 /* GalleryViewController.swift in Sources */,
 				7B64A89F277345810038305A /* ErrInfo.swift in Sources */,
 				726EA7AF275A7C7800EB2D83 /* MainViewController.swift in Sources */,
-				726EA7B1275A7C9500EB2D83 /* GalleryListViewController.swift in Sources */,
+				726EA7B1275A7C9500EB2D83 /* CategoryListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
