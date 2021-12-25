@@ -11,7 +11,7 @@ class GalleryListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    var galleryCategory: [GalleryCategory]
+    var galleryCategory: [GalleryCategory] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -53,9 +53,9 @@ extension GalleryListViewController {
     }
 }
 
-extension GalleryViewController: UITableViewDataSource {
+extension GalleryListViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return tableViewData.count
+        return galleryCategory.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -69,6 +69,6 @@ extension GalleryViewController: UITableViewDataSource {
     
 }
 
-extension GalleryViewController : UITableViewDelegate {
+extension GalleryListViewController : UITableViewDelegate {
     
 }
