@@ -7,7 +7,7 @@
 
 import Foundation
 import Alamofire
-
+// API Service Enumerate 수정 필요함
 enum NetworkResult<T> {
     // status Code에 따라서..
     case success(T) // 200 성공!
