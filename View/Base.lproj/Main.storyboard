@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xe9-yL-BEZ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -30,11 +32,11 @@
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="SignInViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U24-UR-3z5">
-                                <rect key="frame" x="30" y="106" width="540" height="34"/>
+                                <rect key="frame" x="30" y="150" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -42,7 +44,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Ru-yL-6lV">
-                                <rect key="frame" x="30" y="150" width="540" height="34"/>
+                                <rect key="frame" x="30" y="194" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
@@ -50,7 +52,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXA-9I-saE">
-                                <rect key="frame" x="30" y="204" width="540" height="31"/>
+                                <rect key="frame" x="30" y="248" width="354" height="31"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -60,7 +62,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6e-YW-sRW">
-                                <rect key="frame" x="30" y="240" width="540" height="31"/>
+                                <rect key="frame" x="30" y="284" width="354" height="31"/>
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="회원가입"/>
@@ -101,17 +103,17 @@
         <!--GalleryListViewController-->
         <scene sceneID="XUT-r1-VBM">
             <objects>
-                <viewController storyboardIdentifier="GalleryListViewController" title="GalleryListViewController" id="vVu-Gd-sLy" customClass="CategoryListViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tegoryListViewController" title="GalleryListViewController" id="vVu-Gd-sLy" customClass="CategoryListViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zlg-gZ-a3w">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zzU-am-oFc">
-                                <rect key="frame" x="0.0" y="44" width="600" height="507"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="1MT-Cy-Ffy">
-                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zgr-BG-vFC"/>
@@ -151,15 +153,27 @@
             </objects>
             <point key="canvasLocation" x="51" y="2646"/>
         </scene>
-        <!--View Controller-->
+        <!--Gallery List View Controller-->
         <scene sceneID="Izf-fe-KOn">
             <objects>
-                <viewController id="hkP-Eg-KOs" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GalleryListViewController" id="hkP-Eg-KOs" customClass="GalleryListViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x6g-Cs-2Mn">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lZo-28-Wnh">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9Jz-JQ-SfC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9Jz-JQ-SfC" firstAttribute="trailing" secondItem="lZo-28-Wnh" secondAttribute="trailing" id="4Eh-gi-ui2"/>
+                            <constraint firstItem="lZo-28-Wnh" firstAttribute="top" secondItem="9Jz-JQ-SfC" secondAttribute="top" id="F7W-OU-O1Q"/>
+                            <constraint firstItem="lZo-28-Wnh" firstAttribute="leading" secondItem="9Jz-JQ-SfC" secondAttribute="leading" id="aSL-hS-vDX"/>
+                            <constraint firstItem="9Jz-JQ-SfC" firstAttribute="bottom" secondItem="lZo-28-Wnh" secondAttribute="bottom" id="u6O-XF-jTv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="H1V-4S-Exh"/>
                 </viewController>
@@ -188,7 +202,7 @@
             <objects>
                 <viewController storyboardIdentifier="PostViewController" id="l2R-zV-sAX" customClass="PostViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xa8-Ca-L9F">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="zFJ-LL-TWe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -232,7 +246,7 @@
             <objects>
                 <viewController id="M3a-Kn-cAA" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5GZ-ly-5H6">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="zSh-2k-5de"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -248,7 +262,7 @@
             <objects>
                 <viewController storyboardIdentifier="SearchViewController" id="UNf-vu-8N9" customClass="SearchViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g9G-Me-6rD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="lB3-Tt-HED"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -264,7 +278,7 @@
             <objects>
                 <viewController storyboardIdentifier="MakePostViewController" id="rI2-3N-axR" customClass="MakePostViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W2D-9E-SUF">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="1xN-ly-cF4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -297,7 +311,7 @@
             <objects>
                 <viewController storyboardIdentifier="SideMenuControllerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gmf-Zl-Ka4" customClass="SideMenuControllerViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q4g-2x-Wuv">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="fOU-Ai-bGQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -329,7 +343,7 @@
             <objects>
                 <viewController id="4uc-tP-qlx" customClass="NoticeViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dm0-To-biT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="phP-Vp-CiZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -349,7 +363,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZw-n4-x6Z">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="956"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0XB-mh-KDG">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
@@ -591,7 +605,7 @@
             <objects>
                 <viewController id="lIl-h8-JU5" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wrm-1d-cLG">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="dvw-x5-gAm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -611,10 +625,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sLC-24-kCZ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="1235"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="1191"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cDf-Jv-nwR">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1235"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1191"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <searchBar key="tableHeaderView" contentMode="redraw" id="OgO-iU-BWj">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -741,7 +755,7 @@
         <!--Main Tab Bar View Controller-->
         <scene sceneID="gnc-4w-GED">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Xe9-yL-BEZ" customClass="MainTabBarViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarViewController" automaticallyAdjustsScrollViewInsets="NO" id="Xe9-yL-BEZ" customClass="MainTabBarViewController" customModule="dcinside_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bhQ-0P-tQ9">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
