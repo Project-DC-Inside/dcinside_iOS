@@ -8,6 +8,7 @@
 import Foundation
 
 struct GalleryCategory:Codable {
+    var opened: Bool
     var title: String
     var cells: [GalleryCell]
 }
