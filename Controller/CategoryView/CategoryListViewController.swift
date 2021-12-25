@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GalleryListViewController: UIViewController {
+class CategoryListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -19,7 +19,7 @@ class GalleryListViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(TableViewCell.self, forCellReuseIdentifier: "GalleryListTableViewCell")
+        tableView.register(TableViewCell.self, forCellReuseIdentifier: "CategoryListTableViewCell")
         
         ConfigNav()
         activityIndicator.startAnimating()
@@ -28,7 +28,7 @@ class GalleryListViewController: UIViewController {
 
 }
 
-extension GalleryListViewController {
+extension CategoryListViewController {
     func FetchingData() {
         // escaping Closure 이후,
         // activityIndicator Animating 종료
@@ -46,7 +46,7 @@ extension GalleryListViewController {
     }
 }
 
-extension GalleryListViewController: UITableViewDataSource {
+extension CategoryListViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return galleryCategory.count
     }
@@ -63,13 +63,13 @@ extension GalleryListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "GalleryListTableViewCell", for: indexPath)
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryListTableViewCell", for: indexPath)
                     as? TableViewCell else { return UITableViewCell() }
             cell.configureUI()
             cell.tableLabel.text = galleryCategory[indexPath.section].title
             return cell
         } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "GalleryListTableViewCell", for: indexPath)
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryListTableViewCell", for: indexPath)
                     as? TableViewCell else { return UITableViewCell() }
             cell.configureUI()
             cell.tableLabel.text = galleryCategory[indexPath.section].cells[indexPath.row - 1].galleryTitle
@@ -91,6 +91,6 @@ extension GalleryListViewController: UITableViewDataSource {
     }
 }
 
-extension GalleryListViewController : UITableViewDelegate {
+extension CategoryListViewController : UITableViewDelegate {
     
 }
