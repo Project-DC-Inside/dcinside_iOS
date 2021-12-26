@@ -1,5 +1,12 @@
 # dcinside_iOS
 
+- Swift5
+- iOS UIKit
+- SnapKit
+- Alamofire
+- SideMenu
+- IQTKeyboard
+
 
 # iOS
 
