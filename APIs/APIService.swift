@@ -28,7 +28,6 @@ class APIService {
                 do {
                     let decoder = JSONDecoder()
                     let json = try decoder.decode(LoginResponse.self, from: data)
-                    guard let isSuccess = json.success else { return }
                     compleition(.success(json))
                 }catch{
                     print("Decode Error Occured")
@@ -38,7 +37,7 @@ class APIService {
             }
         }
     }
-
+    
     func SignUpAPI(signUp: User, completion: @escaping (Result<Bool, NetworkError>)-> Void) {
         AF.request(baseURL + "/api/v1/auth/signup", method: .post, parameters: signUp, encoder: JSONParameterEncoder.default).responseJSON { response in
             switch response.result {
