@@ -8,11 +8,9 @@
 import Foundation
 import Alamofire
 // API Service Enumerate 수정 필요함
-enum NetworkResult<T> {
-    // status Code에 따라서..
-    case success(T) // 200 성공!
-    case failure(T)
-    case networkErr
+enum NetworkError:Error {
+    case badURL
+    case serverError
 }
 
 class APIService {
@@ -22,7 +20,7 @@ class APIService {
     private let HTTPHeaders = ["Content-Type": "application/json"]
     private let baseURL = "http://3.36.205.23:8080"
  
-    func SingInAPI(singin: Login, compleition: @escaping (NetworkResult<Any>) -> Void) {
+    func SingInAPI(singin: Login, compleition: @escaping (Result<LoginResponse, NetworkError>) -> Void) {
         AF.request(baseURL + "/api/v1/auth/signin", method: .post, parameters: singin, encoder: JSONParameterEncoder.default).responseJSON { response in
             switch response.result {
             case .success:
@@ -30,22 +28,17 @@ class APIService {
                 do {
                     let decoder = JSONDecoder()
                     let json = try decoder.decode(LoginResponse.self, from: data)
-                    guard let isSuccess = json.success else { return }
-                    if isSuccess {
-                        compleition(.success(json.result))
-                    }else {
-                        compleition(.failure(json.error))
-                    }
+                    compleition(.success(json))
                 }catch{
                     print("Decode Error Occured")
                 }
             case .failure:
-                compleition(.networkErr)
+                compleition(.failure(.badURL))
             }
         }
     }
-
-    func SignUpAPI(signUp: User, completion: @escaping (NetworkResult<Any>)-> Void) {
+    
+    func SignUpAPI(signUp: User, completion: @escaping (Result<Bool, NetworkError>)-> Void) {
         AF.request(baseURL + "/api/v1/auth/signup", method: .post, parameters: signUp, encoder: JSONParameterEncoder.default).responseJSON { response in
             switch response.result {
             case .success:
@@ -54,17 +47,12 @@ class APIService {
                     let decoder = JSONDecoder()
                     let json = try decoder.decode(SignUpResponse.self, from: data)
                     guard let isSuccess = json.success else { return }
-                    if isSuccess {
-                        completion(.success(true))
-                    }else {
-                        guard let error = json.error else { return }
-                        completion(.success(error))
-                    }
+                    completion(.success(isSuccess))
                 }catch {
                     print("Decode Error Occured")
                 }
             case .failure:
-                completion(.networkErr)
+                completion(.failure(.badURL))
             }
         }
     }
@@ -80,7 +68,7 @@ class APIService {
         }
     }
     
-    func RefreshAPI(completion: @escaping (NetworkResult<Any>)-> Void) {
+    func RefreshAPI(completion: @escaping (Result<LoginResponse, NetworkError>)-> Void) {
         print("REFRESH!!")
         guard let token = DecodeToken() else { return }
         print("TK",token)
@@ -93,18 +81,12 @@ class APIService {
                     let decoder = JSONDecoder()
                     let json = try decoder.decode(LoginResponse.self, from: data)
                     guard let isSuccess = json.success else { return }
-                    if isSuccess {
-                        guard let result = json.result else { return }
-                        completion(.success(json.result))
-                    }else {
-                        guard let error = json.error else { return }
-                        completion(.failure(json.error))
-                    }
+                    completion(.success(json))
                 }catch{
                     print("Decode Error Occured")
                 }
             case .failure:
-                completion(.networkErr)
+                completion(.failure(.badURL))
                 break
             }
         }
