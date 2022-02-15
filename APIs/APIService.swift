@@ -31,26 +31,23 @@ class APIService {
     
     func SignInAPI(signIn: LoginInfo) -> Observable<Result<SignInResult, NetworkError>> {
         return Observable<Result<SignInResult, NetworkError>>.create { observer in
-            observer.onNext(.success(SignInResult(success: true, token: nil, error: nil)))
-            //observer.onNext(.success(SignInResult(success: true, token: Token(token: "wefwefwef", refreshToken: "WEFewf"), error: nil)))
-//            print("AFAF")
-//            AF.request(self.baseURL + "/api/v1/auth/signin", method: .post, parameters: signIn, encoder: JSONParameterEncoder.default).responseJSON { response in
-//                guard let data = response.data else { return }
-//                switch response.result {
-//                case .success:
-//                    print("SUCCESS")
-//                    do {
-//                        let signInResult = try JSONDecoder().decode(SignInResult.self, from: data)
-//                        observer.onNext(.success(signInResult))
-//                    }catch {
-//                        print("DECODEERR")
-//                        observer.onError(NetworkError.badURL)
-//                    }
-//                case .failure:
-//                    print("BAD")
-//                    observer.onNext(.failure(.badURL))
-//                }
-//            }
+            AF.request(self.baseURL + "/api/v1/auth/signin", method: .post, parameters: signIn, encoder: JSONParameterEncoder.default).responseJSON { response in
+                guard let data = response.data else { return }
+                switch response.result {
+                case .success:
+                    print("SUCCESS")
+                    do {
+                        let signInResult = try JSONDecoder().decode(SignInResult.self, from: data)
+                        observer.onNext(.success(signInResult))
+                    }catch {
+                        print("DECODEERR")
+                        observer.onError(NetworkError.badURL)
+                    }
+                case .failure:
+                    print("BAD")
+                    observer.onNext(.failure(.badURL))
+                }
+            }
             observer.onCompleted()
             return Disposables.create()
         }
