@@ -15,8 +15,9 @@ import SnapKit
 class MainSceneViewController: UIViewController {
     let disposeBag = DisposeBag()
     
-    let searchBar = UISearchBar()
     let sideMenuButton = UIBarButtonItem()
+    
+    let searchBar = UISearchBar()
     let tableView = UITableView()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {

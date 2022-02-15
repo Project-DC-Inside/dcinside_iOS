@@ -16,15 +16,10 @@ struct MainSceneViewModel {
     // view -> ViewModel
     let sideMenuButtonTapped = PublishRelay<Void>()    
     
-    init() {
-        print("INIT")
-        let map = "MAP"
-    
-        
+    init() {        
         self.presentSideMenu = sideMenuButtonTapped
             .asSignal(onErrorSignalWith: .empty())
         
-            //.asSignal(onErrorSignalWith: .empty())
     }
     
 }

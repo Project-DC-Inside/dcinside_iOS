@@ -10,12 +10,13 @@ import RxSwift
 import RxCocoa
 
 struct SideMenuViewModel {
-    // view -> ViewModel
     
+    // view -> ViewModel
+    let push: Driver<SignInViewModel>
     
     // ViewModel -> View
     let cellData: Driver<[String]>
-    
+    let signInButtonTapped = PublishRelay<Void>()
     
     let menu = [
         "갤러리 리스트",
@@ -31,6 +32,13 @@ struct SideMenuViewModel {
             .of(menu)
             .asDriver(onErrorJustReturn: [])
         
+        let signInViewModel = SignInViewModel()
+        
+        self.push = signInButtonTapped
+            .map{ Void -> SignInViewModel in
+                return signInViewModel
+            }
+            .asDriver(onErrorDriveWith: .empty())
         
     }
 }
