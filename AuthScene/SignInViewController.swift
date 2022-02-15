@@ -32,10 +32,14 @@ class SignInViewController: UIViewController {
     
     func bind(_ viewModel: SignInViewModel) {
         
-        viewModel.requestData
+        viewModel.nextCheck
             .drive(onNext: {
-                print($0)
+                self.navigationController?.popViewController(animated: true)
             })
+            .disposed(by: disposeBag)
+        
+        viewModel.errorCheck
+            .emit(to: self.rx.setAlert)
             .disposed(by: disposeBag)
         
         idTextView.rx.text
@@ -92,3 +96,18 @@ class SignInViewController: UIViewController {
     }
     
 }
+
+
+typealias Alert = (title: String, message: String?)
+extension Reactive where Base:SignInViewController {
+    var setAlert: Binder<Alert> {
+        return Binder(base) { base, data in
+            let alertController = UIAlertController(title: data.title, message: data.message, preferredStyle: .alert)
+            let alert = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+            alertController.addAction(alert)
+            base.present(alertController, animated: true, completion: nil)
+        }
+    }
+}
+
+

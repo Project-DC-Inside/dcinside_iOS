@@ -9,11 +9,19 @@ import Foundation
 import RxCocoa
 import RxSwift
 
+enum SignInAction {
+    case success
+    case nonExist
+    case networkErr
+}
+
 struct SignInViewModel {
     let disposeBag = DisposeBag()
     
     // viewModel -> view
-    let requestData: Driver<Void>
+    //let requestData: Driver<SignInAction>
+    let errorCheck: Signal<Alert>
+    let nextCheck: Driver<Void>
     
     // view -> viewModel
     let submitButtonTapped = PublishRelay<Void>()
@@ -21,8 +29,9 @@ struct SignInViewModel {
     let pwInfo = BehaviorRelay<String?>(value: "")
     
     let logInfo: Observable<LoginInfo>
+    let idDriver: Signal<String?>
     
-    init() {
+    init(model: SignInModel = SignInModel()) {
         let tapped = self.submitButtonTapped
             .asObservable()
       
@@ -34,29 +43,48 @@ struct SignInViewModel {
             }.asObservable()
         
         let requestResult = tapped.withLatestFrom(self.logInfo) { _, LoginInfo in
-            print(LoginInfo)
             return LoginInfo
         }.flatMapLatest { info in
             return APIService.shared.SignInAPI(signIn: info)
         }
         
-        requestData = requestResult
-            .compactMap { data -> Void in
+        let requestData = requestResult
+            .compactMap { data -> SignInAction in
                 switch data {
-                case let .success(token):
+                case let .success(result):
+                    guard let token = result.token else { return .nonExist }
                     KeyChain.shared.addItem(key: "token", value: token.token)
                     KeyChain.shared.addItem(key: "token", value: token.refreshToken)
                     print("SUCCESSTOKEN")
-                    return Void()
+                    return .success
                 case let .failure(e) :
                     print(e.localizedDescription)
-                    return Void()
+                    return .networkErr
                 default:
-                    return Void()
+                    return .networkErr
                 }
+            }
+            .asObservable()
+            //.asDriver(onErrorDriveWith: .empty())
+        let t = requestData.subscribe{
+            print($0)
+        }.disposed(by: disposeBag)
+        
+        self.errorCheck = requestData
+            .filter { $0 != .success }
+            .map { action in
+                return model.setAlert(action: action)
+            }
+            .asSignal(onErrorSignalWith: .empty())
+        
+        self.nextCheck = requestData
+            .filter { $0 == .success }
+            .map { action -> Void in
+                return Void()
             }
             .asDriver(onErrorDriveWith: .empty())
         
+        idDriver = idInfo.asSignal(onErrorSignalWith: .empty())
 
     }
 }

@@ -11,7 +11,7 @@ import Foundation
 struct SignInResult: Codable {
     var success: Bool
     var token: Token?
-    var error: NError
+    var error: NError?
     
     enum CodingKeys: String, CodingKey {
         case success

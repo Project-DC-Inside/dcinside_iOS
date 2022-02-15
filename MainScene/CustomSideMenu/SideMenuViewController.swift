@@ -43,7 +43,7 @@ class SideMenuViewController : UIViewController {
                 return cell
             }
             .disposed(by: disposeBag)
-        
+
         signInButton.rx.tap
             .bind(to: viewModel.signInButtonTapped)
             .disposed(by: disposeBag)
@@ -51,7 +51,7 @@ class SideMenuViewController : UIViewController {
         viewModel.push
             .drive(onNext: { viewModel in
                 let viewController = SignInViewController()
-                viewController.bind(viewModel)
+                viewController.bind(viewModel)                
                 self.show(viewController, sender: nil)
             })
     }

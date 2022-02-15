@@ -19,6 +19,7 @@
 		726EA7AD275A534500EB2D83 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA7AC275A534500EB2D83 /* KeyChain.swift */; };
 		7B21B44D27BB2CA4006B5FF5 /* SignInResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B21B44C27BB2CA4006B5FF5 /* SignInResult.swift */; };
 		7B21B45027BB2CDC006B5FF5 /* NError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B21B44F27BB2CDC006B5FF5 /* NError.swift */; };
+		7B21B45227BC6766006B5FF5 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B21B45127BC6766006B5FF5 /* SignInModel.swift */; };
 		7BD2F3A627B7B72F00E4CF6F /* MainSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A527B7B72F00E4CF6F /* MainSceneViewController.swift */; };
 		7BD2F3A827B7B7B600E4CF6F /* MainSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A727B7B7B600E4CF6F /* MainSceneViewModel.swift */; };
 		7BD2F3AA27B7D77B00E4CF6F /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A927B7D77B00E4CF6F /* SideMenuViewController.swift */; };
@@ -76,6 +77,7 @@
 		726EA7AC275A534500EB2D83 /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		7B21B44C27BB2CA4006B5FF5 /* SignInResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResult.swift; sourceTree = "<group>"; };
 		7B21B44F27BB2CDC006B5FF5 /* NError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NError.swift; sourceTree = "<group>"; };
+		7B21B45127BC6766006B5FF5 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		7BD2F3A527B7B72F00E4CF6F /* MainSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewController.swift; sourceTree = "<group>"; };
 		7BD2F3A727B7B7B600E4CF6F /* MainSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewModel.swift; sourceTree = "<group>"; };
 		7BD2F3A927B7D77B00E4CF6F /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 			children = (
 				7BD2F3C227BA522100E4CF6F /* SignInViewController.swift */,
 				7BD2F3C427BA522A00E4CF6F /* SignInViewModel.swift */,
+				7B21B45127BC6766006B5FF5 /* SignInModel.swift */,
 			);
 			path = AuthScene;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				726EA7AD275A534500EB2D83 /* KeyChain.swift in Sources */,
 				7B21B45027BB2CDC006B5FF5 /* NError.swift in Sources */,
 				7BD2F3C527BA522A00E4CF6F /* SignInViewModel.swift in Sources */,
+				7B21B45227BC6766006B5FF5 /* SignInModel.swift in Sources */,
 				7BD2F3C027BA480500E4CF6F /* GalleryListViewModel.swift in Sources */,
 				7BD2F3B527B7E16A00E4CF6F /* SideMenuCell.swift in Sources */,
 				7BD2F3B927BA204800E4CF6F /* LoginInfo.swift in Sources */,

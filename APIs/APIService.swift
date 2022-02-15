@@ -29,31 +29,28 @@ class APIService {
     
     private init() {} // 다른곳에서 초기화하지 못하게 해야해서..
     
-    func SignInAPI(signIn: LoginInfo) -> Observable<Result<Token, NetworkError>> {
-        return Observable<Result<Token, NetworkError>>.create { observer in
-            print("AFAF")
-            AF.request(self.baseURL + "/api/v1/auth/signin", method: .post, parameters: signIn, encoder: JSONParameterEncoder.default).responseJSON { response in
-                print(response.response?.statusCode)
-                guard let data = response.data else { return }
-                print(data)
-                switch response.result {
-                case .success:
-                    print("SUCCESS")
-                    do {
-                        //print(<#T##items: Any...##Any#>)
-                        let signInResult = try JSONDecoder().decode(SignInResult.self, from: data)
-                        print(signInResult)
-                        let token = signInResult.token
-                        observer.onNext(.success(token!))
-                    }catch {
-                        print("DECODEERR")
-                        observer.onError(NetworkError.badURL)
-                    }
-                case .failure:
-                    print("BAD")
-                    observer.onNext(.failure(.badURL))
-                }
-            }
+    func SignInAPI(signIn: LoginInfo) -> Observable<Result<SignInResult, NetworkError>> {
+        return Observable<Result<SignInResult, NetworkError>>.create { observer in
+            observer.onNext(.success(SignInResult(success: true, token: nil, error: nil)))
+            //observer.onNext(.success(SignInResult(success: true, token: Token(token: "wefwefwef", refreshToken: "WEFewf"), error: nil)))
+//            print("AFAF")
+//            AF.request(self.baseURL + "/api/v1/auth/signin", method: .post, parameters: signIn, encoder: JSONParameterEncoder.default).responseJSON { response in
+//                guard let data = response.data else { return }
+//                switch response.result {
+//                case .success:
+//                    print("SUCCESS")
+//                    do {
+//                        let signInResult = try JSONDecoder().decode(SignInResult.self, from: data)
+//                        observer.onNext(.success(signInResult))
+//                    }catch {
+//                        print("DECODEERR")
+//                        observer.onError(NetworkError.badURL)
+//                    }
+//                case .failure:
+//                    print("BAD")
+//                    observer.onNext(.failure(.badURL))
+//                }
+//            }
             observer.onCompleted()
             return Disposables.create()
         }
