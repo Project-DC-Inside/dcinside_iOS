@@ -35,14 +35,18 @@ class APIService {
             AF.request(self.baseURL + "/api/v1/auth/signin", method: .post, parameters: signIn, encoder: JSONParameterEncoder.default).responseJSON { response in
                 print(response.response?.statusCode)
                 guard let data = response.data else { return }
+                print(data)
                 switch response.result {
                 case .success:
+                    print("SUCCESS")
                     do {
                         //print(<#T##items: Any...##Any#>)
-                        let tokenInfo = try JSONDecoder().decode(Token.self, from: data)
-                        print(tokenInfo)
-                        observer.onNext(.success(tokenInfo))
+                        let signInResult = try JSONDecoder().decode(SignInResult.self, from: data)
+                        print(signInResult)
+                        let token = signInResult.token
+                        observer.onNext(.success(token!))
                     }catch {
+                        print("DECODEERR")
                         observer.onError(NetworkError.badURL)
                     }
                 case .failure:
