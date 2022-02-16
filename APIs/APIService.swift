@@ -10,6 +10,28 @@ import Alamofire
 import RxSwift
 import RxAlamofire
 
+enum StatusCode {
+    case success
+    case redirection
+    case badRequest
+    case serverError
+    case error
+    
+    init(statusCode: Int) {
+        switch statusCode {
+        case 200..<300:
+            self = .success
+        case 300..<400:
+            self = .redirection
+        case 400..<500:
+            self = .badRequest
+        case 500..<600:
+            self = .serverError
+        default:
+            self = .error
+        }
+    }
+}
 // API Service Enumerate 수정 필요함
 enum NetworkError:Error {
     case badURL
@@ -29,13 +51,14 @@ class APIService {
     
     private init() {} // 다른곳에서 초기화하지 못하게 해야해서..
     
-    func SignInAPI(signIn: LoginInfo) -> Observable<Result<SignInResult, NetworkError>> {
+    func SignInAPI(signIn: SignInInfo) -> Observable<Result<SignInResult, NetworkError>> {
         return Observable<Result<SignInResult, NetworkError>>.create { observer in
             AF.request(self.baseURL + "/api/v1/auth/signin", method: .post, parameters: signIn, encoder: JSONParameterEncoder.default).responseJSON { response in
                 guard let data = response.data else { return }
+                guard let res = response.response else { return }
+                let statusCode = res.statusCode
                 switch response.result {
                 case .success:
-                    print("SUCCESS")
                     do {
                         let signInResult = try JSONDecoder().decode(SignInResult.self, from: data)
                         observer.onNext(.success(signInResult))
@@ -53,6 +76,7 @@ class APIService {
         }
     }
     
+    //func SignUpAPI(signUp: Sign)
 
 //
 //    func SingInAPI(singin: Login, compleition: @escaping (Result<LoginResponse, NetworkError>) -> Void) {

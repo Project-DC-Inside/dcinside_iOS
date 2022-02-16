@@ -9,9 +9,11 @@ import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
+import RxKeyboard
 
 class SignUpViewController: UIViewController {
-    let wrappingView = UIView()
+    let disposeBag = DisposeBag()
+    
     let contentView = UIView()
     let scrollView = UIScrollView()
     
@@ -47,6 +49,70 @@ class SignUpViewController: UIViewController {
     }
     
     func bind(viewModel: SignUpViewModel) {
+//        RxKeyboard.instance.visibleHeight
+//            .skip(1)
+//            .drive(onNext: { height in
+//                print(height)
+//            })
+//            .disposed(by: disposeBag)
+//
+        idTextField.rx.text
+            .bind(to: viewModel.idText)
+            .disposed(by: disposeBag)
+            
+        viewModel.idConstraint
+            .drive(onNext: {
+                self.idConstraint.text = $0.0
+                self.idConstraint.textColor = $0.1
+            })
+            .disposed(by: disposeBag)
+        
+        nickNameTextField.rx.text
+            .bind(to: viewModel.nickNameText)
+            .disposed(by: disposeBag)
+        
+        viewModel.nickNameConstraint
+            .drive(onNext: {
+                self.nickNameConstraint.text = $0.0
+                self.nickNameConstraint.textColor = $0.1
+            })
+            .disposed(by: disposeBag)
+        
+        passwordTextField.rx.text
+            .bind(to: viewModel.passwordText)
+            .disposed(by: disposeBag)
+        
+        rePasswordTextField.rx.text
+            .bind(to: viewModel.rePasswordText)
+            .disposed(by: disposeBag)
+        
+        viewModel.passwordConstraint
+            .drive(onNext: {
+                self.passwordConstraint.text = $0.0
+                self.passwordConstraint.textColor = $0.1
+            }).disposed(by: disposeBag)
+        
+        emailTextField.rx.text
+            .bind(to: viewModel.emailText)
+            .disposed(by: disposeBag)
+        
+        emailCertiButton.rx.tap
+            .bind(to: viewModel.emailCertiBtn)
+            .disposed(by: disposeBag)
+        
+        viewModel.emailCert
+            .drive(onNext: {
+                UIView.animate(withDuration: 1) {
+                    self.certiNumb.alpha = 1
+                    self.signUpButton.alpha = 1
+                    self.signUpButton.isEnabled = true
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        signUpButton.rx.tap
+            .bind(to: viewModel.signUpSubmit)
+            .disposed(by: disposeBag)
         
     }
     
@@ -54,7 +120,6 @@ class SignUpViewController: UIViewController {
         title = "SignUp"
         view.backgroundColor = .systemBackground
         
-        scrollView.automaticallyAdjustsScrollIndicatorInsets = false;
         
         idLabel.text = "아이디"
         idTextField.borderStyle = .roundedRect
@@ -64,13 +129,15 @@ class SignUpViewController: UIViewController {
         
         nickNameLabel.text = "닉네임"
         nickNameTextField.borderStyle = .roundedRect
-        nickNameConstraint.text = "20자 내외로 닉네임 입력해주세요!, 띄어쓰기는 안됩니다 :)"
+        nickNameConstraint.text = "20자 내외로 닉네임 입력해주세요! :)"
         nickNameConstraint.textColor = UIColor.systemGray
         nickNameConstraint.font = UIFont.systemFont(ofSize: 10)
         
         passwordLabel.text = "비밀번호"
         passwordTextField.borderStyle = .roundedRect
+        passwordTextField.isSecureTextEntry = true
         rePasswordTextField.borderStyle = .roundedRect
+        rePasswordTextField.isSecureTextEntry = true
         passwordConstraint.text = "영문, 숫자 8~20자 내외로 해주세요"
         passwordConstraint.textColor = UIColor.systemGray
         passwordConstraint.font = UIFont.systemFont(ofSize: 8)
@@ -83,11 +150,11 @@ class SignUpViewController: UIViewController {
         emailCertiButton.layer.cornerRadius = 8
         
         certiNumb.placeholder = "인증번호"
-        certiNumb.textColor = UIColor.systemGray
         certiNumb.borderStyle = .roundedRect
-        certiNumb.isHidden = true
+        certiNumb.alpha = 0
         
-        signUpButton.setTitle("가입하기", for: .disabled)
+        signUpButton.setTitle("가입하기", for: .normal)
+        signUpButton.isEnabled = false
         signUpButton.layer.opacity = 0
         signUpButton.backgroundColor = UIColor.systemBlue
         signUpButton.titleLabel?.textColor = .white
@@ -105,9 +172,9 @@ class SignUpViewController: UIViewController {
         
         contentView.snp.makeConstraints {
             $0.width.equalTo(view.frame.width)
-            $0.height.equalTo(view.frame.height + 100)
+            $0.height.equalTo(view.frame.height + 200)
         }
-        
+
         contentView.addSubview(idLabel)
         contentView.addSubview(idTextField)
         contentView.addSubview(idConstraint)

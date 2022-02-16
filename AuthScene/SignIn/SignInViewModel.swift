@@ -30,7 +30,7 @@ struct SignInViewModel {
     let idInfo = BehaviorRelay<String?>(value: "")
     let pwInfo = BehaviorRelay<String?>(value: "")
     
-    let logInfo: Observable<LoginInfo>
+    let logInfo: Observable<SignInInfo>
     let idDriver: Signal<String?>
     
     init(model: SignInModel = SignInModel()) {
@@ -41,10 +41,10 @@ struct SignInViewModel {
             .asDriver(onErrorDriveWith: .empty())
       
         self.logInfo = Observable.combineLatest(idInfo, pwInfo)
-            .compactMap { info -> LoginInfo? in
+            .compactMap { info -> SignInInfo? in
                 guard let id = info.0, let pw = info.1 else { return nil }
-                print(LoginInfo(id: id, pw: pw))
-                return LoginInfo(id: id, pw: pw)
+                print(SignInInfo(id: id, pw: pw))
+                return SignInInfo(id: id, pw: pw)
             }.asObservable()
         
         let requestResult = tapped.withLatestFrom(self.logInfo) { _, LoginInfo in

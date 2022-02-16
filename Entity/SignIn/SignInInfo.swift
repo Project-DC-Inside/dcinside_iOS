@@ -8,11 +8,11 @@
 import Foundation
 
 
-struct LoginInfo: Codable {
+struct SignInInfo: Codable {
     var id: String
     var pw: String
     enum CodingKeys: String, CodingKey {
         case id = "username"
         case pw = "password"
-    }
+    }    
 }

@@ -11,6 +11,7 @@ target 'dcinside_iOS' do
   pod 'IQKeyboardManagerSwift'
   pod 'SideMenu'
   pod 'RxAlamofire'
+  pod 'RxKeyboard'
   # Pods for dcinside_iOS
 
   target 'dcinside_iOSTests' do
