@@ -22,9 +22,11 @@ struct SignInViewModel {
     //let requestData: Driver<SignInAction>
     let errorCheck: Signal<Alert>
     let nextCheck: Driver<Void>
+    let signUp: Driver<Void>
     
     // view -> viewModel
     let submitButtonTapped = PublishRelay<Void>()
+    let signUpButtonTapped = PublishRelay<Void>()
     let idInfo = BehaviorRelay<String?>(value: "")
     let pwInfo = BehaviorRelay<String?>(value: "")
     
@@ -34,6 +36,9 @@ struct SignInViewModel {
     init(model: SignInModel = SignInModel()) {
         let tapped = self.submitButtonTapped
             .asObservable()
+        
+        signUp = self.signUpButtonTapped
+            .asDriver(onErrorDriveWith: .empty())
       
         self.logInfo = Observable.combineLatest(idInfo, pwInfo)
             .compactMap { info -> LoginInfo? in

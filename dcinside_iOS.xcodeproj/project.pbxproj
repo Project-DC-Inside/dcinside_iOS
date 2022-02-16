@@ -20,6 +20,8 @@
 		7B21B44D27BB2CA4006B5FF5 /* SignInResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B21B44C27BB2CA4006B5FF5 /* SignInResult.swift */; };
 		7B21B45027BB2CDC006B5FF5 /* NError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B21B44F27BB2CDC006B5FF5 /* NError.swift */; };
 		7B21B45227BC6766006B5FF5 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B21B45127BC6766006B5FF5 /* SignInModel.swift */; };
+		7B21B45527BC6EFD006B5FF5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B21B45427BC6EFD006B5FF5 /* SignUpViewController.swift */; };
+		7B21B45727BC6F07006B5FF5 /* SingUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B21B45627BC6F07006B5FF5 /* SingUpViewModel.swift */; };
 		7BD2F3A627B7B72F00E4CF6F /* MainSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A527B7B72F00E4CF6F /* MainSceneViewController.swift */; };
 		7BD2F3A827B7B7B600E4CF6F /* MainSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A727B7B7B600E4CF6F /* MainSceneViewModel.swift */; };
 		7BD2F3AA27B7D77B00E4CF6F /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A927B7D77B00E4CF6F /* SideMenuViewController.swift */; };
@@ -78,6 +80,8 @@
 		7B21B44C27BB2CA4006B5FF5 /* SignInResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResult.swift; sourceTree = "<group>"; };
 		7B21B44F27BB2CDC006B5FF5 /* NError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NError.swift; sourceTree = "<group>"; };
 		7B21B45127BC6766006B5FF5 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
+		7B21B45427BC6EFD006B5FF5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		7B21B45627BC6F07006B5FF5 /* SingUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewModel.swift; sourceTree = "<group>"; };
 		7BD2F3A527B7B72F00E4CF6F /* MainSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewController.swift; sourceTree = "<group>"; };
 		7BD2F3A727B7B7B600E4CF6F /* MainSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewModel.swift; sourceTree = "<group>"; };
 		7BD2F3A927B7D77B00E4CF6F /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +229,25 @@
 			path = SignIn;
 			sourceTree = "<group>";
 		};
+		7B21B45327BC6EF0006B5FF5 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				7BD2F3C227BA522100E4CF6F /* SignInViewController.swift */,
+				7BD2F3C427BA522A00E4CF6F /* SignInViewModel.swift */,
+				7B21B45127BC6766006B5FF5 /* SignInModel.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		7B21B45827BC6F73006B5FF5 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				7B21B45427BC6EFD006B5FF5 /* SignUpViewController.swift */,
+				7B21B45627BC6F07006B5FF5 /* SingUpViewModel.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
 		7BD2F3A427B7B72100E4CF6F /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,9 +291,8 @@
 		7BD2F3C127BA521200E4CF6F /* AuthScene */ = {
 			isa = PBXGroup;
 			children = (
-				7BD2F3C227BA522100E4CF6F /* SignInViewController.swift */,
-				7BD2F3C427BA522A00E4CF6F /* SignInViewModel.swift */,
-				7B21B45127BC6766006B5FF5 /* SignInModel.swift */,
+				7B21B45327BC6EF0006B5FF5 /* SignIn */,
+				7B21B45827BC6F73006B5FF5 /* SignUp */,
 			);
 			path = AuthScene;
 			sourceTree = "<group>";
@@ -512,8 +534,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B21B45527BC6EFD006B5FF5 /* SignUpViewController.swift in Sources */,
 				7BD2F3B327B7DF6C00E4CF6F /* SideMenuItems.swift in Sources */,
 				7BD2F3BE27BA47FB00E4CF6F /* GalleryListViewController.swift in Sources */,
+				7B21B45727BC6F07006B5FF5 /* SingUpViewModel.swift in Sources */,
 				7BD2F3AA27B7D77B00E4CF6F /* SideMenuViewController.swift in Sources */,
 				7BD2F3A827B7B7B600E4CF6F /* MainSceneViewModel.swift in Sources */,
 				6B0E9DC727524CCF00B0E946 /* AppDelegate.swift in Sources */,

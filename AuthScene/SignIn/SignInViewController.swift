@@ -18,6 +18,7 @@ class SignInViewController: UIViewController {
     let pwTextView = UITextField()
     
     let submitButton = UIButton()
+    let signUpButton = UIButton()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -42,6 +43,13 @@ class SignInViewController: UIViewController {
             .emit(to: self.rx.setAlert)
             .disposed(by: disposeBag)
         
+        viewModel.signUp
+            .drive(onNext: {
+                let nextScene = SignUpViewController()
+                nextScene.bind(viewModel: SignUpViewModel())
+                self.navigationController?.pushViewController(nextScene, animated: true)
+            }).disposed(by: disposeBag)
+        
         idTextView.rx.text
             .bind(to: viewModel.idInfo)
             .disposed(by: disposeBag)
@@ -53,29 +61,36 @@ class SignInViewController: UIViewController {
         submitButton.rx.tap
             .bind(to: viewModel.submitButtonTapped)
             .disposed(by: disposeBag)
+        
+        signUpButton.rx.tap
+            .bind(to: viewModel.signUpButtonTapped)
+            .disposed(by: disposeBag)
     }
     
     private func attribute() {
         title = "SignIn"
         view.backgroundColor = .systemBackground
         
-        idTextView.layer.cornerRadius = 5
-        idTextView.layer.borderWidth = 0.5
+        idTextView.borderStyle = .roundedRect
         idTextView.placeholder = "아이디"
         
-        pwTextView.layer.cornerRadius = 5
-        pwTextView.layer.borderWidth = 0.5
+        pwTextView.borderStyle = .roundedRect
         pwTextView.placeholder = "비밀번호"
         pwTextView.isSecureTextEntry = true
         
         submitButton.setTitle("로그인", for: .normal)
         submitButton.backgroundColor = .systemBlue
+        
+        signUpButton.setTitle("회원 가입", for: .normal)
+        signUpButton.setTitleColor(.systemGray, for: .normal)
+        signUpButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
     }
     
     private func layout() {
         view.addSubview(idTextView)
         view.addSubview(pwTextView)
         view.addSubview(submitButton)
+        view.addSubview(signUpButton)
         
         idTextView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(80)
@@ -91,6 +106,11 @@ class SignInViewController: UIViewController {
 
         submitButton.snp.makeConstraints {
             $0.top.equalTo(pwTextView.snp.bottom).offset(50)
+            $0.leading.trailing.equalToSuperview().inset(40)
+        }
+        
+        signUpButton.snp.makeConstraints {
+            $0.top.equalTo(submitButton.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(40)
         }
     }
