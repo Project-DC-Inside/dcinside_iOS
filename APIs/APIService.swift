@@ -10,32 +10,9 @@ import Alamofire
 import RxSwift
 import RxAlamofire
 
-enum StatusCode {
-    case success
-    case redirection
-    case badRequest
-    case serverError
-    case error
-    
-    init(statusCode: Int) {
-        switch statusCode {
-        case 200..<300:
-            self = .success
-        case 300..<400:
-            self = .redirection
-        case 400..<500:
-            self = .badRequest
-        case 500..<600:
-            self = .serverError
-        default:
-            self = .error
-        }
-    }
-}
 // API Service Enumerate 수정 필요함
 enum NetworkError:Error {
     case badURL
-    case serverError
     case decodeError
 }
 
@@ -53,21 +30,19 @@ class APIService {
     
     func SignInAPI(signIn: SignInInfo) -> Observable<Result<SignInResult, NetworkError>> {
         return Observable<Result<SignInResult, NetworkError>>.create { observer in
-            AF.request(self.baseURL + "/api/v1/auth/signin", method: .post, parameters: signIn, encoder: JSONParameterEncoder.default).responseJSON { response in
+            AF.request(self.baseURL + "/api/v1/auth/signin", method: .post, parameters: signIn, encoder: JSONParameterEncoder.default)
+                .validate(statusCode: 200..<300).responseJSON { response in
                 guard let data = response.data else { return }
-                guard let res = response.response else { return }
-                let statusCode = res.statusCode
                 switch response.result {
                 case .success:
                     do {
                         let signInResult = try JSONDecoder().decode(SignInResult.self, from: data)
                         observer.onNext(.success(signInResult))
                     }catch {
-                        print("DECODEERR")
-                        observer.onError(NetworkError.badURL)
+                        observer.onNext(.failure(.decodeError))
                     }
+                    
                 case .failure:
-                    print("BAD")
                     observer.onNext(.failure(.badURL))
                 }
             }
