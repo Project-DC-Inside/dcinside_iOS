@@ -6,12 +6,19 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 import UIKit
 // 비즈니스 로직을 처리해주자.
 
 typealias LabelTextwithColor = (String, UIColor)
 
 struct SignUpModel {
+    // model -> ViewModel
+    
+    // viewModel -> model
+    
+    
     func idChecker(id: String) -> LabelTextwithColor {
         switch id.count {
         case 0...0:
@@ -58,5 +65,14 @@ struct SignUpModel {
         let emailValid = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
             
         return emailValid.evaluate(with: email)
+    }
+    
+    func setAlert(action: Result<SignUpResult, NetworkError> ) -> Alert {
+        switch action {
+        case .success(let _):
+            return (title: "성공", message: "성공했습니다!!")
+        default:
+            return (title: "실퓨ㅐ", message: "가입 실패!")
+        }        
     }
 }

@@ -49,14 +49,8 @@ class SignUpViewController: UIViewController {
     }
     
     func bind(viewModel: SignUpViewModel) {
-//        RxKeyboard.instance.visibleHeight
-//            .skip(1)
-//            .drive(onNext: { height in
-//                print(height)
-//            })
-//            .disposed(by: disposeBag)
-//
         idTextField.rx.text
+            .orEmpty
             .bind(to: viewModel.idText)
             .disposed(by: disposeBag)
             
@@ -68,6 +62,7 @@ class SignUpViewController: UIViewController {
             .disposed(by: disposeBag)
         
         nickNameTextField.rx.text
+            .orEmpty
             .bind(to: viewModel.nickNameText)
             .disposed(by: disposeBag)
         
@@ -79,10 +74,12 @@ class SignUpViewController: UIViewController {
             .disposed(by: disposeBag)
         
         passwordTextField.rx.text
+            .orEmpty
             .bind(to: viewModel.passwordText)
             .disposed(by: disposeBag)
         
         rePasswordTextField.rx.text
+            .orEmpty
             .bind(to: viewModel.rePasswordText)
             .disposed(by: disposeBag)
         
@@ -93,6 +90,7 @@ class SignUpViewController: UIViewController {
             }).disposed(by: disposeBag)
         
         emailTextField.rx.text
+            .orEmpty
             .bind(to: viewModel.emailText)
             .disposed(by: disposeBag)
         
@@ -100,20 +98,27 @@ class SignUpViewController: UIViewController {
             .bind(to: viewModel.emailCertiBtn)
             .disposed(by: disposeBag)
         
-        viewModel.emailCert
-            .drive(onNext: {
-                UIView.animate(withDuration: 1) {
-                    self.certiNumb.alpha = 1
-                    self.signUpButton.alpha = 1
-                    self.signUpButton.isEnabled = true
-                }
-            })
+        viewModel.submitChecker
+            .emit(to: signUpButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
         signUpButton.rx.tap
             .bind(to: viewModel.signUpSubmit)
             .disposed(by: disposeBag)
         
+        viewModel.submitResult
+            .emit(to: self.rx.setAlert)
+            .disposed(by: disposeBag)
+        
+        viewModel.emailCerti
+            .drive(onNext: {
+                print($0)
+                UIView.animate(withDuration: 1, delay: 0) {
+                    self.certiNumb.layer.opacity = 1
+                    self.signUpButton.layer.opacity = 1
+                }
+            })
+            .disposed(by: disposeBag)
     }
     
     private func attribute() {
@@ -154,7 +159,6 @@ class SignUpViewController: UIViewController {
         certiNumb.alpha = 0
         
         signUpButton.setTitle("가입하기", for: .normal)
-        signUpButton.isEnabled = false
         signUpButton.layer.opacity = 0
         signUpButton.backgroundColor = UIColor.systemBlue
         signUpButton.titleLabel?.textColor = .white
@@ -271,3 +275,16 @@ class SignUpViewController: UIViewController {
         }
     }
 }
+
+extension Reactive where Base:SignUpViewController {
+    var setAlert: Binder<Alert> {
+        return Binder(base) { base, data in
+            let alertController = UIAlertController(title: data.title, message: data.message, preferredStyle: .alert)
+            let alert = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+            alertController.addAction(alert)
+            base.present(alertController, animated: true, completion: nil)
+        }
+    }
+}
+
+
