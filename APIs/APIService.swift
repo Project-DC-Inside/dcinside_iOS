@@ -37,22 +37,50 @@ class APIService {
                 case .success:
                     do {
                         let signInResult = try JSONDecoder().decode(SignInResult.self, from: data)
+                        //print(signInResult)
                         observer.onNext(.success(signInResult))
+                        observer.onCompleted()
                     }catch {
                         observer.onNext(.failure(.decodeError))
+                        observer.onCompleted()
                     }
                     
                 case .failure:
                     observer.onNext(.failure(.badURL))
+                    observer.onCompleted()
                 }
             }
-            observer.onCompleted()
             return Disposables.create()
         }
     }
     
-    //func SignUpAPI(signUp: Sign)
-
+    func SignUpAPI(signUp: SignUpInfo) -> Observable<Result<SignUpResult, NetworkError>> {
+        return Observable<Result<SignUpResult, NetworkError>>.create { observer in
+            AF.request(self.baseURL + "/api/v1/auth/signup", method: .post, parameters: signUp, encoder: JSONParameterEncoder.default)
+                .validate(statusCode: 200..<300).responseJSON { response in
+                    guard let data = response.data else { return }
+                    switch response.result {
+                    case .success:
+                        do {
+                            let signUpResult = try JSONDecoder().decode(SignUpResult.self, from: data)
+                            print(signUpResult)
+                            observer.onNext(.success(signUpResult))
+                            observer.onCompleted()
+                        }catch {
+                            print("Decode Err")
+                            observer.onNext(.failure(.decodeError))
+                            observer.onCompleted()
+                        }
+                    case .failure:
+                        print("fail")
+                        observer.onNext(.failure(.badURL))
+                        observer.onCompleted()
+                    }
+            }
+            return Disposables.create()
+        }
+    }
+        
 //
 //    func SingInAPI(singin: Login, compleition: @escaping (Result<LoginResponse, NetworkError>) -> Void) {
 //        AF.request(baseURL + "/api/v1/auth/signin", method: .post, parameters: singin, encoder: JSONParameterEncoder.default).responseJSON { response in
