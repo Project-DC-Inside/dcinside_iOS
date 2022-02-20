@@ -11,11 +11,13 @@ import RxSwift
 import SnapKit
 
 class GalleryListViewController: UIViewController {
+    let viewModel = GalleryListViewModel()
     let galleryListTable = UITableView()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
+        bind()
         attribute()
         layout()
     }
@@ -24,7 +26,7 @@ class GalleryListViewController: UIViewController {
         fatalError("GalleryList Error")
     }
     
-    func bind(_ viewModel: GalleryListViewModel){
+    func bind(){
         
     }
     
@@ -34,6 +36,8 @@ class GalleryListViewController: UIViewController {
     }
     
     private func layout() {
+        view.addSubview(galleryListTable)
+        
         galleryListTable.snp.makeConstraints {
             $0.leading.trailing.top.bottom.equalTo(view.safeAreaLayoutGuide)
         }

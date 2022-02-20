@@ -10,5 +10,11 @@ import RxSwift
 import RxCocoa
 
 struct GalleryListViewModel {
-    
+    let disposeBag = DisposeBag()
+    init() {
+        APIService.shared.fetchGalleryList().subscribe(onNext: {
+            print($0)
+        })
+            .disposed(by: disposeBag)
+    }
 }

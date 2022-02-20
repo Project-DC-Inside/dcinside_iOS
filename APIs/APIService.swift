@@ -80,6 +80,34 @@ class APIService {
             return Disposables.create()
         }
     }
+    
+    func fetchGalleryList() -> Observable<Result<[Gallery], NetworkError>> {
+        return Observable<Result<[Gallery], NetworkError>>.create { observer in
+            AF.request(self.baseURL + "/api/v1/galleries", method: .get, parameters: nil).validate(statusCode: 200..<300).responseJSON { response in
+                guard let data = response.data else { return }
+                switch response.result {
+                case .success:
+                    do {
+                        let galleryList = try JSONDecoder().decode(GalleryList.self, from: data)
+                        print(galleryList)
+                        if let res = galleryList.result {
+                            observer.onNext(.success(res))
+                        }
+                        observer.onCompleted()
+                    }catch {
+                        print("decode Err")
+                        observer.onNext(.failure(.decodeError))
+                        observer.onCompleted()
+                    }
+                case .failure:
+                    observer.onNext(.failure(.badURL))
+                    observer.onCompleted()
+                }
+            }
+            
+            return Disposables.create()
+        }
+    }
         
 //
 //    func SingInAPI(singin: Login, compleition: @escaping (Result<LoginResponse, NetworkError>) -> Void) {

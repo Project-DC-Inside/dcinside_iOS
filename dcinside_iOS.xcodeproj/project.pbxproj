@@ -28,6 +28,7 @@
 		7B87D08227C2255F00572DD9 /* ManagingSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D08127C2255F00572DD9 /* ManagingSceneViewController.swift */; };
 		7B87D08527C225CB00572DD9 /* VisitListSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D08427C225CB00572DD9 /* VisitListSceneViewController.swift */; };
 		7B87D08827C2262700572DD9 /* ViewedSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D08727C2262700572DD9 /* ViewedSceneViewController.swift */; };
+		7B87D08A27C2690600572DD9 /* GalleryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D08927C2690600572DD9 /* GalleryList.swift */; };
 		7BD2F3A627B7B72F00E4CF6F /* MainSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A527B7B72F00E4CF6F /* MainSceneViewController.swift */; };
 		7BD2F3A827B7B7B600E4CF6F /* MainSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A727B7B7B600E4CF6F /* MainSceneViewModel.swift */; };
 		7BD2F3AA27B7D77B00E4CF6F /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A927B7D77B00E4CF6F /* SideMenuViewController.swift */; };
@@ -94,6 +95,7 @@
 		7B87D08127C2255F00572DD9 /* ManagingSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagingSceneViewController.swift; sourceTree = "<group>"; };
 		7B87D08427C225CB00572DD9 /* VisitListSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitListSceneViewController.swift; sourceTree = "<group>"; };
 		7B87D08727C2262700572DD9 /* ViewedSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewedSceneViewController.swift; sourceTree = "<group>"; };
+		7B87D08927C2690600572DD9 /* GalleryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryList.swift; sourceTree = "<group>"; };
 		7BD2F3A527B7B72F00E4CF6F /* MainSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewController.swift; sourceTree = "<group>"; };
 		7BD2F3A727B7B7B600E4CF6F /* MainSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewModel.swift; sourceTree = "<group>"; };
 		7BD2F3A927B7D77B00E4CF6F /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				7B21B44E27BB2CAD006B5FF5 /* SignIn */,
 				7B21B46E27BD3230006B5FF5 /* SignUpInfo.swift */,
 				7B21B47027BE78DF006B5FF5 /* SignUpResult.swift */,
+				7B87D08927C2690600572DD9 /* GalleryList.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B87D08A27C2690600572DD9 /* GalleryList.swift in Sources */,
 				7B21B45527BC6EFD006B5FF5 /* SignUpViewController.swift in Sources */,
 				7BD2F3B327B7DF6C00E4CF6F /* SideMenuItems.swift in Sources */,
 				7BD2F3BE27BA47FB00E4CF6F /* GalleryListViewController.swift in Sources */,
