@@ -13,6 +13,7 @@ struct SideMenuViewModel {
     
     // view -> ViewModel
     let push: Driver<SignInViewModel>
+    let findNickName: Observable<String?>
     
     // ViewModel -> View
     let cellData: Driver<[String]>
@@ -40,5 +41,6 @@ struct SideMenuViewModel {
             }
             .asDriver(onErrorDriveWith: .empty())
         
+        self.findNickName = KeyChain.shared.getInfo(key: KeyChain.nickName)
     }
 }

@@ -54,6 +54,16 @@ class SideMenuViewController : UIViewController {
                 viewController.bind(viewModel)                
                 self.show(viewController, sender: nil)
             })
+            .disposed(by: disposeBag)
+        
+        viewModel.findNickName
+            .subscribe(onNext: {
+                self.nicknameInfo.text = $0
+            }, onError: { error in
+                print(error)
+                self.nicknameInfo.text = "로그인 하세요!"
+            })
+            .disposed(by: disposeBag)
     }
     
     
@@ -62,12 +72,14 @@ class SideMenuViewController : UIViewController {
         
         nicknameInfo.textAlignment = .center
         nicknameInfo.numberOfLines = 0
+        nicknameInfo.font = .systemFont(ofSize: 12)
         
         noticeButton.setImage(UIImage(systemName: "bell.fill"), for: .normal)
         
         settingButton.setImage(UIImage(systemName: "gearshape.fill"), for: .normal)
         
-        logo.text = "DF"
+        logo.text = "Deep Forest"
+        logo.font = .systemFont(ofSize: 13)
         logo.textAlignment = .center
         
         view.backgroundColor = .white
@@ -89,7 +101,7 @@ class SideMenuViewController : UIViewController {
         lazy var logStack = UIStackView(arrangedSubviews: [blankLabel4, signInButton])
         lazy var stackView = UIStackView(arrangedSubviews: [nicknameInfo, logStack])
         lazy var btnView = UIStackView(arrangedSubviews: [settingButton, noticeButton])
-        lazy var stackTop = UIStackView(arrangedSubviews: [logo, blankLabel, btnView])
+        lazy var stackTop = UIStackView(arrangedSubviews: [logo, btnView])
         
         lazy var HeaderStack = UIStackView(arrangedSubviews: [stackTop, stackView])
         
@@ -116,7 +128,7 @@ class SideMenuViewController : UIViewController {
         }
         
         tableView.snp.makeConstraints {
-            $0.top.equalTo(stackView.snp.bottom).offset(5)
+            $0.top.equalTo(stackView.snp.bottom).offset(20)
             $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide).inset(10)
         }
         
