@@ -1,0 +1,6 @@
+framework module Pods_dcinside_iOSTests {
+  umbrella header "Pods-dcinside_iOSTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

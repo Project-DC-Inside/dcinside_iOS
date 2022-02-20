@@ -29,6 +29,7 @@
 		7B87D08527C225CB00572DD9 /* VisitListSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D08427C225CB00572DD9 /* VisitListSceneViewController.swift */; };
 		7B87D08827C2262700572DD9 /* ViewedSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D08727C2262700572DD9 /* ViewedSceneViewController.swift */; };
 		7B87D08A27C2690600572DD9 /* GalleryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D08927C2690600572DD9 /* GalleryList.swift */; };
+		7B87D08C27C2718500572DD9 /* GalleryListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D08B27C2718500572DD9 /* GalleryListTableCell.swift */; };
 		7BD2F3A627B7B72F00E4CF6F /* MainSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A527B7B72F00E4CF6F /* MainSceneViewController.swift */; };
 		7BD2F3A827B7B7B600E4CF6F /* MainSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A727B7B7B600E4CF6F /* MainSceneViewModel.swift */; };
 		7BD2F3AA27B7D77B00E4CF6F /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A927B7D77B00E4CF6F /* SideMenuViewController.swift */; };
@@ -96,6 +97,7 @@
 		7B87D08427C225CB00572DD9 /* VisitListSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitListSceneViewController.swift; sourceTree = "<group>"; };
 		7B87D08727C2262700572DD9 /* ViewedSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewedSceneViewController.swift; sourceTree = "<group>"; };
 		7B87D08927C2690600572DD9 /* GalleryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryList.swift; sourceTree = "<group>"; };
+		7B87D08B27C2718500572DD9 /* GalleryListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryListTableCell.swift; sourceTree = "<group>"; };
 		7BD2F3A527B7B72F00E4CF6F /* MainSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewController.swift; sourceTree = "<group>"; };
 		7BD2F3A727B7B7B600E4CF6F /* MainSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewModel.swift; sourceTree = "<group>"; };
 		7BD2F3A927B7D77B00E4CF6F /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 			children = (
 				7BD2F3BD27BA47FB00E4CF6F /* GalleryListViewController.swift */,
 				7BD2F3BF27BA480500E4CF6F /* GalleryListViewModel.swift */,
+				7B87D08B27C2718500572DD9 /* GalleryListTableCell.swift */,
 			);
 			path = GalleryListScene;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				7BD2F3AC27B7DBD800E4CF6F /* sideMenuNavigation.swift in Sources */,
 				6B0E9DC927524CCF00B0E946 /* SceneDelegate.swift in Sources */,
 				7B21B47127BE78DF006B5FF5 /* SignUpResult.swift in Sources */,
+				7B87D08C27C2718500572DD9 /* GalleryListTableCell.swift in Sources */,
 				723830BF275A2B97006B0F49 /* APIService.swift in Sources */,
 				7BD2F3AF27B7DF0B00E4CF6F /* SideMenuViewModel.swift in Sources */,
 				726EA7AD275A534500EB2D83 /* KeyChain.swift in Sources */,

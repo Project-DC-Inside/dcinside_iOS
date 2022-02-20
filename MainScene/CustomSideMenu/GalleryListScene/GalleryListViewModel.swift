@@ -11,10 +11,21 @@ import RxCocoa
 
 struct GalleryListViewModel {
     let disposeBag = DisposeBag()
+    // viewModel -> view
+    let cellData: Driver<[Gallery]>
+    
+    // view -> viewModel
+    
     init() {
-        APIService.shared.fetchGalleryList().subscribe(onNext: {
-            print($0)
-        })
-            .disposed(by: disposeBag)
+        cellData = APIService.shared.fetchGalleryList()
+            .map {
+                switch $0 {
+                case .success(let data):
+                    return data
+                case .failure:
+                    return []
+                }
+            }
+            .asDriver(onErrorDriveWith: .empty())
     }
 }

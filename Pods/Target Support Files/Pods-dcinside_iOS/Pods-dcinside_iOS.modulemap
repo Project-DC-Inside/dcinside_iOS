@@ -1,0 +1,6 @@
+framework module Pods_dcinside_iOS {
+  umbrella header "Pods-dcinside_iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
