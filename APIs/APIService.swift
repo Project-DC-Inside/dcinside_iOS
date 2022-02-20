@@ -47,7 +47,7 @@ class APIService {
                     
                 case .failure:
                     observer.onNext(.failure(.badURL))
-                    observer.onCompleted()
+                    observer.onError(NetworkError.badURL)
                 }
             }
             return Disposables.create()
