@@ -28,9 +28,30 @@ class APIService {
     
     private init() {} // 다른곳에서 초기화하지 못하게 해야해서..
     
+    private func URLGenerate(path : String, queryItems: [String: String]?) -> URLComponents {
+        var components = URLComponents()
+        
+        let scheme = "http"
+        let host = "52.78.99.238"
+        let port = 8080
+        
+        components.scheme = scheme
+        components.host = host
+        components.port = port
+        components.path = path
+        guard let queries = queryItems else { return components }
+        
+        components.queryItems = []
+        for item in queries {
+            components.queryItems?.append(URLQueryItem(name: item.key, value: item.value))
+        }
+        
+        return components
+    }
+    
     func SignInAPI(signIn: SignInInfo) -> Observable<Result<SignInResult, NetworkError>> {
         return Observable<Result<SignInResult, NetworkError>>.create { observer in
-            AF.request(self.baseURL + "/api/v1/auth/signin", method: .post, parameters: signIn, encoder: JSONParameterEncoder.default)
+            AF.request(self.URLGenerate(path: "/api/v1/auth/signin", queryItems: nil).url!, method: .post, parameters: signIn, encoder: JSONParameterEncoder.default)
                 .validate(statusCode: 200..<300).responseJSON { response in
                 guard let data = response.data else { return }
                 switch response.result {
@@ -56,7 +77,7 @@ class APIService {
     
     func SignUpAPI(signUp: SignUpInfo) -> Observable<Result<SignUpResult, NetworkError>> {
         return Observable<Result<SignUpResult, NetworkError>>.create { observer in
-            AF.request(self.baseURL + "/api/v1/auth/signup", method: .post, parameters: signUp, encoder: JSONParameterEncoder.default)
+            AF.request(self.URLGenerate(path: "/api/v1/auth/signup", queryItems: nil).url!, method: .post, parameters: signUp, encoder: JSONParameterEncoder.default)
                 .validate(statusCode: 200..<300).responseJSON { response in
                     guard let data = response.data else { return }
                     switch response.result {
@@ -83,8 +104,9 @@ class APIService {
     
     func fetchGalleryList() -> Observable<Result<[Gallery], NetworkError>> {
         return Observable<Result<[Gallery], NetworkError>>.create { observer in
-            AF.request(self.baseURL + "/api/v1/galleries", method: .get, parameters: nil).validate(statusCode: 200..<300).responseJSON { response in
+            AF.request(self.URLGenerate(path: "/api/v1/galleries", queryItems: ["type": "MAJOR"]).url!, method: .get, parameters: nil).validate(statusCode: 200..<300).responseJSON { response in
                 guard let data = response.data else { return }
+                print(response)
                 switch response.result {
                 case .success:
                     do {
