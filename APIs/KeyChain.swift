@@ -13,8 +13,16 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+enum KeyChainError:Error {
+    case notFound
+    case Exist
+}
+
 class KeyChain {
     static let shared = KeyChain()
+    static let token = "Token"
+    static let refresh = "refreshToken"
+    static let nickName = "nickName"
     
     func addItem(key: String, value: Any) -> Bool {
         let addQuery: [CFString: Any] = [kSecClass: kSecClassGenericPassword,
@@ -33,6 +41,29 @@ class KeyChain {
         }()
         
         return result
+    }
+    
+    func getInfo(key: String) -> Observable<String?> {
+        let query: [CFString: Any] = [kSecClass: kSecClassGenericPassword,
+                                kSecAttrAccount: key,
+                           kSecReturnAttributes: true,
+                                 kSecReturnData: true]
+        
+        var item: CFTypeRef?
+        let result = SecItemCopyMatching(query as CFDictionary, &item)
+        
+        if result == errSecSuccess {
+            if let existingItem = item as? [String: Any],
+               let data = existingItem[kSecValueData as String] as? Data,
+               let password = String(data: data, encoding: .utf8) {
+                return Observable.create { observe in
+                    observe.onNext(password)
+                    observe.onCompleted()
+                    return Disposables.create()
+                }
+            }
+        }
+        return Observable.create{ observe in observe.onError(KeyChainError.notFound); return Disposables.create()}
     }
     
     func getItem(key: Any) -> Any? {
