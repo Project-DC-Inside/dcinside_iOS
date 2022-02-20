@@ -37,18 +37,21 @@ class SignUpViewController: UIViewController {
     let certiNumb = UITextField()
     let signUpButton = UIButton()
     
+    let viewModel: SignUpViewModel = SignUpViewModel()
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         attribute()
         layout()
+        bind()
     }
     
     required init?(coder: NSCoder) {
         fatalError("SignUpViewController Error")
     }
     
-    func bind(viewModel: SignUpViewModel) {
+    func bind() {
         idTextField.rx.text
             .orEmpty
             .bind(to: viewModel.idText)
@@ -280,7 +283,7 @@ extension Reactive where Base:SignUpViewController {
     var setAlert: Binder<Alert> {
         return Binder(base) { base, data in
             let alertController = UIAlertController(title: data.title, message: data.message, preferredStyle: .alert)
-            let alert = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+            let alert = UIAlertAction(title: "확인", style: .cancel)
             alertController.addAction(alert)
             base.present(alertController, animated: true, completion: nil)
         }

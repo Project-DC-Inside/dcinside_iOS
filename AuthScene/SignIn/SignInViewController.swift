@@ -46,7 +46,7 @@ class SignInViewController: UIViewController {
         viewModel.signUp
             .drive(onNext: {
                 let nextScene = SignUpViewController()
-                nextScene.bind(viewModel: SignUpViewModel())
+                //nextScene.bind(viewModel: SignUpViewModel())
                 self.navigationController?.pushViewController(nextScene, animated: true)
             }).disposed(by: disposeBag)
         
