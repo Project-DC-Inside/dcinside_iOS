@@ -25,9 +25,9 @@ class SideMenuViewController : UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        bind(SideMenuViewModel())
         attribute()
         layout()
+        bind(SideMenuViewModel())
     }
     
     required init?(coder: NSCoder) {
@@ -45,11 +45,24 @@ class SideMenuViewController : UIViewController {
             .disposed(by: disposeBag)
 
         signInButton.rx.tap
+            .map { Void -> Bool in
+                if self.signInButton.image(for: .normal) == UIImage(systemName: "power.circle") {
+                    return true
+                }else {
+                    return false
+                    
+                }
+            }
             .bind(to: viewModel.signInButtonTapped)
             .disposed(by: disposeBag)
         
         viewModel.push
             .drive(onNext: { viewModel in
+                guard let viewModel = viewModel else {
+                    self.nicknameInfo.text = "로그인 하세요!"
+                    self.signInButton.setImage(UIImage(systemName: "power.circle"), for: .normal)
+                    return
+                }
                 let viewController = SignInViewController()
                 viewController.bind(viewModel)                
                 self.show(viewController, sender: nil)
@@ -59,11 +72,35 @@ class SideMenuViewController : UIViewController {
         viewModel.findNickName
             .subscribe(onNext: {
                 self.nicknameInfo.text = $0
+                self.signInButton.setImage(UIImage(systemName: "power.circle.fill"), for: .normal)
             }, onError: { error in
                 print(error)
                 self.nicknameInfo.text = "로그인 하세요!"
             })
             .disposed(by: disposeBag)
+        
+        
+        
+        tableView.rx.itemSelected
+            .bind(to: viewModel.selectTableItems)
+            .disposed(by: disposeBag)
+        
+        viewModel.nextSceneInfo.drive(onNext: {
+            switch $0{
+            case .galleryListScene:
+                let galleryScene = GalleryListViewController()
+                self.navigationController?.pushViewController(galleryScene, animated: true)
+            case .managingScene:
+                let managingScene = ManagingSceneViewController()
+                self.navigationController?.pushViewController(managingScene, animated: true)
+            case .visitListScene:
+                let visitListScene = VisitListSceneViewController()
+                self.navigationController?.pushViewController(visitListScene, animated: true)
+            default:
+                let viewedScene = ViewedSceneViewController()
+                self.navigationController?.pushViewController(viewedScene, animated: true)
+            }
+        }).disposed(by: disposeBag)
     }
     
     

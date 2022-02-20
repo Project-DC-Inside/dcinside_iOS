@@ -16,7 +16,7 @@ class SideMenuNavigation: SideMenuNavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.presentationStyle = .menuSlideIn
-        self.menuWidth = self.view.frame.width * 0.5
+        self.menuWidth = self.view.frame.width * 0.7
         self.leftSide = true
     }
 }
