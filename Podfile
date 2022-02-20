@@ -12,6 +12,7 @@ target 'dcinside_iOS' do
   pod 'SideMenu'
   pod 'RxAlamofire'
   pod 'RxKeyboard'
+  pod 'RxDataSources'
   # Pods for dcinside_iOS
 
   target 'dcinside_iOSTests' do
