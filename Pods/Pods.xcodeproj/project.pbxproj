@@ -1027,11 +1027,11 @@
 		9BA2349E611E9B43902948787538B513 /* SchedulerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SchedulerType.swift; path = RxSwift/SchedulerType.swift; sourceTree = "<group>"; };
 		9BDB89BA61E08400CB9C76283427EFA9 /* Pods-dcinside_iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-dcinside_iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9C99A0111C4F61337DDA4A0E8F3B7975 /* Single.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Single.swift; path = RxSwift/Traits/PrimitiveSequence/Single.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E054E5BB8CA7F69BA13ECF8A35E295C /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = RxSwift/Observables/Error.swift; sourceTree = "<group>"; };
 		9E42BF84F612D26AC97C6FF96ADD3A43 /* Timeout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeout.swift; path = RxSwift/Observables/Timeout.swift; sourceTree = "<group>"; };
 		9F2B73D8FAC07E1521FFE7A10765591D /* ObserverType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObserverType.swift; path = RxSwift/ObserverType.swift; sourceTree = "<group>"; };
-		9F2C58667D537C7E9C4D6CF31560865F /* Pods-dcinside_iOS */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-dcinside_iOS"; path = Pods_dcinside_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F2C58667D537C7E9C4D6CF31560865F /* Pods_dcinside_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dcinside_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC01193892372143771B60E28895536 /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+IQKeyboardToolbar.swift"; path = "IQKeyboardManagerSwift/IQToolbar/IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
 		A05B40C2B978E1A8CF7BD238DE1FB7AB /* IQKeyboardManagerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-umbrella.h"; sourceTree = "<group>"; };
 		A082305A1540D58E15B3AC9609E70AAD /* IQTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextView.swift; path = IQKeyboardManagerSwift/IQTextView/IQTextView.swift; sourceTree = "<group>"; };
@@ -1369,7 +1369,6 @@
 				C16733A907C4DD858606F5B03FC8A531 /* Core */,
 				C0EA02A20F8F64155D498F8580D60147 /* Support Files */,
 			);
-			name = RxAlamofire;
 			path = RxAlamofire;
 			sourceTree = "<group>";
 		};
@@ -1488,7 +1487,6 @@
 				D39C6EB7A74AB25C10CB85C56EA0BC6B /* WKWebView+Rx.swift */,
 				E84A28781F794FA1C7EE77C277FE5A41 /* Support Files */,
 			);
-			name = RxCocoa;
 			path = RxCocoa;
 			sourceTree = "<group>";
 		};
@@ -1498,7 +1496,6 @@
 				1BEDADEFD2198DC5F5209B1A33F04078 /* RxKeyboard.swift */,
 				F30584D837130C281B265D0B59916DFD /* Support Files */,
 			);
-			name = RxKeyboard;
 			path = RxKeyboard;
 			sourceTree = "<group>";
 		};
@@ -1552,7 +1549,6 @@
 				CCE1AD4B5BCE398DCF9A797D3D408439 /* Utilities.swift */,
 				DD571BDFC500BF655BF5ECB29ABCCA87 /* Support Files */,
 			);
-			name = Differentiator;
 			path = Differentiator;
 			sourceTree = "<group>";
 		};
@@ -1575,7 +1571,6 @@
 				31CFF1353F12E5C42A47ADB2B9031701 /* UITableViewVibrantCell.swift */,
 				D4718AF2EC92ECC52C89E4CFA94C5122 /* Support Files */,
 			);
-			name = SideMenu;
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
@@ -1619,7 +1614,6 @@
 				9722E701DA68CCA1CC540EC495F5E357 /* Validation.swift */,
 				BD1C387B0B28F0FB0CBD437B7EF0E061 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -1677,7 +1671,6 @@
 				94E8229D9A5E664708866EF76D11DA01 /* ViewTransition.swift */,
 				F0E1F551D1B31099BF4C632A9AFFAB7C /* Support Files */,
 			);
-			name = RxDataSources;
 			path = RxDataSources;
 			sourceTree = "<group>";
 		};
@@ -1697,7 +1690,7 @@
 				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */,
 				D51C3D0C53D23B97B032E3BDD4F82C82 /* Differentiator */,
 				A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */,
-				9F2C58667D537C7E9C4D6CF31560865F /* Pods-dcinside_iOS */,
+				9F2C58667D537C7E9C4D6CF31560865F /* Pods_dcinside_iOS.framework */,
 				AE5974D996890496B19ED9470EA7B386 /* Pods-dcinside_iOS-dcinside_iOSUITests */,
 				11632FBA14AD477CE4F3CF5DEDB25191 /* Pods-dcinside_iOSTests */,
 				82F1475AA0F9C33F7EA4A1459305D2AB /* RxAlamofire */,
@@ -1740,7 +1733,6 @@
 				E235C84BE3C557FCC62C64F80B492B38 /* IQUIViewController+Additions.swift */,
 				9BB76A6AC78FE7BA74B453ADFAFE364B /* Support Files */,
 			);
-			name = IQKeyboardManagerSwift;
 			path = IQKeyboardManagerSwift;
 			sourceTree = "<group>";
 		};
@@ -1924,7 +1916,6 @@
 				F4C7CB1A38E520659B27DDFD9CA70C7E /* Zip+Collection.swift */,
 				69E7B17A8D66CAB6C9A11F037755C825 /* Support Files */,
 			);
-			name = RxSwift;
 			path = RxSwift;
 			sourceTree = "<group>";
 		};
@@ -2069,7 +2060,6 @@
 				F572C271AE25C788D04486D6CFC240A6 /* Utils.swift */,
 				CA0647C8813631290F4E75A44780DA4B /* Support Files */,
 			);
-			name = RxRelay;
 			path = RxRelay;
 			sourceTree = "<group>";
 		};
@@ -2174,7 +2164,6 @@
 				5771EC888FD7CEA44230C2AF6F3AA4E0 /* UILayoutSupport+Extensions.swift */,
 				B1C6EBF8E9A8CD59C04433ECC2D8D872 /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -2529,7 +2518,7 @@
 			);
 			name = "Pods-dcinside_iOS";
 			productName = Pods_dcinside_iOS;
-			productReference = 9F2C58667D537C7E9C4D6CF31560865F /* Pods-dcinside_iOS */;
+			productReference = 9F2C58667D537C7E9C4D6CF31560865F /* Pods_dcinside_iOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EA9EA43B3B503823EE36C60D9C8A865F /* RxSwift */ = {

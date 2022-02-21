@@ -15,7 +15,8 @@ import RxSwift
 class SideMenuViewController : UIViewController {
     let disposeBag = DisposeBag()
     
-    let tableView = UITableView()
+    let wrappTableView = UIView()
+    let tableView = UITableView(frame: .zero, style: .insetGrouped)
     let signInButton = UIButton()
     let nicknameInfo = UILabel()
     let noticeButton = UIButton()
@@ -87,8 +88,20 @@ class SideMenuViewController : UIViewController {
         
         viewModel.nextSceneInfo.drive(onNext: {
             switch $0{
-            case .galleryListScene:
+            case .majorGallery:
                 let galleryScene = GalleryListViewController()
+                let viewModel = GalleryListViewModel(gallery: "MAJOR")
+                galleryScene.bind(viewModel: viewModel)
+                self.navigationController?.pushViewController(galleryScene, animated: true)
+            case .minorGallery:
+                let galleryScene = GalleryListViewController()
+                let viewModel = GalleryListViewModel(gallery: "MINOR")
+                galleryScene.bind(viewModel: viewModel)
+                self.navigationController?.pushViewController(galleryScene, animated: true)
+            case .miniGallery:
+                let galleryScene = GalleryListViewController()
+                let viewModel = GalleryListViewModel(gallery: "MINI")
+                galleryScene.bind(viewModel: viewModel)
                 self.navigationController?.pushViewController(galleryScene, animated: true)
             case .managingScene:
                 let managingScene = ManagingSceneViewController()
@@ -107,7 +120,7 @@ class SideMenuViewController : UIViewController {
     private func attribute() {
         signInButton.setImage(UIImage(systemName: "power.circle"), for: .normal)
         
-        nicknameInfo.textAlignment = .center
+//        nicknameInfo.textAlignment = .center
         nicknameInfo.numberOfLines = 0
         nicknameInfo.font = .systemFont(ofSize: 12)
         
@@ -117,12 +130,11 @@ class SideMenuViewController : UIViewController {
         
         logo.text = "Deep Forest"
         logo.font = .systemFont(ofSize: 13)
-        logo.textAlignment = .center
         
         view.backgroundColor = .white
         
-        tableView.backgroundColor = .white
-        tableView.separatorStyle = .singleLine
+        tableView.backgroundColor = .systemBackground
+        tableView.separatorStyle = .none
         
         tableView.register(SideMenuCell.self, forCellReuseIdentifier: "SideMenuCell")
     }
@@ -135,21 +147,18 @@ class SideMenuViewController : UIViewController {
         lazy var blankLabel3 = UILabel()
         lazy var blankLabel4 = UILabel()
         
-        lazy var logStack = UIStackView(arrangedSubviews: [blankLabel4, signInButton])
-        lazy var stackView = UIStackView(arrangedSubviews: [nicknameInfo, logStack])
+        //lazy var logStack = UIStackView(arrangedSubviews: [blankLabel4, signInButton])
+        lazy var stackView = UIStackView(arrangedSubviews: [nicknameInfo, signInButton])
         lazy var btnView = UIStackView(arrangedSubviews: [settingButton, noticeButton])
         lazy var stackTop = UIStackView(arrangedSubviews: [logo, btnView])
         
         lazy var HeaderStack = UIStackView(arrangedSubviews: [stackTop, stackView])
         
         stackView.spacing = 4.0
-        stackView.distribution = .fillEqually
         
-        btnView.spacing = 0.0
-        btnView.distribution = .fillEqually
+        btnView.spacing = 10.0
         
         stackTop.spacing = 0.0
-        stackTop.distribution = .fillEqually
         
         HeaderStack.axis = .vertical
         
@@ -157,18 +166,44 @@ class SideMenuViewController : UIViewController {
         HeaderStack.distribution = .fillEqually
         
         view.addSubview(HeaderStack)
-        view.addSubview(tableView)
+        view.addSubview(wrappTableView)
         
         HeaderStack.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview()
             $0.top.equalTo(view.safeAreaLayoutGuide)
         }
         
-        tableView.snp.makeConstraints {
-            $0.top.equalTo(stackView.snp.bottom).offset(20)
-            $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide).inset(10)
+        wrappTableView.snp.makeConstraints {
+            $0.top.equalTo(HeaderStack.snp.bottom)
+            $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+        wrappTableView.addSubview(tableView)
+        
+        logo.snp.makeConstraints {
+            $0.leading.equalTo(stackTop.snp.leading).offset(10)
         }
         
+        nicknameInfo.snp.makeConstraints {
+            $0.leading.equalTo(stackTop.snp.leading).offset(10)
+        }
         
+        tableView.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
+        }
+        
+        settingButton.snp.makeConstraints {
+            $0.width.height.equalTo(stackTop.snp.height)
+        }
+        
+        noticeButton.snp.makeConstraints {
+            $0.width.height.equalTo(stackTop.snp.height)
+            $0.leading.equalTo(settingButton.snp.trailing).offset(20)
+        }
+        
+        signInButton.snp.makeConstraints {
+            $0.width.height.equalTo(stackView.snp.height)
+        }
     }
 }

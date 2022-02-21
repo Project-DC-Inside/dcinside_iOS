@@ -27,11 +27,12 @@ class GalleryListTableCell: UITableViewCell {
         self.addSubview(label)
         
         label.snp.makeConstraints {
-            $0.leading.top.bottom.equalToSuperview()
+            $0.leading.top.bottom.equalToSuperview().inset(10)
         }
     }
     
     private func attribute() {
         self.accessoryType = .disclosureIndicator
+        
     }
 }

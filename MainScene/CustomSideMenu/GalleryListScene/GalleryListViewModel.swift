@@ -13,11 +13,14 @@ struct GalleryListViewModel {
     let disposeBag = DisposeBag()
     // viewModel -> view
     let cellData: Driver<[Gallery]>
+    let buttonExist: Driver<Bool>
+    let actionAddGallery: Driver<String>
     
     // view -> viewModel
+    let addGallery = PublishRelay<Void>()
     
-    init() {
-        cellData = APIService.shared.fetchGalleryList()
+    init(gallery: String) {
+        cellData = APIService.shared.fetchGalleryList(type: gallery)
             .map {
                 switch $0 {
                 case .success(let data):
@@ -25,6 +28,21 @@ struct GalleryListViewModel {
                 case .failure:
                     return []
                 }
+            }
+            .asDriver(onErrorDriveWith: .empty())
+        
+        buttonExist = Observable.create { observer in
+            if gallery == "MAJOR" {
+                observer.onNext(false)
+            }
+            observer.onNext(true)
+            observer.onCompleted()
+            return Disposables.create()
+        }.asDriver(onErrorDriveWith: .empty())
+        
+        actionAddGallery = addGallery
+            .map{ _ -> String in
+                return gallery
             }
             .asDriver(onErrorDriveWith: .empty())
     }

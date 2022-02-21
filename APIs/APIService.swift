@@ -102,9 +102,9 @@ class APIService {
         }
     }
     
-    func fetchGalleryList() -> Observable<Result<[Gallery], NetworkError>> {
+    func fetchGalleryList(type: String) -> Observable<Result<[Gallery], NetworkError>> {
         return Observable<Result<[Gallery], NetworkError>>.create { observer in
-            AF.request(self.URLGenerate(path: "/api/v1/galleries", queryItems: ["type": "MAJOR"]).url!, method: .get, parameters: nil).validate(statusCode: 200..<300).responseJSON { response in
+            AF.request(self.URLGenerate(path: "/api/v1/galleries", queryItems: ["type": type]).url!, method: .get, parameters: nil).validate(statusCode: 200..<300).responseJSON { response in
                 guard let data = response.data else { return }
                 print(response)
                 switch response.result {
@@ -130,80 +130,7 @@ class APIService {
             return Disposables.create()
         }
     }
-        
-//
-//    func SingInAPI(singin: Login, compleition: @escaping (Result<LoginResponse, NetworkError>) -> Void) {
-//        AF.request(baseURL + "/api/v1/auth/signin", method: .post, parameters: singin, encoder: JSONParameterEncoder.default).responseJSON { response in
-//            switch response.result {
-//            case .success:
-//                guard let data = response.data else { return }
-//                do {
-//                    let decoder = JSONDecoder()
-//                    let json = try decoder.decode(LoginResponse.self, from: data)
-//                    compleition(.success(json))
-//                }catch{
-//                    print("Decode Error Occured")
-//                }
-//            case .failure:
-//                compleition(.failure(.badURL))
-//            }
-//        }
-//    }
-//
-//    func SignUpAPI(signUp: User, completion: @escaping (Result<Bool, NetworkError>)-> Void) {
-//        AF.request(baseURL + "/api/v1/auth/signup", method: .post, parameters: signUp, encoder: JSONParameterEncoder.default).responseJSON { response in
-//            switch response.result {
-//            case .success:
-//                guard let data = response.data else { return }
-//                do {
-//                    let decoder = JSONDecoder()
-//                    let json = try decoder.decode(SignUpResponse.self, from: data)
-//                    guard let isSuccess = json.success else { return }
-//                    completion(.success(isSuccess))
-//                }catch {
-//                    print("Decode Error Occured")
-//                }
-//            case .failure:
-//                completion(.failure(.badURL))
-//            }
-//        }
-//    }
-//
-//    func DecodeToken()-> TokenInfo? {
-//        let decoder = PropertyListDecoder()
-//        guard let encodedToken = UserDefaults.standard.object(forKey: "token") as? Data else { return nil }
-//        do {
-//            let token = try? decoder.decode(TokenInfo.self, from: encodedToken)
-//            return token
-//        }catch {
-//            return nil
-//        }
-//    }
-//
-//    func RefreshAPI(completion: @escaping (Result<LoginResponse, NetworkError>)-> Void) {
-//        print("REFRESH!!")
-//        guard let token = DecodeToken() else { return }
-//        print("TK",token)
-//        let reissueToken = refreshToken(accessToken: token.accessToken, refreshToken: token.refreshToken)
-//        AF.request(baseURL + "/api/v1/auth/reissue", method: .post, parameters: reissueToken, encoder: JSONParameterEncoder.default).responseJSON { response in
-//            switch response.result {
-//            case .success:
-//                guard let data = response.data else { return }
-//                do {
-//                    let decoder = JSONDecoder()
-//                    let json = try decoder.decode(LoginResponse.self, from: data)
-//                    guard let isSuccess = json.success else { return }
-//                    completion(.success(json))
-//                }catch{
-//                    print("Decode Error Occured")
-//                }
-//            case .failure:
-//                completion(.failure(.badURL))
-//                break
-//            }
-//        }
-//
-//    }
+    
     func openPage() {
 
     }
