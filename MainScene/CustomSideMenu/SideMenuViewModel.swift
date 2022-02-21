@@ -10,7 +10,9 @@ import RxSwift
 import RxCocoa
 
 enum NextSceneEnum {
-    case galleryListScene
+    case majorGallery
+    case minorGallery
+    case miniGallery
     case managingScene
     case visitListScene
     case viewdListScene
@@ -30,7 +32,9 @@ struct SideMenuViewModel {
     let logOff = PublishRelay<Void>()
     
     let menu = [
-        "갤러리 리스트",
+        "메이저 갤러리",
+        "마이너 갤러리",
+        "미니 갤러리",
         "운영 갤러리",
         "방문한 갤러리",
         "최근 본 글"
@@ -50,10 +54,14 @@ struct SideMenuViewModel {
         self.nextSceneInfo = self.selectTableItems.map{ ip -> NextSceneEnum in
             switch ip.row {
             case 0:
-                return .galleryListScene
+                return .majorGallery
             case 1:
-                return .managingScene
+                return .minorGallery
             case 2:
+                return .miniGallery
+            case 3:
+                return .managingScene
+            case 4:
                 return .visitListScene
             default:
                 return .viewdListScene

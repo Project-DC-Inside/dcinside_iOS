@@ -28,6 +28,8 @@ class SideMenuCell : UITableViewCell {
     }
     
     private func attribute() {
+        self.backgroundColor = UIColor.systemGray6
+        
         titleLabel.textAlignment = .left
     }
     
@@ -35,7 +37,7 @@ class SideMenuCell : UITableViewCell {
         contentView.addSubview(titleLabel)
         
         titleLabel.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
+            $0.top.leading.trailing.equalToSuperview().inset(10)
         }
     }
 }
