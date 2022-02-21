@@ -28,6 +28,10 @@ class GalleryListViewController: UIViewController {
     }
     
     func bind(viewModel: GalleryListViewModel){
+        viewModel.titleNaming.drive(onNext: {
+            self.title = $0
+        }).disposed(by: disposeBag)
+        
         viewModel.cellData.drive(galleryListTable.rx.items) { tv, row, data in
             let cell = tv.dequeueReusableCell(withIdentifier: "GalleryListTableCell", for: IndexPath(row: row, section: 0)) as! GalleryListTableCell
             //cell.selectionStyle = .none

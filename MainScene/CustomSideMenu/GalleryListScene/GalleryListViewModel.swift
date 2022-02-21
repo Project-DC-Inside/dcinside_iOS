@@ -15,11 +15,18 @@ struct GalleryListViewModel {
     let cellData: Driver<[Gallery]>
     let buttonExist: Driver<Bool>
     let actionAddGallery: Driver<String>
+    let titleNaming: Driver<String>
     
     // view -> viewModel
     let addGallery = PublishRelay<Void>()
     
     init(gallery: String) {
+        titleNaming = Observable.create { observer in
+            observer.onNext(gallery)
+            observer.onCompleted()
+            return Disposables.create()
+        }.asDriver(onErrorDriveWith: .empty())
+        
         cellData = APIService.shared.fetchGalleryList(type: gallery)
             .map {
                 switch $0 {
