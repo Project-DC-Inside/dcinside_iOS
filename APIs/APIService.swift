@@ -102,9 +102,9 @@ class APIService {
         }
     }
     
-    func fetchGalleryList() -> Observable<Result<[Gallery], NetworkError>> {
+    func fetchGalleryList(type: String) -> Observable<Result<[Gallery], NetworkError>> {
         return Observable<Result<[Gallery], NetworkError>>.create { observer in
-            AF.request(self.URLGenerate(path: "/api/v1/galleries", queryItems: ["type": "MAJOR"]).url!, method: .get, parameters: nil).validate(statusCode: 200..<300).responseJSON { response in
+            AF.request(self.URLGenerate(path: "/api/v1/galleries", queryItems: ["type": type]).url!, method: .get, parameters: nil).validate(statusCode: 200..<300).responseJSON { response in
                 guard let data = response.data else { return }
                 print(response)
                 switch response.result {
