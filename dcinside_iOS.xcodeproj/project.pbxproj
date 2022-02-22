@@ -37,6 +37,8 @@
 		7B87D09B27C3E69700572DD9 /* TitleTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D09A27C3E69700572DD9 /* TitleTextFieldCellViewModel.swift */; };
 		7B87D09E27C3E7C400572DD9 /* DetailWriteFromCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D09D27C3E7C400572DD9 /* DetailWriteFromCell.swift */; };
 		7B87D0A027C3E7D100572DD9 /* DetailWriteFormCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D09F27C3E7D100572DD9 /* DetailWriteFormCellViewModel.swift */; };
+		7B87D0A327C536B400572DD9 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D0A227C536B400572DD9 /* Gallery.swift */; };
+		7B87D0A627C537AB00572DD9 /* GalleryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D0A527C537AB00572DD9 /* GalleryResult.swift */; };
 		7BD2F3A627B7B72F00E4CF6F /* MainSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A527B7B72F00E4CF6F /* MainSceneViewController.swift */; };
 		7BD2F3A827B7B7B600E4CF6F /* MainSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A727B7B7B600E4CF6F /* MainSceneViewModel.swift */; };
 		7BD2F3AA27B7D77B00E4CF6F /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A927B7D77B00E4CF6F /* SideMenuViewController.swift */; };
@@ -112,6 +114,8 @@
 		7B87D09A27C3E69700572DD9 /* TitleTextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextFieldCellViewModel.swift; sourceTree = "<group>"; };
 		7B87D09D27C3E7C400572DD9 /* DetailWriteFromCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWriteFromCell.swift; sourceTree = "<group>"; };
 		7B87D09F27C3E7D100572DD9 /* DetailWriteFormCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWriteFormCellViewModel.swift; sourceTree = "<group>"; };
+		7B87D0A227C536B400572DD9 /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
+		7B87D0A527C537AB00572DD9 /* GalleryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryResult.swift; sourceTree = "<group>"; };
 		7BD2F3A527B7B72F00E4CF6F /* MainSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewController.swift; sourceTree = "<group>"; };
 		7BD2F3A727B7B7B600E4CF6F /* MainSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewModel.swift; sourceTree = "<group>"; };
 		7BD2F3A927B7D77B00E4CF6F /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -332,6 +336,25 @@
 			path = DetailWriteFromCell;
 			sourceTree = "<group>";
 		};
+		7B87D0A127C5369200572DD9 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				7B21B46E27BD3230006B5FF5 /* SignUpInfo.swift */,
+				7B21B47027BE78DF006B5FF5 /* SignUpResult.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		7B87D0A427C5377100572DD9 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				7B87D08927C2690600572DD9 /* GalleryList.swift */,
+				7B87D0A527C537AB00572DD9 /* GalleryResult.swift */,
+				7B87D0A227C536B400572DD9 /* Gallery.swift */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
 		7BD2F3A427B7B72100E4CF6F /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,9 +386,8 @@
 				7B21B44F27BB2CDC006B5FF5 /* NError.swift */,
 				7BD2F3B227B7DF6C00E4CF6F /* SideMenuItems.swift */,
 				7B21B44E27BB2CAD006B5FF5 /* SignIn */,
-				7B21B46E27BD3230006B5FF5 /* SignUpInfo.swift */,
-				7B21B47027BE78DF006B5FF5 /* SignUpResult.swift */,
-				7B87D08927C2690600572DD9 /* GalleryList.swift */,
+				7B87D0A127C5369200572DD9 /* SignUp */,
+				7B87D0A427C5377100572DD9 /* Gallery */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -632,6 +654,7 @@
 				7BD2F3B327B7DF6C00E4CF6F /* SideMenuItems.swift in Sources */,
 				7B87D09927C3E68A00572DD9 /* TitleTextFieldCell.swift in Sources */,
 				7BD2F3BE27BA47FB00E4CF6F /* GalleryListViewController.swift in Sources */,
+				7B87D0A627C537AB00572DD9 /* GalleryResult.swift in Sources */,
 				7B21B45A27BCD9EC006B5FF5 /* SignUpModel.swift in Sources */,
 				7B21B45727BC6F07006B5FF5 /* SingUpViewModel.swift in Sources */,
 				7BD2F3AA27B7D77B00E4CF6F /* SideMenuViewController.swift in Sources */,
@@ -651,6 +674,7 @@
 				7B21B47127BE78DF006B5FF5 /* SignUpResult.swift in Sources */,
 				7B87D08C27C2718500572DD9 /* GalleryListTableCell.swift in Sources */,
 				7B87D0A027C3E7D100572DD9 /* DetailWriteFormCellViewModel.swift in Sources */,
+				7B87D0A327C536B400572DD9 /* Gallery.swift in Sources */,
 				723830BF275A2B97006B0F49 /* APIService.swift in Sources */,
 				7B87D09427C3E43100572DD9 /* AddGalleryViewModel.swift in Sources */,
 				7BD2F3AF27B7DF0B00E4CF6F /* SideMenuViewModel.swift in Sources */,

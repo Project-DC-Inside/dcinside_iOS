@@ -23,10 +23,16 @@ class APIService {
 
     private let disposeBag = DisposeBag()
     
-    private let HTTPHeaders = ["Content-Type": "application/json"]
+    private let HTTPHeaders: HTTPHeaders = ["accept":"*/*", "Content-Type": "application/json",]
     private let baseURL = "http://52.78.99.238:8080"
     
     private init() {} // 다른곳에서 초기화하지 못하게 해야해서..
+    
+    private func makeHeader() -> HTTPHeaders {
+        let token = KeyChain.shared.getItem(key: KeyChain.token) as! String
+        print(token)
+        return ["Authorization": "Bearer " + token]
+    }
     
     private func URLGenerate(path : String, queryItems: [String: String]?) -> URLComponents {
         var components = URLComponents()
@@ -102,7 +108,7 @@ class APIService {
         }
     }
     
-    func fetchGalleryList(type: String) -> Observable<Result<[Gallery], NetworkError>> {
+    func FetchGalleryList(type: String) -> Observable<Result<[Gallery], NetworkError>> {
         return Observable<Result<[Gallery], NetworkError>>.create { observer in
             AF.request(self.URLGenerate(path: "/api/v1/galleries", queryItems: ["type": type]).url!, method: .get, parameters: nil).validate(statusCode: 200..<300).responseJSON { response in
                 guard let data = response.data else { return }
@@ -127,6 +133,34 @@ class APIService {
                 }
             }
             
+            return Disposables.create()
+        }
+    }
+    
+    func MakeGallery(type: String, title: String) -> Observable<Result<GalleryResult, NetworkError>> {
+        print("IS OBSERVABLE")
+        return Observable<Result<GalleryResult, NetworkError>>.create { observer in
+            AF.request(self.URLGenerate(path: "/api/v1/galleries", queryItems: nil), method: .post, parameters: Gallery(type: type, name: title), encoder: JSONParameterEncoder.default, headers: self.makeHeader()).responseJSON { response in
+                print(response.response?.statusCode, "STATUS")
+                    guard let data = response.data else { return }
+                    switch response.result {
+                    case .success:
+                        do {
+                            let galleryResult = try JSONDecoder().decode(GalleryResult.self, from: data)
+                            print(galleryResult)
+                            observer.onNext(.success(galleryResult))
+                            observer.onCompleted()
+                        }catch {
+                            print("Decode Err")
+                            observer.onNext(.failure(.decodeError))
+                            observer.onCompleted()
+                        }
+                    case .failure:
+                        print("fail")
+                        observer.onNext(.failure(.badURL))
+                        observer.onCompleted()
+                    }
+            }
             return Disposables.create()
         }
     }
