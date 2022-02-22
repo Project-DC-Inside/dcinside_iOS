@@ -27,7 +27,7 @@ struct GalleryListViewModel {
             return Disposables.create()
         }.asDriver(onErrorDriveWith: .empty())
         
-        cellData = APIService.shared.fetchGalleryList(type: gallery)
+        cellData = APIService.shared.FetchGalleryList(type: gallery)
             .map {
                 switch $0 {
                 case .success(let data):
