@@ -23,6 +23,8 @@ class SideMenuViewController : UIViewController {
     let settingButton = UIButton()
     let logo = UILabel()
     
+    lazy var HeaderStack = UIStackView()
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
@@ -118,6 +120,7 @@ class SideMenuViewController : UIViewController {
     
     
     private func attribute() {
+        
         signInButton.setImage(UIImage(systemName: "power.circle"), for: .normal)
         
 //        nicknameInfo.textAlignment = .center
@@ -152,8 +155,8 @@ class SideMenuViewController : UIViewController {
         lazy var btnView = UIStackView(arrangedSubviews: [settingButton, noticeButton])
         lazy var stackTop = UIStackView(arrangedSubviews: [logo, btnView])
         
-        lazy var HeaderStack = UIStackView(arrangedSubviews: [stackTop, stackView])
-        
+        HeaderStack = UIStackView(arrangedSubviews: [stackTop, stackView])
+    
         stackView.spacing = 4.0
         
         btnView.spacing = 10.0
@@ -169,7 +172,7 @@ class SideMenuViewController : UIViewController {
         view.addSubview(wrappTableView)
         
         HeaderStack.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(10)
             $0.top.equalTo(view.safeAreaLayoutGuide)
         }
         

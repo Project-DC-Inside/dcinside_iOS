@@ -17,7 +17,7 @@ class MainSceneViewController: UIViewController {
     
     let sideMenuButton = UIBarButtonItem()
     
-    let searchBar = UISearchBar()
+    let searchBarController = UISearchController()
     let tableView = UITableView()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -47,24 +47,18 @@ class MainSceneViewController: UIViewController {
         sideMenuButton.style = .done
         sideMenuButton.image = UIImage(systemName: "line.horizontal.3")
         
+        searchBarController.searchBar.placeholder = "검색어"
+        searchBarController.hidesNavigationBarDuringPresentation = false
+        navigationItem.searchController = searchBarController
         navigationItem.leftBarButtonItem = sideMenuButton
+        
         view.backgroundColor = .white
     }
     
     private func layout() {
         [
-            searchBar,
             tableView
-        ].forEach { view.addSubview($0)}
-        
-        searchBar.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(50)
-        }
-        
-        
-        
+        ].forEach { view.addSubview($0) }
     }
 }
 
