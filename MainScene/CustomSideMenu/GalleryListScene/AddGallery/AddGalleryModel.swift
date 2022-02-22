@@ -8,10 +8,13 @@
 import Foundation
 
 struct AddGalleryModel {
-    func setAlert(errorMessage: [String])-> Alert {
-        let title = errorMessage.isEmpty ? "성공" : "실패"
-        let message = errorMessage.isEmpty ? nil: errorMessage.joined(separator: "\n")
-        
-        return (title: title, message: message)
+    func setAlert(action: Result<GalleryResult, NetworkError>)-> Alert {
+        switch action {
+        case .success(let message):
+            return (title: "성공", message: message.result?.name ?? "" + " 성공!")
+        default:
+            return (title: "실퓨ㅐ", message: "가입 실패!")
+        }
     }
+    
 }

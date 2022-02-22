@@ -46,10 +46,17 @@ struct AddGalleryViewModel {
         let errorMessage = Observable
             .combineLatest(titleMessage, detailMessage){ $0 + $1 }
         
-        self.presentAlert = submitButtonTapped
-            .withLatestFrom(errorMessage)
-            .map(model.setAlert)
-            .asSignal(onErrorSignalWith: .empty())        
+        let makeShare = titleTextFieldViewModel.titleText.filter { $0 != nil }
+            .map{ name -> Gallery in
+                Gallery(type: type, name: name! )}        
+        
+        let submitGallery = submitButtonTapped.withLatestFrom(titleTextFieldViewModel.titleText.filter{ $0 != nil } ){ _, name in
+                return name!
+            }
+            .flatMap { return APIService.shared.MakeGallery(type: type, title: $0) }
+        
+        self.presentAlert = submitGallery.compactMap { data -> Alert in
+            return model.setAlert(action: data)
+        }.asSignal(onErrorSignalWith: .empty())
     }
-
 }
