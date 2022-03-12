@@ -42,10 +42,10 @@
 		7B9B773127DCFEEA00E0D73E /* MakePostSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B773027DCFEEA00E0D73E /* MakePostSceneViewController.swift */; };
 		7B9B773327DCFEF200E0D73E /* MakePostSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B773227DCFEF200E0D73E /* MakePostSceneViewModel.swift */; };
 		7B9B773627DCFF9F00E0D73E /* MakePostSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B773527DCFF9F00E0D73E /* MakePostSceneModel.swift */; };
-		7B9B773927DD00C800E0D73E /* TitleTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B773827DD00C800E0D73E /* TitleTextFieldCell.swift */; };
-		7B9B773B27DD00D500E0D73E /* TitleTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B773A27DD00D500E0D73E /* TitleTextFieldViewModel.swift */; };
-		7B9B773E27DD011E00E0D73E /* DetailWriteFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B773D27DD011E00E0D73E /* DetailWriteFormCell.swift */; };
-		7B9B774027DD012700E0D73E /* DetailWriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B773F27DD012700E0D73E /* DetailWriteViewModel.swift */; };
+		7B9B773927DD00C800E0D73E /* TitleFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B773827DD00C800E0D73E /* TitleFieldCell.swift */; };
+		7B9B773B27DD00D500E0D73E /* TitleFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B773A27DD00D500E0D73E /* TitleFieldCellViewModel.swift */; };
+		7B9B773E27DD011E00E0D73E /* WriteFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B773D27DD011E00E0D73E /* WriteFormCell.swift */; };
+		7B9B774027DD012700E0D73E /* WriteFormCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B773F27DD012700E0D73E /* WriteFormCellViewModel.swift */; };
 		7BD2F3A627B7B72F00E4CF6F /* MainSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A527B7B72F00E4CF6F /* MainSceneViewController.swift */; };
 		7BD2F3A827B7B7B600E4CF6F /* MainSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A727B7B7B600E4CF6F /* MainSceneViewModel.swift */; };
 		7BD2F3AA27B7D77B00E4CF6F /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A927B7D77B00E4CF6F /* SideMenuViewController.swift */; };
@@ -126,10 +126,10 @@
 		7B9B773027DCFEEA00E0D73E /* MakePostSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePostSceneViewController.swift; sourceTree = "<group>"; };
 		7B9B773227DCFEF200E0D73E /* MakePostSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePostSceneViewModel.swift; sourceTree = "<group>"; };
 		7B9B773527DCFF9F00E0D73E /* MakePostSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePostSceneModel.swift; sourceTree = "<group>"; };
-		7B9B773827DD00C800E0D73E /* TitleTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextFieldCell.swift; sourceTree = "<group>"; };
-		7B9B773A27DD00D500E0D73E /* TitleTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextFieldViewModel.swift; sourceTree = "<group>"; };
-		7B9B773D27DD011E00E0D73E /* DetailWriteFormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWriteFormCell.swift; sourceTree = "<group>"; };
-		7B9B773F27DD012700E0D73E /* DetailWriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWriteViewModel.swift; sourceTree = "<group>"; };
+		7B9B773827DD00C800E0D73E /* TitleFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleFieldCell.swift; sourceTree = "<group>"; };
+		7B9B773A27DD00D500E0D73E /* TitleFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleFieldCellViewModel.swift; sourceTree = "<group>"; };
+		7B9B773D27DD011E00E0D73E /* WriteFormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteFormCell.swift; sourceTree = "<group>"; };
+		7B9B773F27DD012700E0D73E /* WriteFormCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteFormCellViewModel.swift; sourceTree = "<group>"; };
 		7BD2F3A527B7B72F00E4CF6F /* MainSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewController.swift; sourceTree = "<group>"; };
 		7BD2F3A727B7B7B600E4CF6F /* MainSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewModel.swift; sourceTree = "<group>"; };
 		7BD2F3A927B7D77B00E4CF6F /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -384,8 +384,8 @@
 		7B9B773727DD009600E0D73E /* TitleTextFieldView */ = {
 			isa = PBXGroup;
 			children = (
-				7B9B773827DD00C800E0D73E /* TitleTextFieldCell.swift */,
-				7B9B773A27DD00D500E0D73E /* TitleTextFieldViewModel.swift */,
+				7B9B773827DD00C800E0D73E /* TitleFieldCell.swift */,
+				7B9B773A27DD00D500E0D73E /* TitleFieldCellViewModel.swift */,
 			);
 			path = TitleTextFieldView;
 			sourceTree = "<group>";
@@ -393,8 +393,8 @@
 		7B9B773C27DD00DC00E0D73E /* DetailWriteFormCell */ = {
 			isa = PBXGroup;
 			children = (
-				7B9B773D27DD011E00E0D73E /* DetailWriteFormCell.swift */,
-				7B9B773F27DD012700E0D73E /* DetailWriteViewModel.swift */,
+				7B9B773D27DD011E00E0D73E /* WriteFormCell.swift */,
+				7B9B773F27DD012700E0D73E /* WriteFormCellViewModel.swift */,
 			);
 			path = DetailWriteFormCell;
 			sourceTree = "<group>";
@@ -706,15 +706,15 @@
 				7B87D09E27C3E7C400572DD9 /* DetailWriteFromCell.swift in Sources */,
 				7BD2F3A827B7B7B600E4CF6F /* MainSceneViewModel.swift in Sources */,
 				7B9B773327DCFEF200E0D73E /* MakePostSceneViewModel.swift in Sources */,
-				7B9B773B27DD00D500E0D73E /* TitleTextFieldViewModel.swift in Sources */,
+				7B9B773B27DD00D500E0D73E /* TitleFieldCellViewModel.swift in Sources */,
 				7B9B772D27DCFCFC00E0D73E /* SignUpInfo.swift in Sources */,
 				7B87D09627C3E66D00572DD9 /* AddGalleryModel.swift in Sources */,
 				6B0E9DC727524CCF00B0E946 /* AppDelegate.swift in Sources */,
 				6B0E9DD127524CCF00B0E946 /* dcinside_iOS.xcdatamodeld in Sources */,
 				7B21B44D27BB2CA4006B5FF5 /* SignInResult.swift in Sources */,
-				7B9B773E27DD011E00E0D73E /* DetailWriteFormCell.swift in Sources */,
+				7B9B773E27DD011E00E0D73E /* WriteFormCell.swift in Sources */,
 				7BD2F3BB27BA20BC00E4CF6F /* Token.swift in Sources */,
-				7B9B773927DD00C800E0D73E /* TitleTextFieldCell.swift in Sources */,
+				7B9B773927DD00C800E0D73E /* TitleFieldCell.swift in Sources */,
 				7BD2F3C327BA522100E4CF6F /* SignInViewController.swift in Sources */,
 				7BD2F3A627B7B72F00E4CF6F /* MainSceneViewController.swift in Sources */,
 				7B9B773127DCFEEA00E0D73E /* MakePostSceneViewController.swift in Sources */,
@@ -735,7 +735,7 @@
 				7B21B45227BC6766006B5FF5 /* SignInModel.swift in Sources */,
 				7B87D08827C2262700572DD9 /* ViewedSceneViewController.swift in Sources */,
 				7B87D08227C2255F00572DD9 /* ManagingSceneViewController.swift in Sources */,
-				7B9B774027DD012700E0D73E /* DetailWriteViewModel.swift in Sources */,
+				7B9B774027DD012700E0D73E /* WriteFormCellViewModel.swift in Sources */,
 				7BD2F3C027BA480500E4CF6F /* GalleryListViewModel.swift in Sources */,
 				7B87D08527C225CB00572DD9 /* VisitListSceneViewController.swift in Sources */,
 				7BD2F3B527B7E16A00E4CF6F /* SideMenuCell.swift in Sources */,
