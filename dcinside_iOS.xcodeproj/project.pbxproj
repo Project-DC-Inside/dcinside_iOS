@@ -23,8 +23,6 @@
 		7B21B45527BC6EFD006B5FF5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B21B45427BC6EFD006B5FF5 /* SignUpViewController.swift */; };
 		7B21B45727BC6F07006B5FF5 /* SingUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B21B45627BC6F07006B5FF5 /* SingUpViewModel.swift */; };
 		7B21B45A27BCD9EC006B5FF5 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B21B45927BCD9EC006B5FF5 /* SignUpModel.swift */; };
-		7B21B46F27BD3230006B5FF5 /* SignUpInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B21B46E27BD3230006B5FF5 /* SignUpInfo.swift */; };
-		7B21B47127BE78DF006B5FF5 /* SignUpResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B21B47027BE78DF006B5FF5 /* SignUpResult.swift */; };
 		7B87D08227C2255F00572DD9 /* ManagingSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D08127C2255F00572DD9 /* ManagingSceneViewController.swift */; };
 		7B87D08527C225CB00572DD9 /* VisitListSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D08427C225CB00572DD9 /* VisitListSceneViewController.swift */; };
 		7B87D08827C2262700572DD9 /* ViewedSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D08727C2262700572DD9 /* ViewedSceneViewController.swift */; };
@@ -39,6 +37,8 @@
 		7B87D0A027C3E7D100572DD9 /* DetailWriteFormCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D09F27C3E7D100572DD9 /* DetailWriteFormCellViewModel.swift */; };
 		7B87D0A327C536B400572DD9 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D0A227C536B400572DD9 /* Gallery.swift */; };
 		7B87D0A627C537AB00572DD9 /* GalleryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D0A527C537AB00572DD9 /* GalleryResult.swift */; };
+		7B9B772D27DCFCFC00E0D73E /* SignUpInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B772C27DCFCFC00E0D73E /* SignUpInfo.swift */; };
+		7B9B772F27DCFD0B00E0D73E /* SignUpResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B772E27DCFD0B00E0D73E /* SignUpResult.swift */; };
 		7BD2F3A627B7B72F00E4CF6F /* MainSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A527B7B72F00E4CF6F /* MainSceneViewController.swift */; };
 		7BD2F3A827B7B7B600E4CF6F /* MainSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A727B7B7B600E4CF6F /* MainSceneViewModel.swift */; };
 		7BD2F3AA27B7D77B00E4CF6F /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A927B7D77B00E4CF6F /* SideMenuViewController.swift */; };
@@ -100,8 +100,6 @@
 		7B21B45427BC6EFD006B5FF5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		7B21B45627BC6F07006B5FF5 /* SingUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewModel.swift; sourceTree = "<group>"; };
 		7B21B45927BCD9EC006B5FF5 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
-		7B21B46E27BD3230006B5FF5 /* SignUpInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInfo.swift; sourceTree = "<group>"; };
-		7B21B47027BE78DF006B5FF5 /* SignUpResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResult.swift; sourceTree = "<group>"; };
 		7B87D08127C2255F00572DD9 /* ManagingSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagingSceneViewController.swift; sourceTree = "<group>"; };
 		7B87D08427C225CB00572DD9 /* VisitListSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitListSceneViewController.swift; sourceTree = "<group>"; };
 		7B87D08727C2262700572DD9 /* ViewedSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewedSceneViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +114,8 @@
 		7B87D09F27C3E7D100572DD9 /* DetailWriteFormCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWriteFormCellViewModel.swift; sourceTree = "<group>"; };
 		7B87D0A227C536B400572DD9 /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		7B87D0A527C537AB00572DD9 /* GalleryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryResult.swift; sourceTree = "<group>"; };
+		7B9B772C27DCFCFC00E0D73E /* SignUpInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpInfo.swift; path = MainScene/SignUpInfo.swift; sourceTree = SOURCE_ROOT; };
+		7B9B772E27DCFD0B00E0D73E /* SignUpResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpResult.swift; path = MainScene/SignUpResult.swift; sourceTree = SOURCE_ROOT; };
 		7BD2F3A527B7B72F00E4CF6F /* MainSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewController.swift; sourceTree = "<group>"; };
 		7BD2F3A727B7B7B600E4CF6F /* MainSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewModel.swift; sourceTree = "<group>"; };
 		7BD2F3A927B7D77B00E4CF6F /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -339,8 +339,8 @@
 		7B87D0A127C5369200572DD9 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				7B21B46E27BD3230006B5FF5 /* SignUpInfo.swift */,
-				7B21B47027BE78DF006B5FF5 /* SignUpResult.swift */,
+				7B9B772C27DCFCFC00E0D73E /* SignUpInfo.swift */,
+				7B9B772E27DCFD0B00E0D73E /* SignUpResult.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -660,9 +660,9 @@
 				7BD2F3AA27B7D77B00E4CF6F /* SideMenuViewController.swift in Sources */,
 				7B87D09E27C3E7C400572DD9 /* DetailWriteFromCell.swift in Sources */,
 				7BD2F3A827B7B7B600E4CF6F /* MainSceneViewModel.swift in Sources */,
+				7B9B772D27DCFCFC00E0D73E /* SignUpInfo.swift in Sources */,
 				7B87D09627C3E66D00572DD9 /* AddGalleryModel.swift in Sources */,
 				6B0E9DC727524CCF00B0E946 /* AppDelegate.swift in Sources */,
-				7B21B46F27BD3230006B5FF5 /* SignUpInfo.swift in Sources */,
 				6B0E9DD127524CCF00B0E946 /* dcinside_iOS.xcdatamodeld in Sources */,
 				7B21B44D27BB2CA4006B5FF5 /* SignInResult.swift in Sources */,
 				7BD2F3BB27BA20BC00E4CF6F /* Token.swift in Sources */,
@@ -671,11 +671,11 @@
 				7BD2F3AC27B7DBD800E4CF6F /* sideMenuNavigation.swift in Sources */,
 				6B0E9DC927524CCF00B0E946 /* SceneDelegate.swift in Sources */,
 				7B87D08F27C3E34A00572DD9 /* AddGalleryViewController.swift in Sources */,
-				7B21B47127BE78DF006B5FF5 /* SignUpResult.swift in Sources */,
 				7B87D08C27C2718500572DD9 /* GalleryListTableCell.swift in Sources */,
 				7B87D0A027C3E7D100572DD9 /* DetailWriteFormCellViewModel.swift in Sources */,
 				7B87D0A327C536B400572DD9 /* Gallery.swift in Sources */,
 				723830BF275A2B97006B0F49 /* APIService.swift in Sources */,
+				7B9B772F27DCFD0B00E0D73E /* SignUpResult.swift in Sources */,
 				7B87D09427C3E43100572DD9 /* AddGalleryViewModel.swift in Sources */,
 				7BD2F3AF27B7DF0B00E4CF6F /* SideMenuViewModel.swift in Sources */,
 				7B87D09B27C3E69700572DD9 /* TitleTextFieldCellViewModel.swift in Sources */,
