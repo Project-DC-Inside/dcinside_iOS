@@ -39,6 +39,9 @@
 		7B87D0A627C537AB00572DD9 /* GalleryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D0A527C537AB00572DD9 /* GalleryResult.swift */; };
 		7B9B772D27DCFCFC00E0D73E /* SignUpInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B772C27DCFCFC00E0D73E /* SignUpInfo.swift */; };
 		7B9B772F27DCFD0B00E0D73E /* SignUpResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B772E27DCFD0B00E0D73E /* SignUpResult.swift */; };
+		7B9B773127DCFEEA00E0D73E /* MakePostSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B773027DCFEEA00E0D73E /* MakePostSceneViewController.swift */; };
+		7B9B773327DCFEF200E0D73E /* MakePostSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B773227DCFEF200E0D73E /* MakePostSceneViewModel.swift */; };
+		7B9B773627DCFF9F00E0D73E /* MakePostSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B773527DCFF9F00E0D73E /* MakePostSceneModel.swift */; };
 		7BD2F3A627B7B72F00E4CF6F /* MainSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A527B7B72F00E4CF6F /* MainSceneViewController.swift */; };
 		7BD2F3A827B7B7B600E4CF6F /* MainSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A727B7B7B600E4CF6F /* MainSceneViewModel.swift */; };
 		7BD2F3AA27B7D77B00E4CF6F /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A927B7D77B00E4CF6F /* SideMenuViewController.swift */; };
@@ -116,6 +119,9 @@
 		7B87D0A527C537AB00572DD9 /* GalleryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryResult.swift; sourceTree = "<group>"; };
 		7B9B772C27DCFCFC00E0D73E /* SignUpInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpInfo.swift; path = MainScene/SignUpInfo.swift; sourceTree = SOURCE_ROOT; };
 		7B9B772E27DCFD0B00E0D73E /* SignUpResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpResult.swift; path = MainScene/SignUpResult.swift; sourceTree = SOURCE_ROOT; };
+		7B9B773027DCFEEA00E0D73E /* MakePostSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePostSceneViewController.swift; sourceTree = "<group>"; };
+		7B9B773227DCFEF200E0D73E /* MakePostSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePostSceneViewModel.swift; sourceTree = "<group>"; };
+		7B9B773527DCFF9F00E0D73E /* MakePostSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePostSceneModel.swift; sourceTree = "<group>"; };
 		7BD2F3A527B7B72F00E4CF6F /* MainSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewController.swift; sourceTree = "<group>"; };
 		7BD2F3A727B7B7B600E4CF6F /* MainSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewModel.swift; sourceTree = "<group>"; };
 		7BD2F3A927B7D77B00E4CF6F /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -355,12 +361,23 @@
 			path = Gallery;
 			sourceTree = "<group>";
 		};
+		7B9B773427DCFEF500E0D73E /* MakePostScene */ = {
+			isa = PBXGroup;
+			children = (
+				7B9B773027DCFEEA00E0D73E /* MakePostSceneViewController.swift */,
+				7B9B773227DCFEF200E0D73E /* MakePostSceneViewModel.swift */,
+				7B9B773527DCFF9F00E0D73E /* MakePostSceneModel.swift */,
+			);
+			path = MakePostScene;
+			sourceTree = "<group>";
+		};
 		7BD2F3A427B7B72100E4CF6F /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
 				7BD2F3A527B7B72F00E4CF6F /* MainSceneViewController.swift */,
 				7BD2F3A727B7B7B600E4CF6F /* MainSceneViewModel.swift */,
 				7BD2F3AD27B7DE7900E4CF6F /* CustomSideMenu */,
+				7B9B773427DCFEF500E0D73E /* MakePostScene */,
 			);
 			path = MainScene;
 			sourceTree = "<group>";
@@ -660,6 +677,7 @@
 				7BD2F3AA27B7D77B00E4CF6F /* SideMenuViewController.swift in Sources */,
 				7B87D09E27C3E7C400572DD9 /* DetailWriteFromCell.swift in Sources */,
 				7BD2F3A827B7B7B600E4CF6F /* MainSceneViewModel.swift in Sources */,
+				7B9B773327DCFEF200E0D73E /* MakePostSceneViewModel.swift in Sources */,
 				7B9B772D27DCFCFC00E0D73E /* SignUpInfo.swift in Sources */,
 				7B87D09627C3E66D00572DD9 /* AddGalleryModel.swift in Sources */,
 				6B0E9DC727524CCF00B0E946 /* AppDelegate.swift in Sources */,
@@ -668,6 +686,7 @@
 				7BD2F3BB27BA20BC00E4CF6F /* Token.swift in Sources */,
 				7BD2F3C327BA522100E4CF6F /* SignInViewController.swift in Sources */,
 				7BD2F3A627B7B72F00E4CF6F /* MainSceneViewController.swift in Sources */,
+				7B9B773127DCFEEA00E0D73E /* MakePostSceneViewController.swift in Sources */,
 				7BD2F3AC27B7DBD800E4CF6F /* sideMenuNavigation.swift in Sources */,
 				6B0E9DC927524CCF00B0E946 /* SceneDelegate.swift in Sources */,
 				7B87D08F27C3E34A00572DD9 /* AddGalleryViewController.swift in Sources */,
@@ -689,6 +708,7 @@
 				7B87D08527C225CB00572DD9 /* VisitListSceneViewController.swift in Sources */,
 				7BD2F3B527B7E16A00E4CF6F /* SideMenuCell.swift in Sources */,
 				7BD2F3B927BA204800E4CF6F /* SignInInfo.swift in Sources */,
+				7B9B773627DCFF9F00E0D73E /* MakePostSceneModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
