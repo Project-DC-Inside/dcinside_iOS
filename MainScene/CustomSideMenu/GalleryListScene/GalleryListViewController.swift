@@ -28,6 +28,21 @@ class GalleryListViewController: UIViewController {
     }
     
     func bind(viewModel: GalleryListViewModel){
+        galleryListTable.rx.itemSelected
+            .map{
+                self.galleryListTable.cellForRow(at: $0) as! GalleryListTableCell
+            }
+            .bind(to: viewModel.itemSelected)
+            .disposed(by: disposeBag)
+        
+        viewModel.push
+            .drive(onNext: { viewModel in
+                let viewController = NoticeBoardViewController()
+                viewController.bind(viewModel)
+                self.show(viewController, sender: nil)
+            })
+            .disposed(by: disposeBag)
+        
         viewModel.titleNaming.drive(onNext: {
             self.title = $0
         }).disposed(by: disposeBag)

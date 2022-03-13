@@ -16,11 +16,14 @@ struct GalleryListViewModel {
     let buttonExist: Driver<Bool>
     let actionAddGallery: Driver<String>
     let titleNaming: Driver<String>
+    let push: Driver<NoticeBoardViewModel>
     
     // view -> viewModel
     let addGallery = PublishRelay<Void>()
+    let itemSelected = PublishRelay<GalleryListTableCell?>()
     
     init(gallery: String) {
+        
         titleNaming = Observable.create { observer in
             observer.onNext(gallery)
             observer.onCompleted()
@@ -50,6 +53,12 @@ struct GalleryListViewModel {
         actionAddGallery = addGallery
             .map{ _ -> String in
                 return gallery
+            }
+            .asDriver(onErrorDriveWith: .empty())
+        
+        self.push = itemSelected
+            .compactMap { cell -> NoticeBoardViewModel? in
+                return NoticeBoardViewModel(cell?.label.text)
             }
             .asDriver(onErrorDriveWith: .empty())
     }

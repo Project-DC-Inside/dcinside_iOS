@@ -48,6 +48,9 @@
 		7B9B774027DD012700E0D73E /* WriteFormCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B773F27DD012700E0D73E /* WriteFormCellViewModel.swift */; };
 		7B9B774227DE215400E0D73E /* NoticeBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B774127DE215400E0D73E /* NoticeBoardViewController.swift */; };
 		7B9B774427DE215F00E0D73E /* NoticeBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B774327DE215F00E0D73E /* NoticeBoardViewModel.swift */; };
+		7B9B774727DE225F00E0D73E /* NoticePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B774627DE225F00E0D73E /* NoticePostCell.swift */; };
+		7B9B774927DE226A00E0D73E /* NoticePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B774827DE226A00E0D73E /* NoticePostViewModel.swift */; };
+		7B9B774C27DE247B00E0D73E /* NoticeBoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B774B27DE247B00E0D73E /* NoticeBoardModel.swift */; };
 		7BD2F3A627B7B72F00E4CF6F /* MainSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A527B7B72F00E4CF6F /* MainSceneViewController.swift */; };
 		7BD2F3A827B7B7B600E4CF6F /* MainSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A727B7B7B600E4CF6F /* MainSceneViewModel.swift */; };
 		7BD2F3AA27B7D77B00E4CF6F /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A927B7D77B00E4CF6F /* SideMenuViewController.swift */; };
@@ -134,6 +137,9 @@
 		7B9B773F27DD012700E0D73E /* WriteFormCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteFormCellViewModel.swift; sourceTree = "<group>"; };
 		7B9B774127DE215400E0D73E /* NoticeBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeBoardViewController.swift; sourceTree = "<group>"; };
 		7B9B774327DE215F00E0D73E /* NoticeBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeBoardViewModel.swift; sourceTree = "<group>"; };
+		7B9B774627DE225F00E0D73E /* NoticePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticePostCell.swift; sourceTree = "<group>"; };
+		7B9B774827DE226A00E0D73E /* NoticePostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticePostViewModel.swift; sourceTree = "<group>"; };
+		7B9B774B27DE247B00E0D73E /* NoticeBoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeBoardModel.swift; sourceTree = "<group>"; };
 		7BD2F3A527B7B72F00E4CF6F /* MainSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewController.swift; sourceTree = "<group>"; };
 		7BD2F3A727B7B7B600E4CF6F /* MainSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewModel.swift; sourceTree = "<group>"; };
 		7BD2F3A927B7D77B00E4CF6F /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -408,8 +414,19 @@
 			children = (
 				7B9B774127DE215400E0D73E /* NoticeBoardViewController.swift */,
 				7B9B774327DE215F00E0D73E /* NoticeBoardViewModel.swift */,
+				7B9B774B27DE247B00E0D73E /* NoticeBoardModel.swift */,
+				7B9B774A27DE229400E0D73E /* NoticePostCell */,
 			);
 			path = NoticeBoard;
+			sourceTree = "<group>";
+		};
+		7B9B774A27DE229400E0D73E /* NoticePostCell */ = {
+			isa = PBXGroup;
+			children = (
+				7B9B774627DE225F00E0D73E /* NoticePostCell.swift */,
+				7B9B774827DE226A00E0D73E /* NoticePostViewModel.swift */,
+			);
+			path = NoticePostCell;
 			sourceTree = "<group>";
 		};
 		7BD2F3A427B7B72100E4CF6F /* MainScene */ = {
@@ -717,6 +734,7 @@
 				7B87D0A627C537AB00572DD9 /* GalleryResult.swift in Sources */,
 				7B21B45A27BCD9EC006B5FF5 /* SignUpModel.swift in Sources */,
 				7B21B45727BC6F07006B5FF5 /* SingUpViewModel.swift in Sources */,
+				7B9B774C27DE247B00E0D73E /* NoticeBoardModel.swift in Sources */,
 				7BD2F3AA27B7D77B00E4CF6F /* SideMenuViewController.swift in Sources */,
 				7B87D09E27C3E7C400572DD9 /* DetailWriteFromCell.swift in Sources */,
 				7BD2F3A827B7B7B600E4CF6F /* MainSceneViewModel.swift in Sources */,
@@ -735,6 +753,7 @@
 				7BD2F3A627B7B72F00E4CF6F /* MainSceneViewController.swift in Sources */,
 				7B9B773127DCFEEA00E0D73E /* MakePostSceneViewController.swift in Sources */,
 				7BD2F3AC27B7DBD800E4CF6F /* sideMenuNavigation.swift in Sources */,
+				7B9B774727DE225F00E0D73E /* NoticePostCell.swift in Sources */,
 				6B0E9DC927524CCF00B0E946 /* SceneDelegate.swift in Sources */,
 				7B87D08F27C3E34A00572DD9 /* AddGalleryViewController.swift in Sources */,
 				7B87D08C27C2718500572DD9 /* GalleryListTableCell.swift in Sources */,
@@ -756,6 +775,7 @@
 				7B87D08527C225CB00572DD9 /* VisitListSceneViewController.swift in Sources */,
 				7BD2F3B527B7E16A00E4CF6F /* SideMenuCell.swift in Sources */,
 				7BD2F3B927BA204800E4CF6F /* SignInInfo.swift in Sources */,
+				7B9B774927DE226A00E0D73E /* NoticePostViewModel.swift in Sources */,
 				7B9B773627DCFF9F00E0D73E /* MakePostSceneModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
