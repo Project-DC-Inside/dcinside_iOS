@@ -10,5 +10,12 @@ import RxSwift
 import RxCocoa
 
 struct NoticeBoardViewModel{
+    let galleryName: String?
+        
+    init(_ galleryName: String?) {
+        self.galleryName = galleryName
+        
+        
+    }
     
 }
