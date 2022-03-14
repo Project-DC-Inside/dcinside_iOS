@@ -36,10 +36,11 @@ class GalleryListViewController: UIViewController {
             .disposed(by: disposeBag)
         
         viewModel.push
-            .drive(onNext: { viewModel in
+            .drive(onNext: { galleryName in
+                let viewModel = NoticeBoardViewModel(galleryName)
                 let viewController = NoticeBoardViewController()
                 viewController.bind(viewModel)
-                self.show(viewController, sender: nil)
+                self.navigationController?.pushViewController(viewController, animated: true)
             })
             .disposed(by: disposeBag)
         
