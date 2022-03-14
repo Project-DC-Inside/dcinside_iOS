@@ -27,20 +27,6 @@ class NoticeBoardViewController: UIViewController {
         fatalError("NoticeBoard Scene Error")
     }
     
-    private func layout() {
-        
-    }
-    
-    private func attribute() {
-        addPostButton.image = UIImage(systemName: "plus")
-        
-        title = "NoticePost"
-        view.backgroundColor = .systemBackground
-        
-        navigationItem.rightBarButtonItem = addPostButton
-        
-    }
-    
     func bind(_ viewModel: NoticeBoardViewModel) {
         addPostButton.rx.tap
             .bind(to: viewModel.addPost)
@@ -52,5 +38,33 @@ class NoticeBoardViewController: UIViewController {
                 self.navigationController?.pushViewController(makePost, animated: true)
             })
             .disposed(by: disposeBag)
+        
+        viewModel.cellData.drive(noticePostListView.rx.items) { tableVew, row, data in
+            print(row)
+            let cell = tableVew.dequeueReusableCell(withIdentifier: "NoticePostCell", for: IndexPath(row: row, section: 0)) as! NoticePostCell
+            cell.label.text = data.name
+            print(data.name)
+            return cell
+        }.disposed(by: disposeBag)
+        
+    }
+    
+    private func layout() {
+        view.addSubview(noticePostListView)
+        
+        noticePostListView.snp.makeConstraints {
+            $0.leading.trailing.bottom.top.equalTo(view.safeAreaLayoutGuide)
+        }
+    }
+    
+    private func attribute() {
+        addPostButton.image = UIImage(systemName: "plus")
+        
+        title = "NoticePost"
+        view.backgroundColor = .systemBackground
+        
+        navigationItem.rightBarButtonItem = addPostButton
+        
+        noticePostListView.register(NoticePostCell.self, forCellReuseIdentifier: "NoticePostCell")
     }
 }

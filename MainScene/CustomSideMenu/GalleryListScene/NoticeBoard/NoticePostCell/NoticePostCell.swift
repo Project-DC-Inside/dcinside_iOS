@@ -6,13 +6,19 @@
 //
 
 import Foundation
+import SnapKit
 import UIKit
 import RxSwift
 import RxCocoa
 
 class NoticePostCell: UITableViewCell {
+    let label = UILabel()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        layout()
+        attribute()
     }
     
     required init?(coder: NSCoder) {
@@ -20,11 +26,15 @@ class NoticePostCell: UITableViewCell {
     }
     
     private func layout() {
+        self.addSubview(label)
         
+        label.snp.makeConstraints {
+            $0.leading.top.trailing.bottom.equalToSuperview()
+        }
     }
     
     private func attribute() {
-        
+        label.font = UIFont.systemFont(ofSize: 15)
     }
     
     func bind() {
