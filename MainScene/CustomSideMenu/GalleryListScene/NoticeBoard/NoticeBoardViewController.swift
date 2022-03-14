@@ -11,9 +11,11 @@ import RxSwift
 import RxCocoa
 
 class NoticeBoardViewController: UIViewController {
+    let disposeBag = DisposeBag()
     
     let noticePostListView = UITableView()
-    
+    let addPostButton = UIBarButtonItem()
+        
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
@@ -30,12 +32,25 @@ class NoticeBoardViewController: UIViewController {
     }
     
     private func attribute() {
+        addPostButton.image = UIImage(systemName: "plus")
+        
         title = "NoticePost"
         view.backgroundColor = .systemBackground
+        
+        navigationItem.rightBarButtonItem = addPostButton
         
     }
     
     func bind(_ viewModel: NoticeBoardViewModel) {
+        addPostButton.rx.tap
+            .bind(to: viewModel.addPost)
+            .disposed(by: disposeBag)
         
+        viewModel.makePostScene
+            .drive(onNext: { str in
+                let makePost = MakePostSceneViewController()
+                self.navigationController?.pushViewController(makePost, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
 }
