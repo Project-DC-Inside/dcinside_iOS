@@ -40,10 +40,8 @@ class NoticeBoardViewController: UIViewController {
             .disposed(by: disposeBag)
         
         viewModel.cellData.drive(noticePostListView.rx.items) { tableVew, row, data in
-            print(row)
             let cell = tableVew.dequeueReusableCell(withIdentifier: "NoticePostCell", for: IndexPath(row: row, section: 0)) as! NoticePostCell
             cell.label.text = data.name
-            print(data.name)
             return cell
         }.disposed(by: disposeBag)
         

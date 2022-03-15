@@ -16,11 +16,12 @@ struct GalleryListViewModel {
     let buttonExist: Driver<Bool>
     let actionAddGallery: Driver<String>
     let titleNaming: Driver<String>
-    let push: Driver<String>
+    let push: Driver<Int>
+    //let itemDeSelected: Driver<Int>
     
     // view -> viewModel
     let addGallery = PublishRelay<Void>()
-    let itemSelected = PublishRelay<GalleryListTableCell?>()
+    let itemSelected = PublishRelay<Int>()
     
     init(gallery: String) {
         
@@ -57,10 +58,7 @@ struct GalleryListViewModel {
             .asDriver(onErrorDriveWith: .empty())
         
         self.push = itemSelected
-            .compactMap { cell -> String in
-                guard let ret = cell?.label.text else { return "" }
-                return ret
-            }
             .asDriver(onErrorDriveWith: .empty())
+        
     }
 }

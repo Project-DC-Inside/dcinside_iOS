@@ -29,14 +29,16 @@ class GalleryListViewController: UIViewController {
     
     func bind(viewModel: GalleryListViewModel){
         galleryListTable.rx.itemSelected
-            .map{
-                self.galleryListTable.cellForRow(at: $0) as! GalleryListTableCell
-            }
+            .map{ $0.row }
             .bind(to: viewModel.itemSelected)
             .disposed(by: disposeBag)
         
         viewModel.push
-            .drive(onNext: { galleryName in
+            .drive(onNext: { galleryIndex in
+                let indexPath = IndexPath(row: galleryIndex, section: 0)
+                self.galleryListTable.deselectRow(at: indexPath, animated: true)
+                let cell = self.galleryListTable.cellForRow(at: indexPath) as? GalleryListTableCell
+                guard let galleryName = cell?.label.text else { return }
                 let viewModel = NoticeBoardViewModel(galleryName)
                 let viewController = NoticeBoardViewController()
                 viewController.bind(viewModel)
