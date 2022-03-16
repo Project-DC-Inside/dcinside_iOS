@@ -28,18 +28,17 @@ class GalleryListViewController: UIViewController {
     }
     
     func bind(viewModel: GalleryListViewModel){
-        galleryListTable.rx.itemSelected
-            .map{ $0.row }
-            .bind(to: viewModel.itemSelected)
+        galleryListTable.rx.modelSelected(Gallery.self)
+            .do { _ in
+                guard let indexPath = self.galleryListTable.indexPathForSelectedRow else { return }
+                self.galleryListTable.deselectRow(at: indexPath, animated: true)
+            }
+            .bind(to: viewModel.modelSelected)
             .disposed(by: disposeBag)
         
         viewModel.push
-            .drive(onNext: { galleryIndex in
-                let indexPath = IndexPath(row: galleryIndex, section: 0)
-                self.galleryListTable.deselectRow(at: indexPath, animated: true)
-                let cell = self.galleryListTable.cellForRow(at: indexPath) as? GalleryListTableCell
-                guard let galleryName = cell?.label.text else { return }
-                let viewModel = NoticeBoardViewModel(galleryName)
+            .drive(onNext: { gallery in
+                let viewModel = NoticeBoardViewModel(gallery.name)
                 let viewController = NoticeBoardViewController()
                 viewController.bind(viewModel)
                 self.navigationController?.pushViewController(viewController, animated: true)
@@ -52,7 +51,6 @@ class GalleryListViewController: UIViewController {
         
         viewModel.cellData.drive(galleryListTable.rx.items) { tv, row, data in
             let cell = tv.dequeueReusableCell(withIdentifier: "GalleryListTableCell", for: IndexPath(row: row, section: 0)) as! GalleryListTableCell
-            //cell.selectionStyle = .none
             cell.label.text = data.name
             return cell
         }

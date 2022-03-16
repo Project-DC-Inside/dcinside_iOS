@@ -16,12 +16,11 @@ struct GalleryListViewModel {
     let buttonExist: Driver<Bool>
     let actionAddGallery: Driver<String>
     let titleNaming: Driver<String>
-    let push: Driver<Int>
-    //let itemDeSelected: Driver<Int>
+    let push: Driver<Gallery>
     
     // view -> viewModel
     let addGallery = PublishRelay<Void>()
-    let itemSelected = PublishRelay<Int>()
+    let modelSelected = PublishRelay<Gallery>()
     
     init(gallery: String) {
         
@@ -56,9 +55,7 @@ struct GalleryListViewModel {
                 return gallery
             }
             .asDriver(onErrorDriveWith: .empty())
-        
-        self.push = itemSelected
-            .asDriver(onErrorDriveWith: .empty())
-        
+                        
+        self.push = modelSelected.asDriver(onErrorDriveWith: .empty())
     }
 }
