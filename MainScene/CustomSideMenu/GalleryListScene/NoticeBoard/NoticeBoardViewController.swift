@@ -34,7 +34,9 @@ class NoticeBoardViewController: UIViewController {
         
         viewModel.makePostScene
             .drive(onNext: { str in
+                let vm = MakePostSceneViewModel()
                 let makePost = MakePostSceneViewController()
+                makePost.bind(vm)
                 self.navigationController?.pushViewController(makePost, animated: true)
             })
             .disposed(by: disposeBag)
