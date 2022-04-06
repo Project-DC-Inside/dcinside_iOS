@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol MainSceneProtocol {
+protocol MainSceneViewProtocol {
     func setupNavigationBar()
     func setUpViews()
     func presentToMenuSelectSceneViewController()
@@ -17,10 +17,10 @@ protocol MainSceneProtocol {
 
 
 class MainScenePresenter: NSObject {
-    private let viewController: MainSceneProtocol
+    private let viewController: MainSceneViewProtocol
     //private var popularPosts: [PopularPost] = []
     
-    init(viewController: MainSceneProtocol) {
+    init(viewController: MainSceneViewProtocol) {
         self.viewController = viewController
     }
     

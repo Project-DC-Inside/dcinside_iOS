@@ -30,7 +30,7 @@ class MainSceneViewController: UIViewController {
     }
 }
 
-extension MainSceneViewController: MainSceneProtocol {
+extension MainSceneViewController: MainSceneViewProtocol {
     func setupNavigationBar() {
         navigationItem.title = "Deep Forest"
         
