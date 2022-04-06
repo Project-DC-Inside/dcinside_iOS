@@ -10,25 +10,32 @@ import SnapKit
 import UIKit
 
 class MainSceneViewController: UIViewController {
+    private lazy var presenter = MainScenePresenter(viewController: self)
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .singleLine
-        
+        tableView.dataSource = presenter
         return tableView
     }()
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBar()
+        presenter.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.reloadTableView()
     }
 }
 
-extension MainSceneViewController {
+extension MainSceneViewController: MainSceneProtocol {
     func setupNavigationBar() {
         navigationItem.title = "Deep Forest"
         
         //UIBarButtonItem.SystemItem
-        let leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: nil)
+        let leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(didTapLeftButton))
         navigationItem.leftBarButtonItem = leftBarButtonItem
     }
     
@@ -37,5 +44,22 @@ extension MainSceneViewController {
         tableView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+    }
+    
+    func presentToMenuSelectSceneViewController() {
+        let viewController = UIViewController()
+        viewController.modalPresentationStyle = .fullScreen
+        viewController.view.backgroundColor = .systemBackground
+        present(viewController, animated: true)
+    }
+    
+    func reloadTableView() {
+        tableView.reloadData()
+    }
+}
+
+extension MainSceneViewController {
+    @objc func didTapLeftButton() {
+        presenter.didTapLeftButton()
     }
 }
