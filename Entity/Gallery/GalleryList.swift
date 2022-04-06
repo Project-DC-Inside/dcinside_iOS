@@ -7,14 +7,6 @@
 
 import Foundation
 
-struct Gallery : Codable {
-    var type: String
-    var name: String
-    enum CodingKeys: String, CodingKey {
-        case type, name
-    }
-}
-
 struct GalleryList: Codable {
     var success: Bool?
     var result: [Gallery]?
@@ -24,3 +16,4 @@ struct GalleryList: Codable {
         case success, result, error
     }
 }
+

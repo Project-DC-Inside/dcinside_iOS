@@ -28,13 +28,29 @@ class GalleryListViewController: UIViewController {
     }
     
     func bind(viewModel: GalleryListViewModel){
+        galleryListTable.rx.modelSelected(Gallery.self)
+            .do { _ in
+                guard let indexPath = self.galleryListTable.indexPathForSelectedRow else { return }
+                self.galleryListTable.deselectRow(at: indexPath, animated: true)
+            }
+            .bind(to: viewModel.modelSelected)
+            .disposed(by: disposeBag)
+        
+        viewModel.push
+            .drive(onNext: { gallery in
+                let viewModel = NoticeBoardViewModel(gallery.name)
+                let viewController = NoticeBoardViewController()
+                viewController.bind(viewModel)
+                self.navigationController?.pushViewController(viewController, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
         viewModel.titleNaming.drive(onNext: {
             self.title = $0
         }).disposed(by: disposeBag)
         
         viewModel.cellData.drive(galleryListTable.rx.items) { tv, row, data in
             let cell = tv.dequeueReusableCell(withIdentifier: "GalleryListTableCell", for: IndexPath(row: row, section: 0)) as! GalleryListTableCell
-            //cell.selectionStyle = .none
             cell.label.text = data.name
             return cell
         }

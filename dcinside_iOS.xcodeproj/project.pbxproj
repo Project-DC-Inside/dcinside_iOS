@@ -23,8 +23,6 @@
 		7B21B45527BC6EFD006B5FF5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B21B45427BC6EFD006B5FF5 /* SignUpViewController.swift */; };
 		7B21B45727BC6F07006B5FF5 /* SingUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B21B45627BC6F07006B5FF5 /* SingUpViewModel.swift */; };
 		7B21B45A27BCD9EC006B5FF5 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B21B45927BCD9EC006B5FF5 /* SignUpModel.swift */; };
-		7B21B46F27BD3230006B5FF5 /* SignUpInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B21B46E27BD3230006B5FF5 /* SignUpInfo.swift */; };
-		7B21B47127BE78DF006B5FF5 /* SignUpResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B21B47027BE78DF006B5FF5 /* SignUpResult.swift */; };
 		7B87D08227C2255F00572DD9 /* ManagingSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D08127C2255F00572DD9 /* ManagingSceneViewController.swift */; };
 		7B87D08527C225CB00572DD9 /* VisitListSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D08427C225CB00572DD9 /* VisitListSceneViewController.swift */; };
 		7B87D08827C2262700572DD9 /* ViewedSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D08727C2262700572DD9 /* ViewedSceneViewController.swift */; };
@@ -37,6 +35,24 @@
 		7B87D09B27C3E69700572DD9 /* TitleTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D09A27C3E69700572DD9 /* TitleTextFieldCellViewModel.swift */; };
 		7B87D09E27C3E7C400572DD9 /* DetailWriteFromCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D09D27C3E7C400572DD9 /* DetailWriteFromCell.swift */; };
 		7B87D0A027C3E7D100572DD9 /* DetailWriteFormCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D09F27C3E7D100572DD9 /* DetailWriteFormCellViewModel.swift */; };
+		7B87D0A327C536B400572DD9 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D0A227C536B400572DD9 /* Gallery.swift */; };
+		7B87D0A627C537AB00572DD9 /* GalleryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D0A527C537AB00572DD9 /* GalleryResult.swift */; };
+		7B87E39427F7495E0053A6F2 /* Pods_dcinside_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1158103951A4FB7AA43372 /* Pods_dcinside_iOS.framework */; };
+		7B9B772D27DCFCFC00E0D73E /* SignUpInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B772C27DCFCFC00E0D73E /* SignUpInfo.swift */; };
+		7B9B772F27DCFD0B00E0D73E /* SignUpResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B772E27DCFD0B00E0D73E /* SignUpResult.swift */; };
+		7B9B773127DCFEEA00E0D73E /* MakePostSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B773027DCFEEA00E0D73E /* MakePostSceneViewController.swift */; };
+		7B9B773327DCFEF200E0D73E /* MakePostSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B773227DCFEF200E0D73E /* MakePostSceneViewModel.swift */; };
+		7B9B773627DCFF9F00E0D73E /* MakePostSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B773527DCFF9F00E0D73E /* MakePostSceneModel.swift */; };
+		7B9B773927DD00C800E0D73E /* TitleFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B773827DD00C800E0D73E /* TitleFieldCell.swift */; };
+		7B9B773B27DD00D500E0D73E /* TitleFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B773A27DD00D500E0D73E /* TitleFieldCellViewModel.swift */; };
+		7B9B773E27DD011E00E0D73E /* WriteFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B773D27DD011E00E0D73E /* WriteFormCell.swift */; };
+		7B9B774027DD012700E0D73E /* WriteFormCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B773F27DD012700E0D73E /* WriteFormCellViewModel.swift */; };
+		7B9B774227DE215400E0D73E /* NoticeBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B774127DE215400E0D73E /* NoticeBoardViewController.swift */; };
+		7B9B774427DE215F00E0D73E /* NoticeBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B774327DE215F00E0D73E /* NoticeBoardViewModel.swift */; };
+		7B9B774727DE225F00E0D73E /* NoticePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B774627DE225F00E0D73E /* NoticePostCell.swift */; };
+		7B9B774927DE226A00E0D73E /* NoticePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B774827DE226A00E0D73E /* NoticePostViewModel.swift */; };
+		7B9B774C27DE247B00E0D73E /* NoticeBoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B774B27DE247B00E0D73E /* NoticeBoardModel.swift */; };
+		7B9B774F27DF901E00E0D73E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B774E27DF901E00E0D73E /* Post.swift */; };
 		7BD2F3A627B7B72F00E4CF6F /* MainSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A527B7B72F00E4CF6F /* MainSceneViewController.swift */; };
 		7BD2F3A827B7B7B600E4CF6F /* MainSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A727B7B7B600E4CF6F /* MainSceneViewModel.swift */; };
 		7BD2F3AA27B7D77B00E4CF6F /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3A927B7D77B00E4CF6F /* SideMenuViewController.swift */; };
@@ -50,7 +66,6 @@
 		7BD2F3C027BA480500E4CF6F /* GalleryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3BF27BA480500E4CF6F /* GalleryListViewModel.swift */; };
 		7BD2F3C327BA522100E4CF6F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3C227BA522100E4CF6F /* SignInViewController.swift */; };
 		7BD2F3C527BA522A00E4CF6F /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3C427BA522A00E4CF6F /* SignInViewModel.swift */; };
-		FCB0A5A54025DB78944510EC /* Pods_dcinside_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1158103951A4FB7AA43372 /* Pods_dcinside_iOS.framework */; };
 		FCFF292416A684B208A02B01 /* Pods_dcinside_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D7B19436E0E14A4F524FA8 /* Pods_dcinside_iOSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,8 +113,6 @@
 		7B21B45427BC6EFD006B5FF5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		7B21B45627BC6F07006B5FF5 /* SingUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewModel.swift; sourceTree = "<group>"; };
 		7B21B45927BCD9EC006B5FF5 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
-		7B21B46E27BD3230006B5FF5 /* SignUpInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInfo.swift; sourceTree = "<group>"; };
-		7B21B47027BE78DF006B5FF5 /* SignUpResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResult.swift; sourceTree = "<group>"; };
 		7B87D08127C2255F00572DD9 /* ManagingSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagingSceneViewController.swift; sourceTree = "<group>"; };
 		7B87D08427C225CB00572DD9 /* VisitListSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitListSceneViewController.swift; sourceTree = "<group>"; };
 		7B87D08727C2262700572DD9 /* ViewedSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewedSceneViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +125,23 @@
 		7B87D09A27C3E69700572DD9 /* TitleTextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextFieldCellViewModel.swift; sourceTree = "<group>"; };
 		7B87D09D27C3E7C400572DD9 /* DetailWriteFromCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWriteFromCell.swift; sourceTree = "<group>"; };
 		7B87D09F27C3E7D100572DD9 /* DetailWriteFormCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWriteFormCellViewModel.swift; sourceTree = "<group>"; };
+		7B87D0A227C536B400572DD9 /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
+		7B87D0A527C537AB00572DD9 /* GalleryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryResult.swift; sourceTree = "<group>"; };
+		7B9B772C27DCFCFC00E0D73E /* SignUpInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpInfo.swift; path = MainScene/SignUpInfo.swift; sourceTree = SOURCE_ROOT; };
+		7B9B772E27DCFD0B00E0D73E /* SignUpResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpResult.swift; path = MainScene/SignUpResult.swift; sourceTree = SOURCE_ROOT; };
+		7B9B773027DCFEEA00E0D73E /* MakePostSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePostSceneViewController.swift; sourceTree = "<group>"; };
+		7B9B773227DCFEF200E0D73E /* MakePostSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePostSceneViewModel.swift; sourceTree = "<group>"; };
+		7B9B773527DCFF9F00E0D73E /* MakePostSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePostSceneModel.swift; sourceTree = "<group>"; };
+		7B9B773827DD00C800E0D73E /* TitleFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleFieldCell.swift; sourceTree = "<group>"; };
+		7B9B773A27DD00D500E0D73E /* TitleFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleFieldCellViewModel.swift; sourceTree = "<group>"; };
+		7B9B773D27DD011E00E0D73E /* WriteFormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteFormCell.swift; sourceTree = "<group>"; };
+		7B9B773F27DD012700E0D73E /* WriteFormCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteFormCellViewModel.swift; sourceTree = "<group>"; };
+		7B9B774127DE215400E0D73E /* NoticeBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeBoardViewController.swift; sourceTree = "<group>"; };
+		7B9B774327DE215F00E0D73E /* NoticeBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeBoardViewModel.swift; sourceTree = "<group>"; };
+		7B9B774627DE225F00E0D73E /* NoticePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticePostCell.swift; sourceTree = "<group>"; };
+		7B9B774827DE226A00E0D73E /* NoticePostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticePostViewModel.swift; sourceTree = "<group>"; };
+		7B9B774B27DE247B00E0D73E /* NoticeBoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeBoardModel.swift; sourceTree = "<group>"; };
+		7B9B774E27DF901E00E0D73E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		7BD2F3A527B7B72F00E4CF6F /* MainSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewController.swift; sourceTree = "<group>"; };
 		7BD2F3A727B7B7B600E4CF6F /* MainSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewModel.swift; sourceTree = "<group>"; };
 		7BD2F3A927B7D77B00E4CF6F /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -136,7 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCB0A5A54025DB78944510EC /* Pods_dcinside_iOS.framework in Frameworks */,
+				7B87E39427F7495E0053A6F2 /* Pods_dcinside_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,8 +302,8 @@
 			isa = PBXGroup;
 			children = (
 				7B21B45427BC6EFD006B5FF5 /* SignUpViewController.swift */,
-				7B21B45627BC6F07006B5FF5 /* SingUpViewModel.swift */,
 				7B21B45927BCD9EC006B5FF5 /* SignUpModel.swift */,
+				7B21B45627BC6F07006B5FF5 /* SingUpViewModel.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -332,12 +362,94 @@
 			path = DetailWriteFromCell;
 			sourceTree = "<group>";
 		};
+		7B87D0A127C5369200572DD9 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				7B9B772C27DCFCFC00E0D73E /* SignUpInfo.swift */,
+				7B9B772E27DCFD0B00E0D73E /* SignUpResult.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		7B87D0A427C5377100572DD9 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				7B87D08927C2690600572DD9 /* GalleryList.swift */,
+				7B87D0A527C537AB00572DD9 /* GalleryResult.swift */,
+				7B87D0A227C536B400572DD9 /* Gallery.swift */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		7B9B773427DCFEF500E0D73E /* MakePostScene */ = {
+			isa = PBXGroup;
+			children = (
+				7B9B773027DCFEEA00E0D73E /* MakePostSceneViewController.swift */,
+				7B9B773227DCFEF200E0D73E /* MakePostSceneViewModel.swift */,
+				7B9B773527DCFF9F00E0D73E /* MakePostSceneModel.swift */,
+				7B9B773C27DD00DC00E0D73E /* DetailWriteFormCell */,
+				7B9B773727DD009600E0D73E /* TitleTextFieldView */,
+			);
+			path = MakePostScene;
+			sourceTree = "<group>";
+		};
+		7B9B773727DD009600E0D73E /* TitleTextFieldView */ = {
+			isa = PBXGroup;
+			children = (
+				7B9B773827DD00C800E0D73E /* TitleFieldCell.swift */,
+				7B9B773A27DD00D500E0D73E /* TitleFieldCellViewModel.swift */,
+			);
+			path = TitleTextFieldView;
+			sourceTree = "<group>";
+		};
+		7B9B773C27DD00DC00E0D73E /* DetailWriteFormCell */ = {
+			isa = PBXGroup;
+			children = (
+				7B9B773D27DD011E00E0D73E /* WriteFormCell.swift */,
+				7B9B773F27DD012700E0D73E /* WriteFormCellViewModel.swift */,
+			);
+			path = DetailWriteFormCell;
+			sourceTree = "<group>";
+		};
+		7B9B774527DE216300E0D73E /* NoticeBoard */ = {
+			isa = PBXGroup;
+			children = (
+				7B9B774127DE215400E0D73E /* NoticeBoardViewController.swift */,
+				7B9B774327DE215F00E0D73E /* NoticeBoardViewModel.swift */,
+				7B9B774B27DE247B00E0D73E /* NoticeBoardModel.swift */,
+				7B9B774A27DE229400E0D73E /* NoticePostCell */,
+			);
+			path = NoticeBoard;
+			sourceTree = "<group>";
+		};
+		7B9B774A27DE229400E0D73E /* NoticePostCell */ = {
+			isa = PBXGroup;
+			children = (
+				7B9B774627DE225F00E0D73E /* NoticePostCell.swift */,
+				7B9B774827DE226A00E0D73E /* NoticePostViewModel.swift */,
+			);
+			path = NoticePostCell;
+			sourceTree = "<group>";
+		};
+		7B9B774D27DF901600E0D73E /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				7B9B774E27DF901E00E0D73E /* Post.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
 		7BD2F3A427B7B72100E4CF6F /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
 				7BD2F3A527B7B72F00E4CF6F /* MainSceneViewController.swift */,
 				7BD2F3A727B7B7B600E4CF6F /* MainSceneViewModel.swift */,
+				7B9B773427DCFEF500E0D73E /* MakePostScene */,
 				7BD2F3AD27B7DE7900E4CF6F /* CustomSideMenu */,
+				7BD2F3BC27BA47C700E4CF6F /* GalleryListScene */,
+				7B87D08627C2261B00572DD9 /* ViewdScene */,
+				7B87D08327C225BD00572DD9 /* VisitListScene */,
+				7B87D08027C2254F00572DD9 /* ManagingScene */,
 			);
 			path = MainScene;
 			sourceTree = "<group>";
@@ -349,10 +461,6 @@
 				7BD2F3A927B7D77B00E4CF6F /* SideMenuViewController.swift */,
 				7BD2F3AE27B7DF0B00E4CF6F /* SideMenuViewModel.swift */,
 				7BD2F3B427B7E16A00E4CF6F /* SideMenuCell.swift */,
-				7BD2F3BC27BA47C700E4CF6F /* GalleryListScene */,
-				7B87D08627C2261B00572DD9 /* ViewdScene */,
-				7B87D08327C225BD00572DD9 /* VisitListScene */,
-				7B87D08027C2254F00572DD9 /* ManagingScene */,
 			);
 			path = CustomSideMenu;
 			sourceTree = "<group>";
@@ -360,12 +468,12 @@
 		7BD2F3B127B7DF5400E4CF6F /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				7B9B774D27DF901600E0D73E /* Post */,
 				7B21B44F27BB2CDC006B5FF5 /* NError.swift */,
 				7BD2F3B227B7DF6C00E4CF6F /* SideMenuItems.swift */,
 				7B21B44E27BB2CAD006B5FF5 /* SignIn */,
-				7B21B46E27BD3230006B5FF5 /* SignUpInfo.swift */,
-				7B21B47027BE78DF006B5FF5 /* SignUpResult.swift */,
-				7B87D08927C2690600572DD9 /* GalleryList.swift */,
+				7B87D0A127C5369200572DD9 /* SignUp */,
+				7B87D0A427C5377100572DD9 /* Gallery */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -377,6 +485,7 @@
 				7BD2F3BF27BA480500E4CF6F /* GalleryListViewModel.swift */,
 				7B87D08B27C2718500572DD9 /* GalleryListTableCell.swift */,
 				7B87D08D27C3E33500572DD9 /* AddGallery */,
+				7B9B774527DE216300E0D73E /* NoticeBoard */,
 			);
 			path = GalleryListScene;
 			sourceTree = "<group>";
@@ -630,28 +739,40 @@
 				7B87D08A27C2690600572DD9 /* GalleryList.swift in Sources */,
 				7B21B45527BC6EFD006B5FF5 /* SignUpViewController.swift in Sources */,
 				7BD2F3B327B7DF6C00E4CF6F /* SideMenuItems.swift in Sources */,
+				7B9B774227DE215400E0D73E /* NoticeBoardViewController.swift in Sources */,
 				7B87D09927C3E68A00572DD9 /* TitleTextFieldCell.swift in Sources */,
 				7BD2F3BE27BA47FB00E4CF6F /* GalleryListViewController.swift in Sources */,
+				7B87D0A627C537AB00572DD9 /* GalleryResult.swift in Sources */,
 				7B21B45A27BCD9EC006B5FF5 /* SignUpModel.swift in Sources */,
 				7B21B45727BC6F07006B5FF5 /* SingUpViewModel.swift in Sources */,
+				7B9B774C27DE247B00E0D73E /* NoticeBoardModel.swift in Sources */,
 				7BD2F3AA27B7D77B00E4CF6F /* SideMenuViewController.swift in Sources */,
 				7B87D09E27C3E7C400572DD9 /* DetailWriteFromCell.swift in Sources */,
 				7BD2F3A827B7B7B600E4CF6F /* MainSceneViewModel.swift in Sources */,
+				7B9B773327DCFEF200E0D73E /* MakePostSceneViewModel.swift in Sources */,
+				7B9B773B27DD00D500E0D73E /* TitleFieldCellViewModel.swift in Sources */,
+				7B9B772D27DCFCFC00E0D73E /* SignUpInfo.swift in Sources */,
 				7B87D09627C3E66D00572DD9 /* AddGalleryModel.swift in Sources */,
+				7B9B774427DE215F00E0D73E /* NoticeBoardViewModel.swift in Sources */,
 				6B0E9DC727524CCF00B0E946 /* AppDelegate.swift in Sources */,
-				7B21B46F27BD3230006B5FF5 /* SignUpInfo.swift in Sources */,
 				6B0E9DD127524CCF00B0E946 /* dcinside_iOS.xcdatamodeld in Sources */,
 				7B21B44D27BB2CA4006B5FF5 /* SignInResult.swift in Sources */,
+				7B9B773E27DD011E00E0D73E /* WriteFormCell.swift in Sources */,
 				7BD2F3BB27BA20BC00E4CF6F /* Token.swift in Sources */,
+				7B9B773927DD00C800E0D73E /* TitleFieldCell.swift in Sources */,
 				7BD2F3C327BA522100E4CF6F /* SignInViewController.swift in Sources */,
 				7BD2F3A627B7B72F00E4CF6F /* MainSceneViewController.swift in Sources */,
+				7B9B774F27DF901E00E0D73E /* Post.swift in Sources */,
+				7B9B773127DCFEEA00E0D73E /* MakePostSceneViewController.swift in Sources */,
 				7BD2F3AC27B7DBD800E4CF6F /* sideMenuNavigation.swift in Sources */,
+				7B9B774727DE225F00E0D73E /* NoticePostCell.swift in Sources */,
 				6B0E9DC927524CCF00B0E946 /* SceneDelegate.swift in Sources */,
 				7B87D08F27C3E34A00572DD9 /* AddGalleryViewController.swift in Sources */,
-				7B21B47127BE78DF006B5FF5 /* SignUpResult.swift in Sources */,
 				7B87D08C27C2718500572DD9 /* GalleryListTableCell.swift in Sources */,
 				7B87D0A027C3E7D100572DD9 /* DetailWriteFormCellViewModel.swift in Sources */,
+				7B87D0A327C536B400572DD9 /* Gallery.swift in Sources */,
 				723830BF275A2B97006B0F49 /* APIService.swift in Sources */,
+				7B9B772F27DCFD0B00E0D73E /* SignUpResult.swift in Sources */,
 				7B87D09427C3E43100572DD9 /* AddGalleryViewModel.swift in Sources */,
 				7BD2F3AF27B7DF0B00E4CF6F /* SideMenuViewModel.swift in Sources */,
 				7B87D09B27C3E69700572DD9 /* TitleTextFieldCellViewModel.swift in Sources */,
@@ -661,10 +782,13 @@
 				7B21B45227BC6766006B5FF5 /* SignInModel.swift in Sources */,
 				7B87D08827C2262700572DD9 /* ViewedSceneViewController.swift in Sources */,
 				7B87D08227C2255F00572DD9 /* ManagingSceneViewController.swift in Sources */,
+				7B9B774027DD012700E0D73E /* WriteFormCellViewModel.swift in Sources */,
 				7BD2F3C027BA480500E4CF6F /* GalleryListViewModel.swift in Sources */,
 				7B87D08527C225CB00572DD9 /* VisitListSceneViewController.swift in Sources */,
 				7BD2F3B527B7E16A00E4CF6F /* SideMenuCell.swift in Sources */,
 				7BD2F3B927BA204800E4CF6F /* SignInInfo.swift in Sources */,
+				7B9B774927DE226A00E0D73E /* NoticePostViewModel.swift in Sources */,
+				7B9B773627DCFF9F00E0D73E /* MakePostSceneModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -834,6 +958,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QA36XKL5W8;
 				INFOPLIST_FILE = dcinside_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -853,6 +978,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QA36XKL5W8;
 				INFOPLIST_FILE = dcinside_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

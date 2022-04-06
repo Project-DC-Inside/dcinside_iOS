@@ -59,7 +59,7 @@ struct SignUpViewModel {
         let submitNetwork = signUpSubmit.withLatestFrom(submitInfo){ _, signUp in
             print(signUp)
             return signUp
-        }.flatMap { return APIService.shared.SignUpAPI(signUp: $0).replay(2) }
+        }.flatMap { return APIService.shared.SignUpAPI(signUp: $0).retry(2) }
         
         
         self.submitResult = submitNetwork.compactMap { data -> Alert in
