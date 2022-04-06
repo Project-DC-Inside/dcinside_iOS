@@ -34,7 +34,6 @@ extension MainSceneViewController: MainSceneViewProtocol {
     func setupNavigationBar() {
         navigationItem.title = "Deep Forest"
         
-        //UIBarButtonItem.SystemItem
         let leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(didTapLeftButton))
         navigationItem.leftBarButtonItem = leftBarButtonItem
     }

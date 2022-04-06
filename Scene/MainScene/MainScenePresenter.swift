@@ -18,7 +18,6 @@ protocol MainSceneViewProtocol {
 
 class MainScenePresenter: NSObject {
     private let viewController: MainSceneViewProtocol
-    //private var popularPosts: [PopularPost] = []
     
     init(viewController: MainSceneViewProtocol) {
         self.viewController = viewController
@@ -38,6 +37,10 @@ class MainScenePresenter: NSObject {
     }
 }
 
+extension MainScenePresenter: MainSceneModelProtocol {
+    
+}
+
 extension MainScenePresenter: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
@@ -46,6 +49,4 @@ extension MainScenePresenter: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
-    
-    
 }
