@@ -59,6 +59,12 @@ struct SignInViewModel {
                 case let .success(result):
                     print(result)
                     guard let token = result.token else { return .nonExist }
+                    if let isToken = KeyChain.shared.getItem(key: KeyChain.token) {
+                        KeyChain.shared.updateItem(value: token.token, key: KeyChain.token)
+                        KeyChain.shared.updateItem(value: token.refreshToken, key: KeyChain.token)
+                        KeyChain.shared.updateItem(value: info.id, key: KeyChain.nickName)
+                        return .success
+                    }
                     KeyChain.shared.addItem(key: KeyChain.token, value: token.token)
                     KeyChain.shared.addItem(key: KeyChain.refresh, value: token.refreshToken)
                     KeyChain.shared.addItem(key: KeyChain.nickName, value: info.id)

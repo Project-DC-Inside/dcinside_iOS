@@ -51,6 +51,7 @@ struct AddGalleryViewModel {
                 Gallery(type: type, name: name! )}        
         
         let submitGallery = submitButtonTapped.withLatestFrom(titleTextFieldViewModel.titleText.filter{ $0 != nil } ){ _, name in
+                print(name!)
                 return name!
             }
             .flatMap { return APIService.shared.MakeGallery(type: type, title: $0) }

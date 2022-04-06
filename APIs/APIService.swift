@@ -33,7 +33,10 @@ class APIService {
         print(token)
         return ["Authorization": "Bearer " + token]
     }
-    
+    /*
+     signUpSubmit
+     eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6IlJPTEVfRklYRUQiLCJleHAiOjE2NDkyNDM4MTN9.QtAv2SkGn5iIeordzRGkxD2FMScdtlYdOHeQAnUl-0ikOPiNVMsz1WVip_JOx08wumUj_yqYHSkwUDNdc48ADA
+     */
     private func URLGenerate(path : String, queryItems: [String: String]?) -> URLComponents {
         var components = URLComponents()
         
@@ -138,7 +141,7 @@ class APIService {
     }
     
     func MakeGallery(type: String, title: String) -> Observable<Result<GalleryResult, NetworkError>> {
-        print("IS OBSERVABLE")
+        print("IS OBSERVABLE", type, title)
         return Observable<Result<GalleryResult, NetworkError>>.create { observer in
             AF.request(self.URLGenerate(path: "/api/v1/galleries", queryItems: nil), method: .post, parameters: Gallery(type: type, name: title), encoder: JSONParameterEncoder.default, headers: self.makeHeader()).responseJSON { response in
                 print(response.response?.statusCode, "STATUS")

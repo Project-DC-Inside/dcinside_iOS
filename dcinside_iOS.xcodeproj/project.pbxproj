@@ -37,6 +37,7 @@
 		7B87D0A027C3E7D100572DD9 /* DetailWriteFormCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D09F27C3E7D100572DD9 /* DetailWriteFormCellViewModel.swift */; };
 		7B87D0A327C536B400572DD9 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D0A227C536B400572DD9 /* Gallery.swift */; };
 		7B87D0A627C537AB00572DD9 /* GalleryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87D0A527C537AB00572DD9 /* GalleryResult.swift */; };
+		7B87E39427F7495E0053A6F2 /* Pods_dcinside_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1158103951A4FB7AA43372 /* Pods_dcinside_iOS.framework */; };
 		7B9B772D27DCFCFC00E0D73E /* SignUpInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B772C27DCFCFC00E0D73E /* SignUpInfo.swift */; };
 		7B9B772F27DCFD0B00E0D73E /* SignUpResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B772E27DCFD0B00E0D73E /* SignUpResult.swift */; };
 		7B9B773127DCFEEA00E0D73E /* MakePostSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B773027DCFEEA00E0D73E /* MakePostSceneViewController.swift */; };
@@ -65,7 +66,6 @@
 		7BD2F3C027BA480500E4CF6F /* GalleryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3BF27BA480500E4CF6F /* GalleryListViewModel.swift */; };
 		7BD2F3C327BA522100E4CF6F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3C227BA522100E4CF6F /* SignInViewController.swift */; };
 		7BD2F3C527BA522A00E4CF6F /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD2F3C427BA522A00E4CF6F /* SignInViewModel.swift */; };
-		FCB0A5A54025DB78944510EC /* Pods_dcinside_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1158103951A4FB7AA43372 /* Pods_dcinside_iOS.framework */; };
 		FCFF292416A684B208A02B01 /* Pods_dcinside_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D7B19436E0E14A4F524FA8 /* Pods_dcinside_iOSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -166,7 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCB0A5A54025DB78944510EC /* Pods_dcinside_iOS.framework in Frameworks */,
+				7B87E39427F7495E0053A6F2 /* Pods_dcinside_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,8 +302,8 @@
 			isa = PBXGroup;
 			children = (
 				7B21B45427BC6EFD006B5FF5 /* SignUpViewController.swift */,
-				7B21B45627BC6F07006B5FF5 /* SingUpViewModel.swift */,
 				7B21B45927BCD9EC006B5FF5 /* SignUpModel.swift */,
+				7B21B45627BC6F07006B5FF5 /* SingUpViewModel.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -446,6 +446,10 @@
 				7BD2F3A727B7B7B600E4CF6F /* MainSceneViewModel.swift */,
 				7B9B773427DCFEF500E0D73E /* MakePostScene */,
 				7BD2F3AD27B7DE7900E4CF6F /* CustomSideMenu */,
+				7BD2F3BC27BA47C700E4CF6F /* GalleryListScene */,
+				7B87D08627C2261B00572DD9 /* ViewdScene */,
+				7B87D08327C225BD00572DD9 /* VisitListScene */,
+				7B87D08027C2254F00572DD9 /* ManagingScene */,
 			);
 			path = MainScene;
 			sourceTree = "<group>";
@@ -457,10 +461,6 @@
 				7BD2F3A927B7D77B00E4CF6F /* SideMenuViewController.swift */,
 				7BD2F3AE27B7DF0B00E4CF6F /* SideMenuViewModel.swift */,
 				7BD2F3B427B7E16A00E4CF6F /* SideMenuCell.swift */,
-				7BD2F3BC27BA47C700E4CF6F /* GalleryListScene */,
-				7B87D08627C2261B00572DD9 /* ViewdScene */,
-				7B87D08327C225BD00572DD9 /* VisitListScene */,
-				7B87D08027C2254F00572DD9 /* ManagingScene */,
 			);
 			path = CustomSideMenu;
 			sourceTree = "<group>";
@@ -958,6 +958,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QA36XKL5W8;
 				INFOPLIST_FILE = dcinside_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -977,6 +978,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QA36XKL5W8;
 				INFOPLIST_FILE = dcinside_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
