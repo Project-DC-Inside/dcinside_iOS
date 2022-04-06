@@ -94,9 +94,11 @@ extension Reactive where Base:AddGalleryViewController {
     var setAlert: Binder<Alert> {
         return Binder(base) { base, data in
             let alertController = UIAlertController(title: data.title, message: data.message, preferredStyle: .alert)
-            let alert = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+            let alert = UIAlertAction(title: "확인", style: .cancel) { _ in
+                base.navigationController?.popViewController(animated: true)
+            }
             alertController.addAction(alert)
-            base.present(alertController, animated: true, completion: nil)
+            base.present(alertController, animated: true)
         }
     }
 }
