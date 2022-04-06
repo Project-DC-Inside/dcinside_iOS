@@ -119,6 +119,7 @@
 		6B0E9DBA27524CCF00B0E946 = {
 			isa = PBXGroup;
 			children = (
+				7BE2227227FDB698005DA880 /* Scene */,
 				723830BD275A265D006B0F49 /* APIs */,
 				6B0E9DC527524CCF00B0E946 /* dcinside_iOS */,
 				6B0E9DDF27524CD000B0E946 /* dcinside_iOSTests */,
@@ -177,6 +178,13 @@
 				726EA7AC275A534500EB2D83 /* KeyChain.swift */,
 			);
 			path = APIs;
+			sourceTree = "<group>";
+		};
+		7BE2227227FDB698005DA880 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
