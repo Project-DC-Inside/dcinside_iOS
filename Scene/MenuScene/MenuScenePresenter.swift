@@ -12,6 +12,8 @@ protocol MenuSceneProtocol: AnyObject {
     func setUpNavigationBar()
     func setUpViews()
     func signInSetUp(signInID: String)
+    func presentSignInScene()
+    func signOutAction()
 }
 
 class MenuScenePresenter: NSObject {
@@ -28,9 +30,19 @@ class MenuScenePresenter: NSObject {
     }
     
     func viewWillAppear() {
-        guard let signInID = UserDefaults.standard.string(forKey: "singInID") else { return }
+        guard let signInID = UserDefaults.standard.string(forKey: "signInID") else { return }
         
         viewController?.signInSetUp(signInID: signInID)
+    }
+    
+    func didTapSignInButton() {
+        viewController?.presentSignInScene()
+    }
+    
+    func didTapSignOutButton() {
+        // Todo: 삭제해야할건 UserDefaults랑 키체인 정보!
+        UserDefaults.standard.removeObject(forKey: "signInID")
+        viewController?.signOutAction()
     }
 }
 
