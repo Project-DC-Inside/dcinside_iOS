@@ -46,10 +46,10 @@ extension MainSceneViewController: MainSceneViewProtocol {
     }
     
     func presentToMenuSelectSceneViewController() {
-        let viewController = UIViewController()
-        viewController.modalPresentationStyle = .fullScreen
-        viewController.view.backgroundColor = .systemBackground
-        present(viewController, animated: true)
+        let viewController = MenuSceneViewController()
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
+        
     }
     
     func reloadTableView() {

@@ -37,10 +37,6 @@ class MainScenePresenter: NSObject {
     }
 }
 
-extension MainScenePresenter: MainSceneModelProtocol {
-    
-}
-
 extension MainScenePresenter: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
