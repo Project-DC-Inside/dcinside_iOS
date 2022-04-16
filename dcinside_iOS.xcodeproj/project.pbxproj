@@ -17,8 +17,9 @@
 		6B0E9DEC27524CD000B0E946 /* dcinside_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E9DEB27524CD000B0E946 /* dcinside_iOSUITests.swift */; };
 		723830BF275A2B97006B0F49 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723830BE275A2B97006B0F49 /* APIService.swift */; };
 		726EA7AD275A534500EB2D83 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA7AC275A534500EB2D83 /* KeyChain.swift */; };
+
 		7BE2228227FDE4C2005DA880 /* MenuSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2228127FDE4C2005DA880 /* MenuSceneViewController.swift */; };
-		7BE2228427FDE4CB005DA880 /* MenuScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2228327FDE4CB005DA880 /* MenuScenePresenter.swift */; };
+		7BE2228427FDE4CB005DA880 /* MenuScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2228327FDE4CB005DA880 /
 		FCB0A5A54025DB78944510EC /* Pods_dcinside_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1158103951A4FB7AA43372 /* Pods_dcinside_iOS.framework */; };
 		FCFF292416A684B208A02B01 /* Pods_dcinside_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D7B19436E0E14A4F524FA8 /* Pods_dcinside_iOSTests.framework */; };
 /* End PBXBuildFile section */
@@ -192,6 +193,7 @@
 			path = Scene;
 			sourceTree = "<group>";
 		};
+
 		7BE2228027FDE4AD005DA880 /* MenuScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +201,7 @@
 				7BE2228327FDE4CB005DA880 /* MenuScenePresenter.swift */,
 			);
 			path = MenuScene;
+
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,7 +446,9 @@
 				7BE2228227FDE4C2005DA880 /* MenuSceneViewController.swift in Sources */,
 				7BE2228427FDE4CB005DA880 /* MenuScenePresenter.swift in Sources */,
 				6B0E9DC927524CCF00B0E946 /* SceneDelegate.swift in Sources */,
+				7BE2227D27FDDF89005DA880 /* PopularPost.swift in Sources */,
 				723830BF275A2B97006B0F49 /* APIService.swift in Sources */,
+				7BE2227727FDB82D005DA880 /* MainScenePresenter.swift in Sources */,
 				726EA7AD275A534500EB2D83 /* KeyChain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
