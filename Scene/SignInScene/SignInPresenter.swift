@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol SignInSceneProtocol: AnyObject {
     func setUpViews()
@@ -19,8 +20,11 @@ class SignInPresenter: NSObject {
     }
     
     func viewDidLoad() {
-        viewController.setUpViews
+        viewController?.setUpViews()
     }
 }
 
 
+extension SignInPresenter: UITextFieldDelegate {
+    
+}
