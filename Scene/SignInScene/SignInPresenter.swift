@@ -7,10 +7,14 @@
 
 import Foundation
 
-protocol SingInSceneProtocol: AnyObject {
+protocol SignInSceneProtocol: AnyObject {
     
 }
 
 class SignInPresenter: NSObject {
+    private var viewController: SignInSceneProtocol?
     
+    init(_ viewController: SignInSceneProtocol) {
+        self.viewController = viewController
+    }
 }
