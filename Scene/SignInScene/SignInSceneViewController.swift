@@ -8,8 +8,16 @@
 import Foundation
 import UIKit
 
-class SingInSceneViewController: UIViewController {
+class SignInSceneViewController: UIViewController {
+    private lazy var presenter = SignInPresenter(viewController: self)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        presenter.viewDidLoad()
     }
+}
+
+extension SignInSceneViewController: SignInSceneProtocol {
+    
 }
