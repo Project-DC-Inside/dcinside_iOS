@@ -8,11 +8,30 @@
 import Foundation
 
 class SignUpSceneModel {
+    private var signUpInfo = SignUpInfo()
     private var passwordInfo: String? = nil
+    
     private var signUpResonable: [Bool] = [Bool](repeating: false, count: 6)
+    
+    func getSignUpInfo() -> SignUpInfo {
+        return signUpInfo
+    }
+    
+    func setId(id: String) {
+        signUpInfo.username = id
+    }
+    
+    func setNick(nick: String) {
+        signUpInfo.nickname = nick
+    }
+    
+    func setEmail(email: String) {
+        signUpInfo.email = email
+    }
     
     func setPasswordInfo(password: String) {
         passwordInfo = password
+        signUpInfo.password = password
     }
     
     func getPasswordInfo() -> String? {

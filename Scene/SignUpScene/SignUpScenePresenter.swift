@@ -16,6 +16,7 @@ protocol SignUpSceneProtocol: AnyObject {
     func nickNameChecker(labelInfo: LabelTextwithColor)
     func pwChecker(labelInfo: LabelTextwithColor)
     func emailChecker(labelInfo: LabelTextwithColor)
+    func setAlert(title: String, content: String, isUp: Bool)
 }
 
 class SignUpScenePresenter: NSObject {
@@ -31,6 +32,26 @@ class SignUpScenePresenter: NSObject {
         viewController?.setUpViews()
     }
     
+    func didTappedSubmitButton() {
+        if !signUpSceneModel.checkSignUpResonable() {
+            // Todo: Alert 띄우기, 에러 만들기..
+            viewController?.setAlert(title: "가입실패", content: "내용을 다시 확인하세요.", isUp: false)
+            return
+        }
+        APIService.shared.signUpAction(signUpInfo: signUpSceneModel.getSignUpInfo()) { [weak self] response in
+            switch response {
+            case .success(let res):
+                if res.error == nil {
+                    self?.viewController?.setAlert(title: "가입 성공!", content: "성공했어요!", isUp: true)
+                } else {
+                    self?.viewController?.setAlert(title: "실패", content: res.error?.message ?? "", isUp: false)
+                }
+            case .failure(let error):
+                self?.viewController?.setAlert(title: "실패", content: error.localizedDescription, isUp: true)
+            }
+        }
+        
+    }
     
 }
 
@@ -71,6 +92,7 @@ extension SignUpScenePresenter {
             return ("ID가 너무 짧습니다.", .red)
         case 5...20:
             signUpSceneModel.setSignUpResonable(tag: 1)
+            signUpSceneModel.setId(id: id)
             return ("적절합니다!", .blue)
         default:
             signUpSceneModel.setSignUpNotResonable(tag: 1)
@@ -85,6 +107,7 @@ extension SignUpScenePresenter {
             return ("20자 내외로 닉네임 입력해주세요! :)", .gray)
         case 1...20:
             signUpSceneModel.setSignUpResonable(tag: 2)
+            signUpSceneModel.setNick(nick: nickName)
             return ("적절합니다!", .blue)
         default:
             signUpSceneModel.setSignUpNotResonable(tag: 2)
@@ -123,6 +146,7 @@ extension SignUpScenePresenter {
         
         if emailValid.evaluate(with: email) {
             signUpSceneModel.setSignUpResonable(tag: 5)
+            signUpSceneModel.setEmail(email: email)
             return ("이메일이 유효합니다!", .blue)
         }
         else {

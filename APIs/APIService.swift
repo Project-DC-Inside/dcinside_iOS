@@ -64,6 +64,24 @@ class APIService {
             
         }.resume()
     }
+    
+    func signUpAction(signUpInfo: SignUpInfo, completion: @escaping (Result<SignUpResponse, NetworkError>)-> Void) {
+        AF.request(URLGenerate(path: "/api/v1/auth/signup", queryItems: nil).url!, method: .post, parameters: signUpInfo, encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300).responseJSON { response in
+            guard let data = response.data else { return }
+            switch response.result {
+            case .success:
+                do {
+                    let signUpResponse = try JSONDecoder().decode(SignUpResponse.self, from: data)
+                    completion(.success(signUpResponse))
+                } catch {
+                    completion(.failure(.decodeError))
+                }
+            case .failure:
+                completion(.failure(NetworkError.badURL))
+            }
+            
+        }.resume()
+    }
 }
 
 struct refreshToken : Codable {
