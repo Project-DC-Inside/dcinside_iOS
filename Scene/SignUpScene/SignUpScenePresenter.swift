@@ -12,5 +12,9 @@ protocol SignUpSceneProtocol: AnyObject {
 }
 
 class SignUpScenePresenter: NSObject {
+    private weak var viewController: SignUpSceneProtocol?
     
+    init(viewController: SignUpSceneProtocol) {
+        self.viewController = viewController
+    }    
 }

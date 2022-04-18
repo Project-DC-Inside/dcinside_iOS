@@ -9,7 +9,13 @@ import Foundation
 import UIKit
 
 class SignUpViewController: UIViewController {
+    private lazy var presenter = SignUpScenePresenter(viewController: self)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+}
+
+extension SignUpViewController: SignUpSceneProtocol {
+    
 }
