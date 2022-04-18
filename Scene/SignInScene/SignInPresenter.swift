@@ -11,6 +11,7 @@ import UIKit
 protocol SignInSceneProtocol: AnyObject {
     func setUpViews()
     func popScene()
+    func signUp()
 }
 
 class SignInPresenter: NSObject {
@@ -37,6 +38,10 @@ class SignInPresenter: NSObject {
                 print(error)
             }
         }
+    }
+    
+    func didTappedSignUpButton() {
+        viewController?.signUp()
     }
 }
 

@@ -39,6 +39,16 @@ class SignInSceneViewController: UIViewController {
         return btn
     }()
     
+    private lazy var signUpButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("회원가입", for: .normal)
+        button.setTitleColor(UIColor.systemGray, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        button.addTarget(self, action: #selector(didTappedSignUpButton), for: .touchUpInside)
+        
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,7 +58,7 @@ class SignInSceneViewController: UIViewController {
 
 extension SignInSceneViewController: SignInSceneProtocol {
     func setUpViews() {
-        [idTextView, pwTextView, submitButton].forEach {
+        [idTextView, pwTextView, submitButton, signUpButton].forEach {
             view.addSubview($0)
         }
         
@@ -68,10 +78,20 @@ extension SignInSceneViewController: SignInSceneProtocol {
             $0.top.equalTo(pwTextView.snp.bottom).offset(50)
             $0.leading.trailing.equalToSuperview().inset(40)
         }
+        
+        signUpButton.snp.makeConstraints {
+            $0.top.equalTo(submitButton.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(40)
+        }
     }
     
     func popScene() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func signUp() {
+        let vc = SignUpSceneViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -80,5 +100,9 @@ extension SignInSceneViewController {
         guard let id = idTextView.text else { return }
         guard let pw = pwTextView.text else { return }
         presenter.didTappedSubmitButton(id: id, pw: pw)
+    }
+    
+    @objc func didTappedSignUpButton() {
+        presenter.didTappedSignUpButton()
     }
 }
