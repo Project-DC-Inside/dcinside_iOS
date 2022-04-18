@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol MainSceneViewProtocol {
+protocol MainSceneViewProtocol: AnyObject {
     func setupNavigationBar()
     func setUpViews()
     func presentToMenuSelectSceneViewController()
@@ -17,23 +17,23 @@ protocol MainSceneViewProtocol {
 
 
 class MainScenePresenter: NSObject {
-    private let viewController: MainSceneViewProtocol
+    private weak var viewController: MainSceneViewProtocol?
     
     init(viewController: MainSceneViewProtocol) {
         self.viewController = viewController
     }
     
     func viewDidLoad() {
-        viewController.setupNavigationBar()
-        viewController.setUpViews()
+        viewController?.setupNavigationBar()
+        viewController?.setUpViews()
     }
     
     func didTapLeftButton() {
-        viewController.presentToMenuSelectSceneViewController()
+        viewController?.presentToMenuSelectSceneViewController()
     }
     
     func reloadTableView() {
-        viewController.reloadTableView()
+        viewController?.reloadTableView()
     }
 }
 
