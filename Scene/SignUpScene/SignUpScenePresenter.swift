@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SignUpSceneProtocol: AnyObject {
-    
+    func setUpViews()
 }
 
 class SignUpScenePresenter: NSObject {
@@ -16,5 +16,10 @@ class SignUpScenePresenter: NSObject {
     
     init(viewController: SignUpSceneProtocol) {
         self.viewController = viewController
-    }    
+    }
+    
+    func viewDidLoad() {
+        print("VIEWDID")
+        viewController?.setUpViews()
+    }
 }
