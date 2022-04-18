@@ -47,7 +47,7 @@ extension MainSceneViewController: MainSceneViewProtocol {
     
     func presentToMenuSelectSceneViewController() {
         let viewController = MenuSceneViewController()
-        
+        navigationItem.backButtonTitle = ""
         self.navigationController?.pushViewController(viewController, animated: true)
         
     }

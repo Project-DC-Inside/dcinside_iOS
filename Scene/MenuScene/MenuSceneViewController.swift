@@ -56,6 +56,7 @@ extension MenuSceneViewController: MenuSceneProtocol {
     func presentSignInScene() {
         let signInViewController = SignInSceneViewController()
         signInViewController.view.backgroundColor = .systemBackground
+        navigationItem.backButtonTitle = ""
         
         self.navigationController?.pushViewController(signInViewController, animated: true)
     }

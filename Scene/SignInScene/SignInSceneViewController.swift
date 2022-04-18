@@ -91,6 +91,8 @@ extension SignInSceneViewController: SignInSceneProtocol {
     
     func signUp() {
         let vc = SignUpSceneViewController()
+        navigationItem.backButtonTitle = ""
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
