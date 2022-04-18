@@ -11,6 +11,8 @@ import Alamofire
 enum NetworkError:Error {
     case badURL
     case serverError
+    case decodeError
+    case inputError
 }
 
 class APIService {
@@ -19,6 +21,49 @@ class APIService {
     
     private let HTTPHeaders = ["Content-Type": "application/json"]
     private let baseURL = "http://3.36.205.23:8080"
+        
+    private func URLGenerate(path : String, queryItems: [String: String]?) -> URLComponents {
+        var components = URLComponents()
+        
+        let scheme = "http"
+        let host = "52.78.99.238"
+        let port = 8080
+        
+        components.scheme = scheme
+        components.host = host
+        components.port = port
+        components.path = path
+        guard let queries = queryItems else { return components }
+        
+        components.queryItems = []
+        for item in queries {
+            components.queryItems?.append(URLQueryItem(name: item.key, value: item.value))
+        }
+        
+        return components
+    }
+    
+    func signInAction(signInInfo: SignInInfo, completion: @escaping (Result<SignInResult, NetworkError>) -> Void) {
+        AF.request(URLGenerate(path: "/api/v1/auth/signin", queryItems: nil).url!, method: .post, parameters: signInInfo, encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300).responseJSON { response in
+            guard let data = response.data else { return }
+            switch response.result {
+            case .success:
+                do {
+                    let signInResponse = try JSONDecoder().decode(SignInResponse.self, from: data)
+                    if signInResponse.success {
+                        completion(.success(signInResponse.result!))
+                    } else {
+                        completion(.failure(NetworkError.inputError))
+                    }
+                } catch {
+                    completion(.failure(.decodeError))
+                }
+            case .failure:
+                completion(.failure(NetworkError.badURL))
+            }
+            
+        }.resume()
+    }
 }
 
 struct refreshToken : Codable {

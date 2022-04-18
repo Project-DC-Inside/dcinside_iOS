@@ -73,6 +73,7 @@ extension MenuSceneViewController: MenuSceneProtocol {
         // To-Do : 받아온 ID 데이터 토대로 해서 로그인 못하게 화면 구성해야함
         navigationItem.title = "\(signInID)님!"
         signInButton.action = #selector(signOutButtonTapped)
+        signInButton.image = UIImage(systemName: "lock.fill")
     }
     
     func signOutAction() {
