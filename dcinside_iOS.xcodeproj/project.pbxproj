@@ -36,9 +36,12 @@
 		7BF3E62C280EC53C00F4126E /* GalleryListScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3E62B280EC53C00F4126E /* GalleryListScenePresenter.swift */; };
 		7BF3E62E280EE33B00F4126E /* GalleryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3E62D280EE33B00F4126E /* GalleryList.swift */; };
 		7BF3E630280EE35600F4126E /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3E62F280EE35600F4126E /* Gallery.swift */; };
-		7BF3E632280EE37200F4126E /* GalleryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3E631280EE37200F4126E /* GalleryResult.swift */; };
+		7BF3E632280EE37200F4126E /* GalleryMakeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3E631280EE37200F4126E /* GalleryMakeResponse.swift */; };
 		7BF3E635280EE9F500F4126E /* GalleryAddSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3E634280EE9F500F4126E /* GalleryAddSceneViewController.swift */; };
 		7BF3E637280EEA0000F4126E /* GalleryAddScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3E636280EEA0000F4126E /* GalleryAddScenePresenter.swift */; };
+		7BF3E63A280EEC4800F4126E /* GalleryNameCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3E639280EEC4800F4126E /* GalleryNameCells.swift */; };
+		7BF3E63C280EECB900F4126E /* GalleryNamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3E63B280EECB900F4126E /* GalleryNamePresenter.swift */; };
+		7BF3E63E280F035700F4126E /* GalleryMakeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3E63D280F035700F4126E /* GalleryMakeResult.swift */; };
 		FCB0A5A54025DB78944510EC /* Pods_dcinside_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1158103951A4FB7AA43372 /* Pods_dcinside_iOS.framework */; };
 		FCFF292416A684B208A02B01 /* Pods_dcinside_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D7B19436E0E14A4F524FA8 /* Pods_dcinside_iOSTests.framework */; };
 /* End PBXBuildFile section */
@@ -100,9 +103,12 @@
 		7BF3E62B280EC53C00F4126E /* GalleryListScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryListScenePresenter.swift; sourceTree = "<group>"; };
 		7BF3E62D280EE33B00F4126E /* GalleryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryList.swift; sourceTree = "<group>"; };
 		7BF3E62F280EE35600F4126E /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
-		7BF3E631280EE37200F4126E /* GalleryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryResult.swift; sourceTree = "<group>"; };
+		7BF3E631280EE37200F4126E /* GalleryMakeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryMakeResponse.swift; sourceTree = "<group>"; };
 		7BF3E634280EE9F500F4126E /* GalleryAddSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryAddSceneViewController.swift; sourceTree = "<group>"; };
 		7BF3E636280EEA0000F4126E /* GalleryAddScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryAddScenePresenter.swift; sourceTree = "<group>"; };
+		7BF3E639280EEC4800F4126E /* GalleryNameCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryNameCells.swift; sourceTree = "<group>"; };
+		7BF3E63B280EECB900F4126E /* GalleryNamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryNamePresenter.swift; sourceTree = "<group>"; };
+		7BF3E63D280F035700F4126E /* GalleryMakeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryMakeResult.swift; sourceTree = "<group>"; };
 		8B3789E2BBFE5F2D389D38DF /* Pods_dcinside_iOS_dcinside_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dcinside_iOS_dcinside_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1158103951A4FB7AA43372 /* Pods_dcinside_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dcinside_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D7B19436E0E14A4F524FA8 /* Pods_dcinside_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dcinside_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -275,7 +281,8 @@
 				7BF3E624280DA34D00F4126E /* SignUpResponse.swift */,
 				7BF3E62D280EE33B00F4126E /* GalleryList.swift */,
 				7BF3E62F280EE35600F4126E /* Gallery.swift */,
-				7BF3E631280EE37200F4126E /* GalleryResult.swift */,
+				7BF3E631280EE37200F4126E /* GalleryMakeResponse.swift */,
+				7BF3E63D280F035700F4126E /* GalleryMakeResult.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -305,8 +312,18 @@
 			children = (
 				7BF3E634280EE9F500F4126E /* GalleryAddSceneViewController.swift */,
 				7BF3E636280EEA0000F4126E /* GalleryAddScenePresenter.swift */,
+				7BF3E638280EEC1E00F4126E /* GalleryAddCells */,
 			);
 			path = GalleryAddScene;
+			sourceTree = "<group>";
+		};
+		7BF3E638280EEC1E00F4126E /* GalleryAddCells */ = {
+			isa = PBXGroup;
+			children = (
+				7BF3E639280EEC4800F4126E /* GalleryNameCells.swift */,
+				7BF3E63B280EECB900F4126E /* GalleryNamePresenter.swift */,
+			);
+			path = GalleryAddCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -555,6 +572,7 @@
 				7BF3E610280C433F00F4126E /* SignInPresenter.swift in Sources */,
 				7BF3E625280DA34D00F4126E /* SignUpResponse.swift in Sources */,
 				7BF3E618280C687B00F4126E /* SignInResponse.swift in Sources */,
+				7BF3E63A280EEC4800F4126E /* GalleryNameCells.swift in Sources */,
 				7BE2228227FDE4C2005DA880 /* MenuSceneViewController.swift in Sources */,
 				7BF3E637280EEA0000F4126E /* GalleryAddScenePresenter.swift in Sources */,
 				7BE2228427FDE4CB005DA880 /* MenuScenePresenter.swift in Sources */,
@@ -568,7 +586,9 @@
 				726EA7AD275A534500EB2D83 /* KeyChain.swift in Sources */,
 				7BF3E621280D984700F4126E /* SignUpSceneModel.swift in Sources */,
 				7BF3E635280EE9F500F4126E /* GalleryAddSceneViewController.swift in Sources */,
-				7BF3E632280EE37200F4126E /* GalleryResult.swift in Sources */,
+				7BF3E63C280EECB900F4126E /* GalleryNamePresenter.swift in Sources */,
+				7BF3E63E280F035700F4126E /* GalleryMakeResult.swift in Sources */,
+				7BF3E632280EE37200F4126E /* GalleryMakeResponse.swift in Sources */,
 				7BF3E623280DA05F00F4126E /* SignUpInfo.swift in Sources */,
 				7BF3E61D280D799200F4126E /* SignUpSceneViewController.swift in Sources */,
 				7B73B13C280B1B0E002E4015 /* MainScenePresenter.swift in Sources */,

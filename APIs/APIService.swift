@@ -21,6 +21,12 @@ class APIService {
     
     private let HTTPHeaders = ["Content-Type": "application/json"]
     private let baseURL = "http://3.36.205.23:8080"
+    
+    private func makeHeader() -> HTTPHeaders {
+        let token = KeyChain.shared.getItem(key: KeyChain.token) as! String
+        print(token)
+        return ["Authorization": "Bearer " + token]
+    }
         
     private func URLGenerate(path : String, queryItems: [String: String]?) -> URLComponents {
         var components = URLComponents()
@@ -102,6 +108,26 @@ class APIService {
             }
             
         }.resume()
+    }
+    
+    func submitNewGallery(gallery: Gallery, completion: @escaping (Result<GalleryMakeResponse, NetworkError>)-> Void) {
+        AF.request(URLGenerate(path: "/api/v1/galleries", queryItems: nil).url!, method: .post, parameters: gallery, encoder: JSONParameterEncoder.default, headers: makeHeader()).validate(statusCode: 200..<300).responseJSON { response in
+            guard let data = response.data else { return }
+            switch response.result {
+            case .success:
+                do {
+                    let galleryResult = try JSONDecoder().decode(GalleryMakeResponse.self, from: data)
+                    print(galleryResult)
+                    completion(.success(galleryResult))
+                }catch {
+                    print("Decode Err")
+                    completion(.failure(.decodeError))
+                }
+            case .failure:
+                print("fail")
+                completion(.failure(.badURL))
+            }
+        }
     }
 }
 
