@@ -24,6 +24,8 @@ class GalleryListSceneViewController: UIViewController {
     private lazy var addGalleryButton: UIBarButtonItem = {
         let button = UIBarButtonItem()
         button.image = UIImage(systemName: "plus")
+        button.target = self
+        button.action = #selector(didTappedAddButton)
         
         return button
     }()
@@ -84,10 +86,20 @@ extension GalleryListSceneViewController: GalleryListSceneProtocol {
     func reLoadData() {
         galleryListTable.reloadData()
     }
+    
+    func addScenePresent() {
+        let vc = GalleryAddSceneViewController(type: galleryType)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension GalleryListSceneViewController {
     @objc func didTappedBackButton() {
         presenter.didTappedBackButton()
+    }
+    
+    @objc func didTappedAddButton() {
+        presenter.didTappedAddButton()
     }
 }

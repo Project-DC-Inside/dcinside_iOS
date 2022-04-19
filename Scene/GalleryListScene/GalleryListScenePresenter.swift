@@ -12,6 +12,7 @@ protocol GalleryListSceneProtocol: AnyObject {
     func setViews()
     func eraseThisScene()
     func reLoadData()
+    func addScenePresent()
 }
 
 class GalleryListScenePresenter: NSObject {
@@ -41,6 +42,10 @@ class GalleryListScenePresenter: NSObject {
     
     func didTappedBackButton() {
         viewController?.eraseThisScene()
+    }
+    
+    func didTappedAddButton() {
+        viewController?.addScenePresent()
     }
 }
 

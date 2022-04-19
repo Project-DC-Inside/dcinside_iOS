@@ -31,8 +31,8 @@ class SignInPresenter: NSObject {
             switch response {
             case .success(let data):
                 UserDefaults.standard.set(id, forKey: "signInID")
-                KeyChain.shared.addItem(key: data.accessToken, value: "accessToken")
-                KeyChain.shared.addItem(key: data.refreshToken, value: "refreshToken")
+                KeyChain.shared.addItem(key: "accessToken", value: data.accessToken)
+                KeyChain.shared.addItem(key: "refreshToken", value: data.refreshToken)
                 self?.viewController?.popScene()
             case .failure(let error):
                 print(error)
