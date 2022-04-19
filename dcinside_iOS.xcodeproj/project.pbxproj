@@ -34,6 +34,9 @@
 		7BF3E625280DA34D00F4126E /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3E624280DA34D00F4126E /* SignUpResponse.swift */; };
 		7BF3E62A280EC53000F4126E /* GalleryListSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3E629280EC53000F4126E /* GalleryListSceneViewController.swift */; };
 		7BF3E62C280EC53C00F4126E /* GalleryListScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3E62B280EC53C00F4126E /* GalleryListScenePresenter.swift */; };
+		7BF3E62E280EE33B00F4126E /* GalleryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3E62D280EE33B00F4126E /* GalleryList.swift */; };
+		7BF3E630280EE35600F4126E /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3E62F280EE35600F4126E /* Gallery.swift */; };
+		7BF3E632280EE37200F4126E /* GalleryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3E631280EE37200F4126E /* GalleryResult.swift */; };
 		FCB0A5A54025DB78944510EC /* Pods_dcinside_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1158103951A4FB7AA43372 /* Pods_dcinside_iOS.framework */; };
 		FCFF292416A684B208A02B01 /* Pods_dcinside_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D7B19436E0E14A4F524FA8 /* Pods_dcinside_iOSTests.framework */; };
 /* End PBXBuildFile section */
@@ -93,6 +96,9 @@
 		7BF3E624280DA34D00F4126E /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		7BF3E629280EC53000F4126E /* GalleryListSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryListSceneViewController.swift; sourceTree = "<group>"; };
 		7BF3E62B280EC53C00F4126E /* GalleryListScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryListScenePresenter.swift; sourceTree = "<group>"; };
+		7BF3E62D280EE33B00F4126E /* GalleryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryList.swift; sourceTree = "<group>"; };
+		7BF3E62F280EE35600F4126E /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
+		7BF3E631280EE37200F4126E /* GalleryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryResult.swift; sourceTree = "<group>"; };
 		8B3789E2BBFE5F2D389D38DF /* Pods_dcinside_iOS_dcinside_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dcinside_iOS_dcinside_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1158103951A4FB7AA43372 /* Pods_dcinside_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dcinside_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D7B19436E0E14A4F524FA8 /* Pods_dcinside_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dcinside_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -263,6 +269,9 @@
 				7BF3E619280C68FD00F4126E /* responseError.swift */,
 				7BF3E622280DA05F00F4126E /* SignUpInfo.swift */,
 				7BF3E624280DA34D00F4126E /* SignUpResponse.swift */,
+				7BF3E62D280EE33B00F4126E /* GalleryList.swift */,
+				7BF3E62F280EE35600F4126E /* Gallery.swift */,
+				7BF3E631280EE37200F4126E /* GalleryResult.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -539,8 +548,11 @@
 				6B0E9DC927524CCF00B0E946 /* SceneDelegate.swift in Sources */,
 				723830BF275A2B97006B0F49 /* APIService.swift in Sources */,
 				7BF3E60E280C433300F4126E /* SignInSceneViewController.swift in Sources */,
+				7BF3E630280EE35600F4126E /* Gallery.swift in Sources */,
+				7BF3E62E280EE33B00F4126E /* GalleryList.swift in Sources */,
 				726EA7AD275A534500EB2D83 /* KeyChain.swift in Sources */,
 				7BF3E621280D984700F4126E /* SignUpSceneModel.swift in Sources */,
+				7BF3E632280EE37200F4126E /* GalleryResult.swift in Sources */,
 				7BF3E623280DA05F00F4126E /* SignUpInfo.swift in Sources */,
 				7BF3E61D280D799200F4126E /* SignUpSceneViewController.swift in Sources */,
 				7B73B13C280B1B0E002E4015 /* MainScenePresenter.swift in Sources */,

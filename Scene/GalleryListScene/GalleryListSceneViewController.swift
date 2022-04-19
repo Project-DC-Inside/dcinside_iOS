@@ -21,6 +21,22 @@ class GalleryListSceneViewController: UIViewController {
         return tb
     }()
     
+    private lazy var addGalleryButton: UIBarButtonItem = {
+        let button = UIBarButtonItem()
+        button.image = UIImage(systemName: "plus")
+        
+        return button
+    }()
+    
+    private lazy var backButton: UIBarButtonItem = {
+        let button = UIBarButtonItem()
+        button.image = UIImage(systemName: "arrow.left")
+        button.target = self
+        button.action = #selector(didTappedBackButton)
+        
+        return button
+    }()
+    
     init(galleryType: String) {
         self.galleryType = galleryType
         super.init(nibName: nil, bundle: nil)
@@ -30,16 +46,15 @@ class GalleryListSceneViewController: UIViewController {
         fatalError("Error")
     }
     
-    private lazy var addGalleryButton: UIBarButtonItem = {
-        let button = UIBarButtonItem()
-        button.image = UIImage(systemName: "plus")
-        
-        return button
-    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         presenter.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.viewWillAppear()
     }
 }
 
@@ -49,6 +64,7 @@ extension GalleryListSceneViewController: GalleryListSceneProtocol {
         title = "\(galleryType.uppercased()) 갤러리"
         
         navigationItem.rightBarButtonItem = addGalleryButton
+        navigationItem.leftBarButtonItem = backButton
         
         [galleryListTable].forEach{
             view.addSubview($0)
@@ -57,5 +73,15 @@ extension GalleryListSceneViewController: GalleryListSceneProtocol {
         galleryListTable.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+    }
+    
+    func eraseThisScene() {
+        self.dismiss(animated: true)
+    }
+}
+
+extension GalleryListSceneViewController {
+    @objc func didTappedBackButton() {
+        presenter.didTappedBackButton()
     }
 }

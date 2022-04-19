@@ -10,6 +10,7 @@ import UIKit
 
 protocol GalleryListSceneProtocol: AnyObject {
     func setViews()
+    func eraseThisScene()
 }
 
 class GalleryListScenePresenter: NSObject {
@@ -21,6 +22,14 @@ class GalleryListScenePresenter: NSObject {
     
     func viewDidLoad() {
         viewController?.setViews()
+    }
+    
+    func viewWillAppear() {
+        //APIService.shared
+    }
+    
+    func didTappedBackButton() {
+        viewController?.eraseThisScene()
     }
 }
 
