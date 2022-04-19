@@ -39,8 +39,8 @@ class MenuSceneViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         presenter.viewWillAppear()
+        super.viewWillAppear(animated)
     }
 }
 
@@ -80,6 +80,13 @@ extension MenuSceneViewController: MenuSceneProtocol {
     func signOutAction() {
         navigationItem.title = "로그인 하실래요?"
         signInButton.action = #selector(signInButtonTapped)
+    }
+    
+    func presentGalleryList(galleryType: String) {
+        let vc = UINavigationController(rootViewController: GalleryListSceneViewController(galleryType: galleryType))
+        vc.modalPresentationStyle = .fullScreen
+        
+        self.present(vc, animated: true)
     }
 }
 

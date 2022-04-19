@@ -8,12 +8,19 @@
 import Foundation
 import UIKit
 
+enum GalleryType: String {
+    case major = "major"
+    case minor = "minor"
+    case mini = "mini"
+}
+
 protocol MenuSceneProtocol: AnyObject {
     func setUpNavigationBar()
     func setUpViews()
     func signInSetUp(signInID: String)
     func presentSignInScene()
     func signOutAction()
+    func presentGalleryList(galleryType: String)
 }
 
 class MenuScenePresenter: NSObject {
@@ -62,5 +69,19 @@ extension MenuScenePresenter: UITableViewDataSource {
 }
 
 extension MenuScenePresenter: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var type: String?
+        switch indexPath.row {
+        case 0:
+            type = GalleryType.major.rawValue
+        case 1:
+            type = GalleryType.minor.rawValue
+        default:
+            type = GalleryType.mini.rawValue
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let type = type else { return }
+        viewController?.presentGalleryList(galleryType: type)
+    }
 }
