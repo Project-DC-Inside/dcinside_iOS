@@ -63,8 +63,10 @@ extension GalleryListSceneViewController: GalleryListSceneProtocol {
         view.backgroundColor = .systemBackground
         title = "\(galleryType.uppercased()) 갤러리"
         
-        navigationItem.rightBarButtonItem = addGalleryButton
         navigationItem.leftBarButtonItem = backButton
+        if galleryType != GalleryType.major.rawValue {
+            navigationItem.rightBarButtonItem = addGalleryButton
+        }
         
         [galleryListTable].forEach{
             view.addSubview($0)
