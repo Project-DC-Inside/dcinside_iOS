@@ -54,7 +54,7 @@ class GalleryListSceneViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter.viewWillAppear()
+        presenter.viewWillAppear(galleryType: galleryType)
     }
 }
 
@@ -77,6 +77,10 @@ extension GalleryListSceneViewController: GalleryListSceneProtocol {
     
     func eraseThisScene() {
         self.dismiss(animated: true)
+    }
+    
+    func reLoadData() {
+        galleryListTable.reloadData()
     }
 }
 

@@ -11,10 +11,12 @@ import UIKit
 protocol GalleryListSceneProtocol: AnyObject {
     func setViews()
     func eraseThisScene()
+    func reLoadData()
 }
 
 class GalleryListScenePresenter: NSObject {
     private weak var viewController: GalleryListSceneProtocol?
+    private var galleryList: [Gallery] = []
     
     init(viewController: GalleryListSceneProtocol?) {
         self.viewController = viewController
@@ -24,8 +26,18 @@ class GalleryListScenePresenter: NSObject {
         viewController?.setViews()
     }
     
-    func viewWillAppear() {
-        //APIService.shared
+    func viewWillAppear(galleryType: String) {
+        print("VIEWWILLAPPEAR", galleryType)
+        APIService.shared.fetchGalleryList(galleryType: galleryType) { [weak self] response in
+            switch response {
+            case .success(let galleryList):
+                self?.galleryList = galleryList
+                self?.viewController?.reLoadData()
+            case .failure(let error):
+                print(error)
+            }
+            
+        }
     }
     
     func didTappedBackButton() {
@@ -40,13 +52,13 @@ extension GalleryListScenePresenter: UITableViewDelegate {
 }
 extension GalleryListScenePresenter: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        return galleryList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
-        cell.textLabel?.text = "LIST TEST"
+        cell.textLabel?.text = galleryList[indexPath.row].name
         return cell
     }
     
