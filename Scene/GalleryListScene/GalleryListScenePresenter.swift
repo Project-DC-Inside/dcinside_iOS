@@ -27,7 +27,6 @@ class GalleryListScenePresenter: NSObject {
     }
     
     func viewWillAppear(galleryType: String) {
-        print("VIEWWILLAPPEAR", galleryType)
         APIService.shared.fetchGalleryList(galleryType: galleryType) { [weak self] response in
             switch response {
             case .success(let galleryList):
