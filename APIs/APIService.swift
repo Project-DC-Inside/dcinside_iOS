@@ -43,6 +43,27 @@ class APIService {
         return components
     }
     
+    func fetchGalleryList(galleryType: String, completion: @escaping (Result<[Gallery],NetworkError>) -> Void) {
+        AF.request(URLGenerate(path: "/api/v1/galleries", queryItems: ["type": galleryType.uppercased()]).url!, method: .get, parameters: nil).validate(statusCode: 200..<300).responseJSON { response in
+            guard let data = response.data else { return }
+            switch response.result {
+            case .success:
+                do {
+                    let galleryList = try JSONDecoder().decode(GalleryList.self, from: data)
+                    if let res = galleryList.result {
+                        completion(.success(res))
+                    } else {
+                        completion(.success([]))
+                    }
+                }catch {
+                    completion(.failure(.decodeError))
+                }
+            case .failure:
+                completion(.failure(.badURL))
+            }
+        }.resume()
+    }
+    
     func signInAction(signInInfo: SignInInfo, completion: @escaping (Result<SignInResult, NetworkError>) -> Void) {
         AF.request(URLGenerate(path: "/api/v1/auth/signin", queryItems: nil).url!, method: .post, parameters: signInInfo, encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300).responseJSON { response in
             guard let data = response.data else { return }
