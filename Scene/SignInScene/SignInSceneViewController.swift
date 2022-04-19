@@ -25,6 +25,7 @@ class SignInSceneViewController: UIViewController {
         let tv = UITextField()
         tv.placeholder = "비밀번호를 입력하세요"
         tv.delegate = presenter
+        tv.isSecureTextEntry = true
         tv.borderStyle = .roundedRect
         
         return tv
