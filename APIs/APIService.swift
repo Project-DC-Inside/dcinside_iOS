@@ -49,7 +49,54 @@ class APIService {
         return components
     }
     
-    func fetchGalleryList(galleryType: String, completion: @escaping (Result<[Gallery],NetworkError>) -> Void) {
+    func fetchPostList(postListRequest: PostListRequest, completion: @escaping (Result<[PostInfo], NetworkError>) -> Void) {
+        AF.request(URLGenerate(path: "/api/v1/posts", queryItems: ["galleryId": "\(postListRequest.galleryId)", "lastPostId": "\(postListRequest.lastPostId)"]).url!, method: .get, parameters: nil).responseJSON { response in
+            guard let data = response.data else { return }
+            switch response.result {
+            case .success:
+                do {
+                    let PostInfos = try JSONDecoder().decode(PostListTotalResponse.self, from: data)
+                    if PostInfos.success {
+                        completion(.success(PostInfos.result ?? []))
+                    } else {
+                        completion(.failure(NetworkError.inputError))
+                    }
+                }catch {
+                    completion(.failure(.decodeError))
+                }
+            case .failure:
+                completion(.failure(.badURL))
+            }
+        }.resume()
+        
+    }
+    
+    func refreshToken(completion: @escaping (Result<SignInResponse, NetworkError>)-> Void) {
+        guard let token = KeyChain.shared.getItem(key: KeyChain.token) as? String else { return }
+        guard let refresh = KeyChain.shared.getItem(key: KeyChain.refresh) as? String else { return }
+        
+        let param = RefreshTokenStructure(accessToken: token, refreshToken: refresh)
+        AF.request(URLGenerate(path: "/api/v1/auth/reissue", queryItems: nil).url!, method: .post, parameters: param, encoder: JSONParameterEncoder.default).responseJSON { response in
+            guard let data = response.data else { return }
+            switch response.result {
+            case .success:
+                do {
+                    let res = try JSONDecoder().decode(SignInResponse.self, from: data)
+                    if res.success {
+                        completion(.success(res))
+                    } else {
+                        completion(.failure(.inputError))
+                    }
+                } catch {
+                    completion(.failure(.decodeError))
+                }
+            case .failure:
+                completion(.failure(.badURL))
+            }
+        }.resume()
+    }
+    
+    func fetchGalleryList(galleryType: String, completion: @escaping (Result<[GalleryResponse],NetworkError>) -> Void) {
         AF.request(URLGenerate(path: "/api/v1/galleries", queryItems: ["type": galleryType.uppercased()]).url!, method: .get, parameters: nil).validate(statusCode: 200..<300).responseJSON { response in
             guard let data = response.data else { return }
             switch response.result {
@@ -110,8 +157,8 @@ class APIService {
         }.resume()
     }
     
-    func submitNewGallery(gallery: Gallery, completion: @escaping (Result<GalleryMakeResponse, NetworkError>)-> Void) {
-        AF.request(URLGenerate(path: "/api/v1/galleries", queryItems: nil).url!, method: .post, parameters: gallery, encoder: JSONParameterEncoder.default, headers: makeHeader()).validate(statusCode: 200..<300).responseJSON { response in
+    func submitNewGallery(gallery: GalleryRequest, completion: @escaping (Result<GalleryMakeResponse, NetworkError>)-> Void) {
+        AF.request(URLGenerate(path: "/api/v1/galleries", queryItems: nil).url!, method: .post, parameters: gallery, encoder: JSONParameterEncoder.default, headers: makeHeader(), interceptor: APIReuqestInterceptor()).responseJSON { response in
             guard let data = response.data else { return }
             switch response.result {
             case .success:
@@ -131,9 +178,9 @@ class APIService {
     }
 }
 
-struct refreshToken : Codable {
-    var accessToken: String
-    var refreshToken: String
+struct RefreshTokenStructure : Codable {
+    let accessToken: String
+    let refreshToken: String
 }
 
 
