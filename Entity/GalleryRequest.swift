@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Gallery : Codable {
+struct GalleryRequest : Codable {
     var type: String
     var name: String
     enum CodingKeys: String, CodingKey {

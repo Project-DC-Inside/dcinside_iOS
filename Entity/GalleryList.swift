@@ -9,7 +9,7 @@ import Foundation
 
 struct GalleryList: Codable {
     var success: Bool?
-    var result: [Gallery]?
+    var result: [GalleryResponse]?
     var error: responseError?
     
     enum CodingKeys: String, CodingKey {
