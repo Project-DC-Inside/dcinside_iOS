@@ -92,6 +92,12 @@ extension GalleryListSceneViewController: GalleryListSceneProtocol {
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func moveGalleryListScene(galleryInfo: GalleryResponse) {
+        let vc = GalleryPostListSceneViewController(gallery: galleryInfo)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension GalleryListSceneViewController {

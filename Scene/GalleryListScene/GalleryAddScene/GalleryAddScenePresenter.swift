@@ -33,7 +33,7 @@ class GalleryAddScenePresenter: NSObject {
     func didTappedSubmitButton(type: String) {
         guard let text = presenter?.getContents() else { return }
         print("TEXT",text, type)
-        let gallery = Gallery(type: type.uppercased(), name: text)
+        let gallery = GalleryRequest(type: type.uppercased(), name: text)
         APIService.shared.submitNewGallery(gallery: gallery) { [weak self] res in
             switch res {
             case .success(let galleryInfo):

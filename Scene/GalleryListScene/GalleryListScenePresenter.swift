@@ -13,11 +13,12 @@ protocol GalleryListSceneProtocol: AnyObject {
     func eraseThisScene()
     func reLoadData()
     func addScenePresent()
+    func moveGalleryListScene(galleryInfo: GalleryResponse)
 }
 
 class GalleryListScenePresenter: NSObject {
     private weak var viewController: GalleryListSceneProtocol?
-    private var galleryList: [Gallery] = []
+    private var galleryList: [GalleryResponse] = []
     
     init(viewController: GalleryListSceneProtocol?) {
         self.viewController = viewController
@@ -52,6 +53,7 @@ class GalleryListScenePresenter: NSObject {
 extension GalleryListScenePresenter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        viewController?.moveGalleryListScene(galleryInfo: galleryList[indexPath.row])
     }
 }
 extension GalleryListScenePresenter: UITableViewDataSource {
