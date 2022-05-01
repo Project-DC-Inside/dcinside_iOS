@@ -89,13 +89,13 @@ extension GalleryListSceneViewController: GalleryListSceneProtocol {
     
     func addScenePresent() {
         let vc = GalleryAddSceneViewController(type: galleryType)
-        
+        navigationItem.backButtonTitle = ""
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func moveGalleryListScene(galleryInfo: GalleryResponse) {
         let vc = GalleryPostListSceneViewController(gallery: galleryInfo)
-        
+        navigationItem.backButtonTitle = ""
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
