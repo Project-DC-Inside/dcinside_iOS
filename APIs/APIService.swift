@@ -48,14 +48,40 @@ class APIService {
         
         return components
     }
+    func fetchPostInfo(postId: Int, completion: @escaping (Result<PostInfo, NetworkError>) -> Void) {
+        // Todo: 에러 처리 해야함, 리트라이랑
+        AF.request(URLGenerate(path: "/api/v1/posts/\(postId)", queryItems: nil).url!, method: .get, parameters: nil).responseJSON { response in
+            guard let data = response.data else { return }
+            switch response.result {
+            case .success:
+                do {
+                    let postInfo = try JSONDecoder().decode(PostResponse.self, from: data)
+                    print(postInfo)
+                    if postInfo.success {
+                        completion(.success(postInfo.result!))
+                    } else {
+                        completion(.failure(.inputError))
+                    }
+                } catch {
+                    completion(.failure(.decodeError))
+                }
+            case .failure:
+                completion(.failure(.badURL))
+            }
+        }.resume()
+    }
     
     func fetchPostList(postListRequest: PostListRequest, completion: @escaping (Result<[PostInfo], NetworkError>) -> Void) {
-        AF.request(URLGenerate(path: "/api/v1/posts", queryItems: ["galleryId": "\(postListRequest.galleryId)", "lastPostId": "\(postListRequest.lastPostId)"]).url!, method: .get, parameters: nil).responseJSON { response in
+        let reqData = postListRequest.lastPostId != nil ? "\(postListRequest.lastPostId!)" : ""
+        print(reqData)
+        AF.request(URLGenerate(path: "/api/v1/posts", queryItems: ["galleryId": "\(postListRequest.galleryId)", "lastPostId": reqData]).url!, method: .get, parameters: nil).responseJSON { response in
             guard let data = response.data else { return }
             switch response.result {
             case .success:
                 do {
                     let PostInfos = try JSONDecoder().decode(PostListTotalResponse.self, from: data)
+                    
+                    print(PostInfos)
                     if PostInfos.success {
                         completion(.success(PostInfos.result ?? []))
                     } else {
@@ -65,6 +91,7 @@ class APIService {
                     completion(.failure(.decodeError))
                 }
             case .failure:
+                print("EE")
                 completion(.failure(.badURL))
             }
         }.resume()
@@ -175,6 +202,7 @@ class APIService {
                 completion(.failure(.badURL))
             }
         }
+        .resume()
     }
 }
 
