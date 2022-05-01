@@ -9,5 +9,5 @@ import Foundation
 
 struct PostListRequest: Codable {
     let galleryId: Int
-    let lastPostId: Int
+    let lastPostId: Int?
 }

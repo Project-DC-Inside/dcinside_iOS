@@ -9,19 +9,19 @@ import Foundation
 
 struct PostInfo: Codable {
     let id: Int
-    let nickName: String
+    let nickname: String
     let title: String
     let createdAt: String
     let updatedAt: String
-    let postStatistics: [PostStatistics]
+    let postStatistics: PostStatistics
     let writer: WriterInfo
-    let content: String
+    let content: String?
 }
 
 struct WriterInfo: Codable {
     let memberType: String
     let nickname: String
-    let username: String
+    let username: String?
 }
 
 struct PostStatistics: Codable {
