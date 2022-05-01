@@ -15,22 +15,36 @@ class GalleryPostListSceneViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tv = UITableView()
+        tv.register(GalleryPostListCell.self, forCellReuseIdentifier: "GalleryPostListCell")
         tv.dataSource = presenter
         tv.delegate = presenter
         
         return tv
     }()
     
+    private lazy var addPostOnGallery: UIBarButtonItem = {
+        let btn = UIBarButtonItem()
+        btn.title = "글쓰기"
+        btn.target = self
+        btn.action = #selector(didTappedAddPostButton)
+        
+        return btn
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter.viewDidLoad()
+        presenter.viewDidLoad(galleryID: gallery.id)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        presenter.viewWillAppear(galleryID: gallery.id)
+        //presenter.viewWillAppear(galleryID: gallery.id)
+    }
+    
+    @objc func didTappedAddPostButton() {
+        presenter.didTappedAddPostButton()
     }
     
     init(gallery: GalleryResponse) {
@@ -47,6 +61,7 @@ class GalleryPostListSceneViewController: UIViewController {
 extension GalleryPostListSceneViewController: GalleryPostListSceneProtocol {
     func setViews() {
         title = gallery.name
+        navigationItem.rightBarButtonItem = addPostOnGallery
         view.backgroundColor = .systemBackground
         [tableView].forEach {
             view.addSubview($0)
@@ -59,6 +74,17 @@ extension GalleryPostListSceneViewController: GalleryPostListSceneProtocol {
     
     func reloadData() {
         tableView.reloadData()
+    }
+    
+    func moveMakePostScene() {
+        let vc = WritePostSceneViewController(galleryInfo: gallery)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func movePostScene(postInfo: PostInfo) {
+        let vc = PostSceneViewController(postId: postInfo.id)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
