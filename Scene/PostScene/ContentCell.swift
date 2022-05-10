@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+//
 class ContentCell: UITableViewCell {
     private lazy var presenter = ContentCellPresenter()
     private lazy var textView: UITextView = {
@@ -42,7 +42,7 @@ extension ContentCell: ContentCellProtocol {
         let CGF: CGFloat = 180
         let height = CGF < estimatedSize.height ? estimatedSize.height: CGF
         textView.snp.makeConstraints {
-            $0.leading.top.trailing.equalToSuperview()
+            $0.leading.top.trailing.equalToSuperview().inset(10)
             $0.height.equalTo(height)
         }
     }

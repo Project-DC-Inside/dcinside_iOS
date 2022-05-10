@@ -56,7 +56,6 @@ extension PostScenePresenter: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
-        print(postInfo)
         let test = "TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST "
         guard let postInfo = postInfo else { return UITableViewCell() }
         switch row {
@@ -81,7 +80,7 @@ extension PostScenePresenter: UITableViewDataSource {
             cell.selectionStyle = .none
             return cell
         default:
-            let cell = ContentCell(content: postInfo.content ?? "")
+            let cell = ContentCell(content: (postInfo.content ?? "") + test)
             cell.selectionStyle = .none
             return cell
             break

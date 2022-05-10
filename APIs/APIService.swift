@@ -48,6 +48,54 @@ class APIService {
         
         return components
     }
+    
+    func submitPostLogOff(post: PostSubmitLogOff, completion: @escaping (Result<Int, NetworkError>) -> Void) {
+        AF.request(URLGenerate(path: "/api/v1/posts/non-member", queryItems: nil).url!, method: .post, parameters: post, encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300).responseJSON { response in
+            
+            guard let data = response.data else { return }
+            print(data)
+            switch response.result {
+            case .success:
+                do {
+                    let postSubmitResult = try JSONDecoder().decode(PostSubmitResult.self, from: data)
+                    if postSubmitResult.success {
+                        completion(.success(postSubmitResult.result!))
+                    } else {
+                        completion(.failure(NetworkError.inputError))
+                    }
+                } catch {
+                    completion(.failure(.decodeError))
+                }
+            case .failure:
+                print("FAIL")
+                completion(.failure(NetworkError.badURL))
+            }
+        }
+    }
+    
+    func submitPostLogIn(post: PostSubmitLogIn, completion: @escaping (Result<Int, NetworkError>) -> Void) {
+        print(post)
+        AF.request(URLGenerate(path: "/api/v1/posts", queryItems: nil).url!, method: .post, parameters: post, encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300).responseJSON { response in
+            
+            guard let data = response.data else { return }
+            switch response.result {
+            case .success:
+                do {
+                    let postSubmitResult = try JSONDecoder().decode(PostSubmitResult.self, from: data)
+                    if postSubmitResult.success {
+                        completion(.success(postSubmitResult.result!))
+                    } else {
+                        completion(.failure(NetworkError.inputError))
+                    }
+                } catch {
+                    completion(.failure(.decodeError))
+                }
+            case .failure:
+                completion(.failure(NetworkError.badURL))
+            }
+        }
+    }
+    
     func fetchPostInfo(postId: Int, completion: @escaping (Result<PostInfo, NetworkError>) -> Void) {
         // Todo: 에러 처리 해야함, 리트라이랑
         AF.request(URLGenerate(path: "/api/v1/posts/\(postId)", queryItems: nil).url!, method: .get, parameters: nil).responseJSON { response in

@@ -21,6 +21,12 @@
 		7B73B13C280B1B0E002E4015 /* MainScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B73B13A280B1B0E002E4015 /* MainScenePresenter.swift */; };
 		7B782E52281E6A0400240417 /* PostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B782E51281E6A0400240417 /* PostResponse.swift */; };
 		7B782E54281E729600240417 /* ContentCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B782E53281E729600240417 /* ContentCellPresenter.swift */; };
+		7B79E61A282A98650071A736 /* TitleTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B79E619282A98650071A736 /* TitleTextFieldCell.swift */; };
+		7B79E61C282A98B90071A736 /* TitleTextFieldPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B79E61B282A98B90071A736 /* TitleTextFieldPresenter.swift */; };
+		7B79E61E282AA1710071A736 /* ContentTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B79E61D282AA1710071A736 /* ContentTextViewCell.swift */; };
+		7B79E620282AA2810071A736 /* ContentTextPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B79E61F282AA2810071A736 /* ContentTextPresenter.swift */; };
+		7B79E623282AB6A90071A736 /* PostSubmit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B79E622282AB6A90071A736 /* PostSubmit.swift */; };
+		7B79E625282AB7CE0071A736 /* PostSubmitResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B79E624282AB7CE0071A736 /* PostSubmitResult.swift */; };
 		7B8437C82819805B0040030C /* GalleryPostListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8437C72819805B0040030C /* GalleryPostListCell.swift */; };
 		7B8437CD281AA2E20040030C /* PostSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8437CC281AA2E20040030C /* PostSceneViewController.swift */; };
 		7B8437CF281AA2F00040030C /* PostScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8437CE281AA2F00040030C /* PostScenePresenter.swift */; };
@@ -106,6 +112,12 @@
 		7B73B13A280B1B0E002E4015 /* MainScenePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScenePresenter.swift; sourceTree = "<group>"; };
 		7B782E51281E6A0400240417 /* PostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostResponse.swift; sourceTree = "<group>"; };
 		7B782E53281E729600240417 /* ContentCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCellPresenter.swift; sourceTree = "<group>"; };
+		7B79E619282A98650071A736 /* TitleTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextFieldCell.swift; sourceTree = "<group>"; };
+		7B79E61B282A98B90071A736 /* TitleTextFieldPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextFieldPresenter.swift; sourceTree = "<group>"; };
+		7B79E61D282AA1710071A736 /* ContentTextViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTextViewCell.swift; sourceTree = "<group>"; };
+		7B79E61F282AA2810071A736 /* ContentTextPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTextPresenter.swift; sourceTree = "<group>"; };
+		7B79E622282AB6A90071A736 /* PostSubmit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSubmit.swift; sourceTree = "<group>"; };
+		7B79E624282AB7CE0071A736 /* PostSubmitResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSubmitResult.swift; sourceTree = "<group>"; };
 		7B8437C72819805B0040030C /* GalleryPostListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPostListCell.swift; sourceTree = "<group>"; };
 		7B8437CC281AA2E20040030C /* PostSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSceneViewController.swift; sourceTree = "<group>"; };
 		7B8437CE281AA2F00040030C /* PostScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScenePresenter.swift; sourceTree = "<group>"; };
@@ -277,6 +289,15 @@
 			path = MainScene;
 			sourceTree = "<group>";
 		};
+		7B79E621282AB69D0071A736 /* PostSubmit */ = {
+			isa = PBXGroup;
+			children = (
+				7B79E622282AB6A90071A736 /* PostSubmit.swift */,
+				7B79E624282AB7CE0071A736 /* PostSubmitResult.swift */,
+			);
+			path = PostSubmit;
+			sourceTree = "<group>";
+		};
 		7B8437CB281AA2AE0040030C /* PostScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +348,7 @@
 		7BF3E612280C67B200F4126E /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				7B79E621282AB69D0071A736 /* PostSubmit */,
 				7BF3E64828102BA100F4126E /* PostInfos */,
 				7BF3E613280C67BF00F4126E /* SignInInfo.swift */,
 				7BF3E615280C683700F4126E /* SignInResult.swift */,
@@ -408,6 +430,10 @@
 			children = (
 				7BF3E650281036C900F4126E /* WritePostSceneViewController.swift */,
 				7BF3E652281036D100F4126E /* WritePostScenePresenter.swift */,
+				7B79E619282A98650071A736 /* TitleTextFieldCell.swift */,
+				7B79E61B282A98B90071A736 /* TitleTextFieldPresenter.swift */,
+				7B79E61D282AA1710071A736 /* ContentTextViewCell.swift */,
+				7B79E61F282AA2810071A736 /* ContentTextPresenter.swift */,
 			);
 			path = WritePostScene;
 			sourceTree = "<group>";
@@ -652,12 +678,16 @@
 				7BF3E616280C683700F4126E /* SignInResult.swift in Sources */,
 				6B0E9DC727524CCF00B0E946 /* AppDelegate.swift in Sources */,
 				7BF3E6422810213D00F4126E /* GalleryPostListSceneViewController.swift in Sources */,
+				7B79E61C282A98B90071A736 /* TitleTextFieldPresenter.swift in Sources */,
+				7B79E61A282A98650071A736 /* TitleTextFieldCell.swift in Sources */,
+				7B79E61E282AA1710071A736 /* ContentTextViewCell.swift in Sources */,
 				7BF3E6452810215500F4126E /* GalleryPostListScenePresenter.swift in Sources */,
 				6B0E9DD127524CCF00B0E946 /* dcinside_iOS.xcdatamodeld in Sources */,
 				7BF3E61F280D799E00F4126E /* SignUpScenePresenter.swift in Sources */,
 				7B73B13B280B1B0E002E4015 /* MainSceneViewController.swift in Sources */,
 				7BF3E62A280EC53000F4126E /* GalleryListSceneViewController.swift in Sources */,
 				7BF3E610280C433F00F4126E /* SignInPresenter.swift in Sources */,
+				7B79E625282AB7CE0071A736 /* PostSubmitResult.swift in Sources */,
 				7BF3E625280DA34D00F4126E /* SignUpResponse.swift in Sources */,
 				7BF3E618280C687B00F4126E /* SignInResponse.swift in Sources */,
 				7BF3E63A280EEC4800F4126E /* GalleryNameCells.swift in Sources */,
@@ -675,10 +705,12 @@
 				723830BF275A2B97006B0F49 /* APIService.swift in Sources */,
 				7BF3E60E280C433300F4126E /* SignInSceneViewController.swift in Sources */,
 				7BF3E630280EE35600F4126E /* GalleryRequest.swift in Sources */,
+				7B79E620282AA2810071A736 /* ContentTextPresenter.swift in Sources */,
 				7BF3E62E280EE33B00F4126E /* GalleryList.swift in Sources */,
 				726EA7AD275A534500EB2D83 /* KeyChain.swift in Sources */,
 				7BF3E64E28102C1000F4126E /* PostInfo.swift in Sources */,
 				7BF3E621280D984700F4126E /* SignUpSceneModel.swift in Sources */,
+				7B79E623282AB6A90071A736 /* PostSubmit.swift in Sources */,
 				7BF3E635280EE9F500F4126E /* GalleryAddSceneViewController.swift in Sources */,
 				7BF3E63C280EECB900F4126E /* GalleryNamePresenter.swift in Sources */,
 				7B782E52281E6A0400240417 /* PostResponse.swift in Sources */,
