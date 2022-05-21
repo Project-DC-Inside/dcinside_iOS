@@ -54,23 +54,18 @@ class GalleryPostListCell: UITableViewCell {
             titlesStack.addArrangedSubview($0)
         }
         
-        //let stackView = UIStackView()
         self.addSubview(titlesStack)
-//        stackView.axis = .horizontal
-//        stackView.distribution = .fillProportionally
-//        [titlesStack, dataLabel].forEach {
-//            stackView.addArrangedSubview($0)
-//        }
+
         titlesStack.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.leading.equalToSuperview().inset(20)
+            $0.trailing.bottom.top.equalToSuperview()
         }
+        
         title.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(20)
             $0.top.trailing.equalToSuperview()
             $0.height.equalTo((self.frame.height * 2) / 3)
         }
         subTitle.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(20)
             $0.trailing.bottom.equalToSuperview()
             $0.top.equalTo(title.snp.bottom)
         }
