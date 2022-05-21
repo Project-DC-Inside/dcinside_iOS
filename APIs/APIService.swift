@@ -15,9 +15,26 @@ enum NetworkError:Error {
     case inputError
 }
 
+extension NetworkError: LocalizedError {
+    var errorDescription: String? {
+        switch self {
+        case .badURL:
+            return "잘못된 주소입니다."
+        case .decodeError:
+            return "Decode 실패"
+        case .inputError:
+            return "입력 값에 대해 확인해 주세요"
+        case .serverError:
+            return "서버에서 데이터를 가져오지 못했어요"
+        }
+    }
+}
+
 class APIService {
     //최초 생성시, 전역으로 사용가능하게한다.
     static let shared = APIService()
+    
+    private init() {}
     
     private let HTTPHeaders = ["Content-Type": "application/json"]
     private let baseURL = "http://3.36.205.23:8080"
@@ -75,7 +92,7 @@ class APIService {
     
     func submitPostLogIn(post: PostSubmitLogIn, completion: @escaping (Result<Int, NetworkError>) -> Void) {
         print(post)
-        AF.request(URLGenerate(path: "/api/v1/posts", queryItems: nil).url!, method: .post, parameters: post, encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300).responseJSON { response in
+        AF.request(URLGenerate(path: "/api/v1/posts", queryItems: nil).url!, method: .post, parameters: post, encoder: JSONParameterEncoder.default, headers: makeHeader()).validate(statusCode: 200..<300).responseJSON { response in
             
             guard let data = response.data else { return }
             switch response.result {
