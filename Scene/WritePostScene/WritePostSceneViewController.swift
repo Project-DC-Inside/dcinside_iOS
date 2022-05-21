@@ -72,8 +72,8 @@ extension WritePostSceneViewController: WritePostSceneProtocol {
     
     func postSuccess() {
         let alertVC = UIAlertController(title: "포스트 등록", message: "성공!", preferredStyle: .alert)
-        let action = UIAlertAction(title: "확인", style: .default) {_ in
-            self.navigationController?.popViewController(animated: true)
+        let action = UIAlertAction(title: "확인", style: .default) { [weak self] _ in
+            self?.navigationController?.popViewController(animated: true)
         }
         alertVC.addAction(action)
         self.present(alertVC, animated: true)
