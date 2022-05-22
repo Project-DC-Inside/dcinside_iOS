@@ -66,11 +66,81 @@ class APIService {
         return components
     }
     
-    func submitPostLogOff(post: PostSubmitLogOff, completion: @escaping (Result<Int, NetworkError>) -> Void) {
-        AF.request(URLGenerate(path: "/api/v1/posts/non-member", queryItems: nil).url!, method: .post, parameters: post, encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300).responseJSON { response in
+    func checkNonMemberPassword(unsignedPostPasswordChecker: UnsignedPostPasswordChecker,
+                                completion: @escaping (Result<Bool, NetworkError>) -> Void) {
+        AF.request(URLGenerate(path: "/api/v1/posts/non-member/access", queryItems: nil).url!, method: .put, parameters: unsignedPostPasswordChecker, encoder: JSONParameterEncoder.default, headers: makeHeader()).validate(statusCode: 200..<300).responseJSON { response in
             
             guard let data = response.data else { return }
-            print(data)
+            switch response.result {
+            case .success:
+                do {
+                    let checker = try JSONDecoder().decode(UnsignedPostPasswordResponse.self, from: data)
+                    if checker.success {
+                        completion(.success(true))
+                    } else {
+                        completion(.failure(NetworkError.inputError))
+                    }
+                } catch {
+                    completion(.failure(.decodeError))
+                }
+            case .failure:
+                completion(.failure(NetworkError.badURL))
+            }
+        }
+    }
+    
+    func submitModifyPostLogOff(postNumber: Int, post: ModifyingUnSignedEntity, completion: @escaping (Result<Bool, NetworkError>) -> Void) {
+        AF.request(URLGenerate(path: "/api/v1/posts/non-member/\(postNumber)", queryItems: nil).url!, method: .put, parameters: post, encoder: JSONParameterEncoder.default, headers: nil).validate(statusCode: 200..<300).responseJSON { response in
+            
+            guard let data = response.data else { return }
+            switch response.result {
+            case .success:
+                do {
+                    let modifyingUnSignedEntityResponse = try JSONDecoder().decode(ModifyingUnSignedEntityResponse.self, from: data)
+                    if modifyingUnSignedEntityResponse.success {
+                        completion(.success(true))
+                    } else {
+                        completion(.failure(NetworkError.inputError))
+                    }
+                } catch {
+                    completion(.failure(.decodeError))
+                }
+            case .failure:
+                completion(.failure(NetworkError.badURL))
+            }
+        }
+    }
+    
+    func submitModifyPostLogIn(postNumber: Int, post: ModifyingSignedEntity, completion: @escaping (Result<Bool, NetworkError>) -> Void) {
+        print(post)
+        AF.request(URLGenerate(path: "/api/v1/posts/\(postNumber)", queryItems: nil).url!, method: .put, parameters: post, encoder: JSONParameterEncoder.default, headers: makeHeader()).validate(statusCode: 200..<300).responseJSON { response in
+            
+            guard let data = response.data else { return }
+            switch response.result {
+            case .success:
+                do {
+                    let modifyingSignedEntityResponse = try JSONDecoder().decode(ModifyingSignedEntityResponse.self, from: data)
+                    if modifyingSignedEntityResponse.success {
+                        completion(.success(true))
+                    } else {
+                        completion(.failure(NetworkError.inputError))
+                    }
+                } catch {
+                    completion(.failure(.decodeError))
+                }
+            case .failure:
+                completion(.failure(NetworkError.badURL))
+            }
+        }
+    }
+    
+    
+    func submitPostLogOff(post: PostSubmitLogOff, completion: @escaping (Result<Int, NetworkError>) -> Void) {
+        AF.request(URLGenerate(path: "/api/v1/posts/non-member", queryItems: nil).url!, method: .post, parameters: post, encoder: JSONParameterEncoder.default).responseJSON { response in
+            
+            guard let data = response.data else { return }
+            guard let statusCode = response.response?.statusCode else { return }
+            
             switch response.result {
             case .success:
                 do {
@@ -87,7 +157,9 @@ class APIService {
                 print("FAIL")
                 completion(.failure(NetworkError.badURL))
             }
-        }
+        }.resume()
+        
+        
     }
     
     func submitPostLogIn(post: PostSubmitLogIn, completion: @escaping (Result<Int, NetworkError>) -> Void) {
@@ -278,4 +350,3 @@ struct RefreshTokenStructure : Codable {
 
 
 // enum 으로 상태도 표현해주자
-

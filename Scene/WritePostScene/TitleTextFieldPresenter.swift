@@ -12,6 +12,7 @@ protocol TitleTextFieldProtocol: AnyObject {
     func setPlaceHolder(placeholder: String)
     func setSecretText()
     func getTitle() -> String
+    func setText(text: String)
 }
 
 class TitleTextFieldPresenter {
@@ -45,5 +46,9 @@ class TitleTextFieldPresenter {
     
     func getTitle() -> String? {
         return viewController?.getTitle()
+    }
+    
+    func setText(text: String) {
+        viewController?.setText(text: text)
     }
 }

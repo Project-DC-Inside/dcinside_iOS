@@ -8,6 +8,7 @@ target 'dcinside_iOS' do
   pod 'SnapKit'
   pod 'IQKeyboardManagerSwift'
   pod 'SideMenu'
+  pod 'MarkdownView'
   # Pods for dcinside_iOS
 
   target 'dcinside_iOSTests' do

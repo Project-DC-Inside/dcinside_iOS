@@ -51,4 +51,8 @@ extension TitleTextFieldCell: TitleTextFieldProtocol {
     func getTitle() -> String {
         return textField.text ?? ""
     }
+    
+    func setText(text: String) {
+        textField.text = text
+    }
 }

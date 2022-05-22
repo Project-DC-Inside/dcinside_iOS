@@ -18,8 +18,16 @@ class GalleryPostListSceneViewController: UIViewController {
         tv.register(GalleryPostListCell.self, forCellReuseIdentifier: "GalleryPostListCell")
         tv.dataSource = presenter
         tv.delegate = presenter
+        tv.refreshControl = refreshController
         
         return tv
+    }()
+    
+    private lazy var refreshController: UIRefreshControl = {
+        let refresh = UIRefreshControl()
+        refresh.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
+        
+        return refresh
     }()
     
     private lazy var addPostOnGallery: UIBarButtonItem = {
@@ -54,6 +62,10 @@ class GalleryPostListSceneViewController: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("GalleryPostListScene Error Occured")
+    }
+    
+    @objc func refreshTableView() {
+        presenter.refreshTableView()
     }
     
 }

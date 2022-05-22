@@ -25,6 +25,12 @@ class PostSceneViewController: UIViewController {
         
         return tv
     }()
+    private lazy var modifyButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(barButtonSystemItem: .edit,
+                                     target: self,
+                                     action: #selector(tapModifyButton))
+        return button
+    }()
     
     init(postId: Int) {
         self.postId = postId
@@ -43,11 +49,51 @@ class PostSceneViewController: UIViewController {
         presenter.viewWillAppear()
         super.viewWillAppear(animated)
     }
+    
+    @objc func tapModifyButton() {
+        print("TAPP MODIFY")
+        presenter.tapModifyButton()
+    }
 }
 
 extension PostSceneViewController: PostSceneProtocol {
+    func presentError(error: Error) {
+        // Error
+        print(error)
+    }
+    
+    func checkUnSignedPassword(postId: Int) {
+        let alert = UIAlertController(title: "비밀번호 확인하기", message: nil, preferredStyle: .alert)
+        alert.addTextField { [weak self] textField in
+            textField.placeholder = "비밀번호"
+            textField.isSecureTextEntry = true
+        }
+        let okAction = UIAlertAction(title: "확인", style: .default) { [weak self] _ in
+            self?.presenter.checkPassword(text: alert.textFields?[0].text, postId: postId)
+        }
+        alert.addAction(okAction)
+        self.present(alert, animated: true)
+    }
+    
+    func modifyPost(presenter: ModifyPostScenePresenter?) {
+        let vc = ModifyPostSceneViewController(presenter: presenter)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func presentError(error: EditPostError) {
+        
+    }
+    
+    func modifyPost(presenter: ModifyPostScenePresenter) {
+        let vc = ModifyPostSceneViewController(presenter: presenter)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func viewConfigure() {
         view.addSubview(tableView)
+        
+        navigationItem.rightBarButtonItem = modifyButton
         
         tableView.rowHeight = UITableView.automaticDimension
         

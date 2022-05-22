@@ -46,7 +46,6 @@ class WritePostSceneViewController: UIViewController {
     }
     
     @objc func didTappedSubmitButton() {
-        print("TAPPED")
         presenter.didTappedSubmitButton(galleryId: galleryInfo.id)
     }
 }

@@ -31,7 +31,6 @@ class GalleryPostListScenePresenter: NSObject {
         viewController?.setViews()
         
         galleryid = galleryID
-        print(galleryID)
         APIService.shared.fetchPostList(postListRequest: PostListRequest(galleryId: galleryID, lastPostId: nil)) {
             [weak self] res in
             
@@ -40,7 +39,6 @@ class GalleryPostListScenePresenter: NSObject {
                 if data.count == 0 {
                     return
                 }
-                print(data)
                 self?.postList = data
                 self?.postListLastID = data.last!.id
                 self?.viewController?.reloadData()
@@ -57,9 +55,16 @@ class GalleryPostListScenePresenter: NSObject {
     func didTappedAddPostButton() {
         viewController?.moveMakePostScene()
     }
+    
+    func refreshTableView() {
+        viewController?.reloadData()
+    }
 }
 
 extension GalleryPostListScenePresenter: UITableViewDelegate {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         viewController?.movePostScene(postInfo: postList[indexPath.row])
@@ -70,7 +75,6 @@ extension GalleryPostListScenePresenter: UITableViewDelegate {
         
         if offsetY > contentHeight - scrollView.frame.height {
             if !fetchingMore {
-                print("SCROLL")
                 fetchingMore = true
                 APIService.shared.fetchPostList(postListRequest: PostListRequest(galleryId: galleryid, lastPostId: postListLastID)) { [weak self] response in
                     switch response {

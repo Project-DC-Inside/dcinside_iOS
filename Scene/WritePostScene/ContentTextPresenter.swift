@@ -12,6 +12,7 @@ protocol ContentTextProtocol: AnyObject {
     func configure()
     func getFrame() -> CGRect
     func getContent() -> String
+    func setTextView(text: String)
 }
 
 class ContentTextPresenter: NSObject {
@@ -41,4 +42,7 @@ class ContentTextPresenter: NSObject {
         return viewController?.getContent() ?? "textView 에러!"
     }
     
+    func setTextView(text: String) {
+        viewController?.setTextView(text: text)
+    }
 }

@@ -55,5 +55,9 @@ extension ContentTextViewCell: ContentTextProtocol {
     func getContent() -> String {
         return textView.text
     }
+    
+    func setTextView(text: String) {
+        textView.text = text
+    }
 }
 
