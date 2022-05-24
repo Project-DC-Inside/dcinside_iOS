@@ -58,8 +58,10 @@ class PostSceneViewController: UIViewController {
 
 extension PostSceneViewController: PostSceneProtocol {
     func presentError(error: Error) {
-        // Error
-        print(error)
+        let alertVC = UIAlertController(title: "에러 발생", message: error.localizedDescription, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default)
+        alertVC.addAction(okAction)
+        self.present(alertVC, animated: true)
     }
     
     func checkUnSignedPassword(postId: Int) {
@@ -78,10 +80,6 @@ extension PostSceneViewController: PostSceneProtocol {
     func modifyPost(presenter: ModifyPostScenePresenter?) {
         let vc = ModifyPostSceneViewController(presenter: presenter)
         self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func presentError(error: EditPostError) {
-        
     }
     
     func modifyPost(presenter: ModifyPostScenePresenter) {
